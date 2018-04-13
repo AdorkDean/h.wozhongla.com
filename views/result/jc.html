@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>竞彩开奖</title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/jc.css"/>
+</head>
+<body>
+
+<header>
+    <a class="header-back" id="headerBack" href="index.html"><span id="title">竞彩足球开奖</span></a>
+    <div class="header-option dr" id="dayOptionBtn"></div>
+    <div class="header-option dr" id="lotOptionBtn"></div>
+</header>
+<section>
+    <div class="head-h45" id="jcResult"></div>
+    <div class="hr50"></div>
+</section>
+<section id="lotOption" class="float-option float-option-long dn">
+    <h2>选择彩种</h2>
+    <ul class="type-group type-group-long" id="lotList"></ul>
+</section>
+<section id="dayOption" class="float-option dn">
+    <h2>选择日期</h2>
+    <ul class="type-group" id="dayList"></ul>
+</section>
+
+<script id="jcResultSp" type="text/x-handlebars-template">
+    {{#each list}}
+    <li class="jc-vs-list">
+        <div class="list-no">
+            {{wook}}<br/>
+            {{no}}
+        </div>
+        <div class="list-home">{{{matchHome}}}</div>
+        <div class="list-result">{{{matchResult}}}</div>
+        <div class="list-guest">{{matchGuest}}</div>
+    </li>
+    {{/each}}
+</script>
+<script ty src="cordova.js"></script>
+<script src="js/sea.js" id="seajsnode"></script>
+<script src="js/config.js"></script>
+<script>
+    seajs.use('jc', function (main) {
+        main.init();
+    })
+</script>
+
+</body>
+</html>

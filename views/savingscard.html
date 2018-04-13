@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>联动充值</title>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111?v=1"/>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <script>
+
+        seajs.config({
+            base:'../js/dist'
+        })
+        seajs.use('wzlh5/1.0.0/pay',function(pay){
+            pay.pay('unionpay');
+        })
+    </script>
+    <!-- 行内样式属于该页面独有样式 -->
+    <style>
+        /* 重新定制 ul样式 */
+        .list-group{
+            background: #fff;
+            border-radius: 5px;
+            border: 1px solid #dddddd;
+        }
+        .list-group-item{
+            position: relative;
+            display: block;
+            margin: 0 0px;
+            padding:8px 10px;
+            background-color: #ffffff;
+            border-top:none;
+            border-left:none;
+            border-right:none;
+            border-bottom: 1px solid #f3f3f3;
+        }
+        /* 重新定制 form-control */
+        .form-control{
+            padding:6px 6px 6px 0;
+        }
+
+        .pay-items-text{
+            float:left;
+            margin-left:15px;
+            margin-top:3px;
+        }
+        .pay-items-text p{
+            margin:0;
+        }
+        .pay-items-titie{
+            font-weight:bold;
+            font-size: 14px;;
+        }
+        .pay-items-subtitie{
+            font-size: 12px;
+            color:#a6a6a6;
+        }
+        .pay-addcard  .text-muted{
+            line-height: 30px;
+            text-indent: 4em;
+        }
+
+        .pay-process{
+            color: #fff;
+            display: inline-block;
+            margin-bottom: 0;
+            font-weight: normal;
+            text-align: center;
+            vertical-align: middle;
+            background-image: none;
+            border: 1px solid transparent;
+            white-space: nowrap;
+            padding: 6px;
+            font-size: 12px;
+            line-height: 1.42857143;
+            border-radius: 4px;
+            -webkit-user-select: none;
+        }   
+        .pay-process-bg1{background-color: #f0ad4e;border-color: #eea236;}
+        .pay-process-bg2{background-color: #428bca;border-color: #357ebd;}
+        
+        .glyphicon-home{color: white;}
+        .ylzf-ok{width: 100%;text-align: center;}
+
+    </style>
+</head>
+<body>
+
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar" onclick="history.back(-1)">
+                    <span class="glyphicon glyphicon-wzl-back"></span>联动支付
+                </div>
+
+                <a class="wzl-index wzl-index-min" href="../index.html">
+                    <span class="glyphicon glyphicon-home"></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <ul class="list-group">
+            <li class="list-group-item pay-items clearfix wzl-mb-10">
+                <a href="javascript:;" class="wzl-ui-btn">
+                    <div class="icon-pay">
+                        <span class="glyphicon  icon-pay-card"></span>
+                    </div>
+                    <div class="pay-items-text">
+                        <input type="text" value="100" class="form-control" id="cash">
+                    </div>
+                </a>
+            </li>
+        </ul>
+
+        <a href="javascript:;" id="pay" class="btn btn-wzl-default btn-lg btn-block wzl-mb-20"> 立即充值</a>
+
+        <p>本站购彩流程</p>
+
+        <div class="buy-process-wzl wzl-mb-20">
+            <span class="pay-process pay-process-bg1">1.输入充值金额</span>
+            >
+            <span class="pay-process pay-process-bg2">2.输入账号信息</span>
+            >
+            <span class="pay-process pay-process-bg2">3.完成充值</span>
+        </div>
+
+        <div class="form-group wzl-mb-40">
+            <p class="text-muted"> <span class="wzl-text-warning">温馨提示: </span><br>
+                1.充值0手续费，充值即时到账<br>
+                2.支持农行、交行、中信、广发银行，招商银行，工行、建行等多家银行</p>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="warp2" style="display:none">
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar" onclick="history.back(-1)">
+                    <span class="glyphicon glyphicon-wzl-back"></span>
+                        <span class="wzl-nav-dropdown">
+                            银联快捷支付
+                        </span>
+                </div>
+                <a href="../index.html">
+                <div class="wzl-nav-share ">
+                    <span class=" glyphicon glyphicon-home"></span>
+                </div>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <section class="ylzf-ok">
+        <font style="font-size:12px;color:red;">请点击下面图片进行支付</font><br/>
+       <a id="payurl"><img id="image" src="../imgs/ui/uppaybutton.png" alt="点击我进行支付"/></a>
+
+        <br />
+    温馨提示：<br /><br/>
+    苹果手机用户请点<a href=http://mobile.unionpay.com/download/securepayplugin>这里</a>下载支付控件<br/><br/>
+    安卓手机用户请点<a href=http://mobile.unionpay.com/getclient?platform=android&type=securepayplugin>这里</a>下载支付控件
+    </section>
+</div>
+
+
+</body>
+</html>

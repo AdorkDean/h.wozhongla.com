@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />    
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="format-detection" content="telephone=no"/>
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, maximum-scale=1, user-scalable=no , viewport-fit=cover">
+    <meta name="description" content="广西体彩二维码兑换平台是广西壮族自治区体育彩票管理中心推出的、为促进彩票事业及公益事业的发展，围绕“换彩票，献爱心”的主题开展二维码兑换广西体育彩票活动，旨在拓展社会大众参与公益事业的新渠道，引导社会捐赠的新理念。
+"/>
+    <title>广西体彩二维码兑换平台</title>
+    <link rel="stylesheet" href="css/wzl-index.css"/>
+    <script src="js/dist/seajs/2.3.0/dist/sea.js?v=2"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script>
+    	function load(){
+    		seajs.config({
+	            base:'./js/dist'
+	        })
+	        seajs.use('wzlh5/1.0.0/wzlindex',function(index){
+	            index.wzlindex('index2');
+	        })
+    	}
+        
+    </script>
+</head>
+<body onload="load()">
+<article class="clearfix" id="index-wrap">
+    <!-- header -->
+    <div id="header">
+        <h1 class="logo">
+            <a href="javascript:;">广西体彩二维码兑换平台</a>
+        </h1>
+        <div class="header-r">
+            <a href="views/ucenter.html"><i class="icon-user"></i></a>
+            <a href="views/login.html">登录</a>|
+            <a href="views/register.html">注册</a>
+        </div>
+    </div>
+    <!-- slider -->
+    <div id="index-slide">
+        <div class="slideImg swiper-container">
+            <ul class="slideList swiper-wrapper">
+				<!--<li class="swiper-slide" style="width: 375px; height: 181px;">
+			        <a href="views/dlt.html">
+			            <img src="imgs/news/banner_3.jpg" alt="">
+			        </a>
+			    </li>-->
+            </ul>
+        </div>
+
+        <div class="pagination"></div>
+    </div>
+    <!--大乐透预售 -->
+    <section id="dlt-bet">
+    	<div class="dlt-bet-top">
+    	<span class="dlt-bet-name pull-left">大乐透</span>
+        <span class="dlt-bet-title pull-left"></span>
+        </div>
+        <h4><span>最高奖金1000万 奖池滚存：￥</span><span class="conta"></span><span>元</span></h4>
+        <div class="dlt-bet-ball">
+        	<div class="bet-ball pull-left">
+                <ul id="bet-a">
+                    <li>05</li>
+                    <li>08</li>
+                    <li>14</li>
+                    <li>23</li>
+                    <li>26</li>
+                    <li class="blue_balls">06</li>
+                    <li class="blue_balls">09</li>
+                </ul>
+
+            </div>
+            <div class="pull-left change">换</div>
+            <div class="bet-btn-block pull-right"><a href="javascript:;" id="bet-btn">兑换</a></div>
+        </div>
+    </section>
+    <!-- lottery -->
+    <section id="lottery">
+        <ul class="lottery-list">
+            <li id="fxbli" style="display: none;">
+                <a href="views/fxb.html" id="indexFxb" style="display: none">
+                    <dl class="lottery-item fxb">
+                        <dt class="logo zq310"></dt>
+                        <dd class="lottery-text">
+                            <h2 class="clearfix">
+                                <span class="pull-left">风向标精选推荐</span>
+                            </h2>
+                            <p class="fxb-sub clearfix">
+                                <span class="pull-left">
+                                    前往购买竞彩
+                                </span>
+                                <span class="pull-right text-red"></span>
+                            </p>
+                        </dd>
+                    </dl>
+                </a>
+            </li>
+
+            <li>
+                <!--<a href="views/cqssc.html" class="multi-d">-->
+                    <!--<dl class="lottery-item">-->
+                        <!--<dt class="logo cqssc "></dt>-->
+                        <!--<dd class="lottery-text">-->
+                            <!--<h2>重庆时时彩</h2>-->
+                            <!--<p class="sub-text">夜间场到2点-->
+                            <!--</p>-->
+                        <!--</dd>-->
+                    <!--</dl>-->
+                <!--</a>-->
+                <!--<a href="views/dlt.html" class="multi-d">-->
+                    <!--<dl class="lottery-item">-->
+                        <!--<dt class="logo dlt"></dt>-->
+                        <!--<dd class="lottery-text">-->
+                            <!--<h2>大乐透</h2>-->
+                            <!--<p class="sub-text">千万大奖-->
+                            <!--</p>-->
+                        <!--</dd>-->
+                    <!--</dl>-->
+                <!--</a>-->
+                <a href="views/jc.html" class="multi-d dsn" style="display:none">
+                    <dl class="lottery-item">
+                        <dt class="logo jc "></dt>
+                        <dd class="lottery-text">
+                            <h2>竞彩足球</h2>
+                            <p class="sub-text">返还率高达69%
+                            </p>
+                        </dd>
+                    </dl>
+                </a>
+                <a href="views/pl5.html" class="multi-d">
+                    <dl class="lottery-item">
+                        <dt class="logo pl5"></dt>
+                        <dd class="lottery-text">
+                            <h2>排列5</h2>
+                            <p class="sub-text">奖金10万
+                            </p>
+                        </dd>
+                    </dl>
+                </a>
+                <a href="views/pl3.html" class="multi-d">
+                    <dl class="lottery-item">
+                        <dt class="logo pl3 "></dt>
+                        <dd class="lottery-text">
+                            <h2>排列3</h2>
+                            <p class="sub-text">奖金1040元
+                            </p>
+                        </dd>
+                    </dl>
+                </a>
+
+            </li>
+            
+            <li>
+            	<a href="views/qxc.html" class="multi-d">
+                    <dl class="lottery-item">
+                        <dt class="logo qxc"></dt>
+                        <dd class="lottery-text">
+                            <h2>七星彩</h2>
+                            <p class="sub-text">
+                                奖金1040元
+                            </p>
+                        </dd>
+                    </dl>
+                </a>
+	        	<a href="views/jc.html" class="multi-d">
+                    <dl class="lottery-item">
+                        <dt class="logo jc "></dt>
+                        <dd class="lottery-text">
+                            <h2>竞彩足球</h2>
+                            <p class="sub-text">返还率高达69%
+                            </p>
+                        </dd>
+                    </dl>
+                </a>
+
+                <a href="views/jx11x5.html" class="multi-d dsn">
+                    <dl class="lottery-item">
+                        <dt class="logo jx11x5 "></dt>
+                        <dd class="lottery-text">
+                            <h2>江西11选5</h2>
+                            <p class="sub-text">返奖率59%
+                            </p>
+                        </dd>
+                    </dl>
+                </a>
+                <a href="views/ssc.html" class="multi-d dsn">
+                    <dl class="lottery-item">
+                        <dt class="logo jxssc"></dt>
+                        <dd class="lottery-text">
+                            <h2>江西时时彩</h2>
+                            <p class="sub-text">返奖率59%
+                            </p>
+                        </dd>
+                    </dl>
+                </a>
+            </li>
+
+            <li class="dsn">
+                <a href="views/pl5.html" class="multi-d">
+                    <dl class="lottery-item">
+                        <dt class="logo pl5"></dt>
+                        <dd class="lottery-text">
+                            <h2>排列5</h2>
+                            <p class="sub-text">奖金10万
+                            </p>
+                        </dd>
+                    </dl>
+                </a>
+
+                <a href="views/qxc.html" class="multi-d">
+                    <dl class="lottery-item">
+                        <dt class="logo qxc "></dt>
+                        <dd class="lottery-text">
+                            <h2>七星彩</h2>
+                            <p class="sub-text">
+                                奖金1040元
+                            </p>
+                        </dd>
+                    </dl>
+                </a>
+
+            </li>
+            <li class="dsn">
+
+                <a href="views/qlc.html" class="multi-d">
+                    <dl class="lottery-item">
+                        <dt class="logo qlc"></dt>
+                        <dd class="lottery-text">
+                            <h2>七乐彩</h2>
+                            <p class="sub-text">
+                                最高奖金500万
+                            </p>
+                       </dd>
+                   </dl>
+              </a>
+                <a href="views/gd11x5.html" class="multi-d">
+                    <dl class="lottery-item">
+                        <dt class="logo gd11x5 "></dt>
+                        <dd class="lottery-text">
+                            <h2>广东11选5</h2>
+                            <p class="sub-text">返奖率59%
+                            </p>
+                        </dd>
+                    </dl>
+                </a>
+                <a href="views/sd11x5.html" class="multi-d">
+                    <dl class="lottery-item">
+                        <dt class="logo sd11x5 "></dt>
+                        <dd class="lottery-text">
+                            <h2>山东11选5</h2>
+                            <p class="sub-text">返奖率59%
+                            </p>
+                        </dd>
+                    </dl>
+                </a>
+
+            </li>
+            <li class="dsn">
+                <a href="views/fc3d.html" class="multi-d">
+                    <dl class="lottery-item">
+                        <dt class="logo fc3d "></dt>
+                        <dd class="lottery-text">
+                            <h2>福彩3D</h2>
+                            <p class="sub-text">奖金1000元
+                            </p>
+                        </dd>
+                    </dl>
+                </a>
+           		<a href="views/ssq.html" class="multi-d">
+                    <dl class="lottery-item">
+                        <dt class="logo ssq"></dt>
+                        <dd class="lottery-text">
+                            <h2>双色球</h2>
+                            <p class="sub-text">千万大奖
+                            </p>
+                        </dd>
+                    </dl>
+                </a>
+
+                <!--<a href="views/ssqcs.html" class="multi-d">
+                    <dl class="lottery-item">
+                        <dt class="logo sd11x5 "></dt>
+                        <dd class="lottery-text">
+                            <h2>1D投注</h2>
+                            <p class="sub-text">返奖率59%
+                            </p>
+                        </dd>
+                    </dl>
+                </a>-->
+
+
+            </li>
+            <!--<li>-->
+                <!--<a href="views/jc.html" class="multi-d">
+                    <dl class="lottery-item">
+                        <dt class="logo jc "></dt>
+                        <dd class="lottery-text">
+                            <h2>竞彩足球</h2>
+                            <p class="sub-text">返奖率73%
+                            </p>
+                        </dd>
+                    </dl>
+                </a>-->
+                <!--<a href="views/ssq.html" class="multi-d">
+                    <dl class="lottery-item">
+                        <dt class="logo ssq"></dt>
+                        <dd class="lottery-text">
+                            <h2>双色球</h2>
+                            <p class="sub-text">千万大奖
+                            </p>
+                        </dd>
+                    </dl>
+                </a>-->
+            <!--</li>-->
+        </ul>
+    </section>
+</article>
+<div style="text-align: center;position:fixed;bottom:5rem;z-index: 10000;width: 100%;">
+	<span id="money" style="background:#C3C3C3;padding: .5rem 4rem;border-radius: .5rem;color:white">您的二维码余额为0元</span>
+</div>
+<div id="bottomnav">
+<div class="bottom-box">
+    <ul class="list-dock">
+        <li>
+            <a class="on">
+                <span class="icon-nav gcdt active"></span>
+            </a>
+        </li>
+        <li>
+            <a href="views/result/index.html">
+                <span class="icon-nav cpkj"></span>
+            </a>
+        </li>
+        <li>
+            <a  href="views/ucenter.html">
+                <span class="icon-nav hyzx"></span>
+            </a>
+        </li>
+        <!--<li>
+            <a  href="views/tese.html">
+                <span class="icon-nav ts"></span>
+            </a>
+        </li>-->
+    </ul>
+</div>
+</div>
+
+<script id="table-template1" type="text/x-handlebars-template">
+<dl class="lottery-item fxb">
+    <dt class="logo zq310"></dt>
+    <dd class="lottery-text">
+        <h2 class="clearfix">
+            <span class="pull-left">{{info.title}}</span>
+            <span class="pull-right text-red">{{info.percent}}%中奖可能</span>
+        </h2>
+        {{#each list}}
+        <p class="fxb-sub clearfix">
+            <span class="pull-left">{{matchHome}} VS {{matchGuest}}</span>
+            <span class="pull-right text-red">{{sp}}</span>
+        </p>
+        {{/each}}
+    </dd>
+</dl>
+</script>
+<script id="table-template2" type="text/x-handlebars-template">
+    {{#each data}}
+    <li class="swiper-slide">
+        <a href="{{href}}">
+            <img src="{{src}}" alt=""/>
+        </a>
+    </li>
+    {{/each}}
+</script>
+
+<script id="table-template3" type="text/x-handlebars-template">
+    {{#each list}}
+        <li><span>{{this}}</span></li>
+    {{/each}}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>个人信息</title>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <script>
+
+        seajs.config({
+            base:'../js/dist'
+        })
+
+        seajs.use('wzlh5/1.0.0/user',function(userA){
+            userA.userA('udata');
+        })
+    </script>
+</head>
+<body>
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar" onclick="location.href='ucenter.html'">
+                    <span class="glyphicon glyphicon-wzl-back" ></span>个人信息
+                </div>
+            </div>
+        </div>
+    </nav>
+
+     <div class="container-mask"></div>
+    <div class="container hidden">
+        <ul class="udatamanage-list-group">
+            <li class="udatamanage-list-group-item">
+                <div class="input-group">
+                    <div class="udatamanage-input-group-addon">头像</div>
+                    <input type="button" class="udatamanage-form-control" name="username" placeholder="">
+                    <div class="udatamanage-input-group-addon"><img class="ucenter-avatar" src="../imgs/news/logo.png" _src="https://avatars1.githubusercontent.com/u/3375725?v=2&amp;s=460" alt="" width="45" height="45"></div>
+                </div>
+            </li>
+
+            <li class="udatamanage-list-group-item clearfix">
+                <div class="input-group">
+                    <div class="udatamanage-input-group-addon pull-left udatamanage-input-group-addon2">用户名</div>
+                    <span class="pull-right udatamanage-input-group-text udatam-uname"></span>
+                    <div class="udatamanage-input-group-addon">
+                        <a href="udataname.html" class="btn btn-xs pull-right wzl-getverify hidden" id="motifyusername">修改</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <ul class="udatamanage-list-group">
+            <li class="udatamanage-list-group-item">
+                <div class="input-group">
+                    <div class="udatamanage-input-group-addon">身份资料</div>
+                    <input type="button" class="udatamanage-form-control" name="username" placeholder="">
+                    <div class="udatamanage-input-group-addon">
+                        <a href="udataid.html" class="btn btn-xs pull-right wzl-getverify hidden" id="motifyid">修改</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="udatamanage-list-group-item clearfix">
+                <div class="input-group">
+                    <div class="udatamanage-input-group-addon pull-left udatamanage-input-group-addon2">姓名</div>
+                    <div class="udatamanage-input-group-addon">
+                        <span class="pull-right udatamanage-input-group-text udatam-uidname"></span>
+                    </div>
+                </div>
+            </li>
+
+            <li class="udatamanage-list-group-item clearfix">
+                <div class="input-group">
+                    <div class="udatamanage-input-group-addon pull-left udatamanage-input-group-addon2">身份证号</div>
+                    <div class="udatamanage-input-group-addon">
+                        <span class="pull-right udatamanage-input-group-text udatam-uid"></span>
+                    </div>
+                </div>
+            </li>
+
+            <li class="udatamanage-list-group-item clearfix">
+                <div class="input-group">
+                    <div class="udatamanage-input-group-addon pull-left udatamanage-input-group-addon2">地址</div>
+                    <div class="udatamanage-input-group-addon">
+                        <span class="pull-right udatamanage-input-group-text udatam-address" ></span>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+
+        <p class="text-muted">
+            <span class="wzl-text-warning">温馨提示：</span><br>
+            1.身份资料，一经认证，不能自行修改，请务必填写真实身份信息。<br>
+            2.身份信息将用于购彩和兑奖，如果填写错误的身份信息，造成奖金不能及时领取，责任由用户自行担负。
+        </p>
+
+    </div>
+</div>
+<!-- weinre 调试js -->
+<!--
+<script src="http://192.168.0.27:8081/target/target-script-min.js#anonymous" type="text/javascript">
+</script>
+-->
+
+</body>
+</html>

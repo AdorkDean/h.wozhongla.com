@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>开奖大全</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <script>
+        seajs.config({
+            base:'../js/dist'
+        })
+        seajs.use('wzlh5/1.0.0/result',function(result){
+            result.result('index');
+        })
+    </script>
+
+    <style>
+    .result-jc-result{letter-spacing: 6px; }
+    </style>
+</head>
+<body>
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar"  onclick="location.href='index.html'">
+                    <span class="glyphicon glyphicon-wzl-back"></span>
+                    <span class="wzl-nav-dropdown">
+                        开奖大厅
+                    </span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-mask">
+     <div class="tips">
+        加载开奖数据中...
+     </div>
+
+    </div>
+    <div id="result" class="container">
+        <div id="result-detail" class="result-group">
+            <ul id="result-group" class="result-group">
+                <li>
+                    <h4 class="text-center">暂无开奖数据 %>_<% 请稍后再试</h4>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script id="result-list-temp" type="text/x-handlebars-template">
+    {{#each list}}
+    <li>
+        <a href="{{href}}" class="result-group-item icon-right">
+            <div class="result-item-title">
+                <span class="result-item-name">{{lotName}}</span>
+                <span class="result-item-qc">{{lotIssue}}期</span>
+                <span class="result-item-time">{{time}}</span>
+            </div>
+            <div class="result-item-detail">
+                {{{str}}}
+            </div>
+        </a>
+    </li>
+    {{/each}}
+</script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+@font-face{font-family:'Glyphicons Halflings';src:url('../fonts/glyphicons-halflings-regular.eot');src:url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'),url('../fonts/glyphicons-halflings-regular.woff') format('woff'),url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'),url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg')}
+.clearfix:before,.clearfix:after,.dl-horizontal dd:before,.dl-horizontal dd:after,.container:before,.container:after,.container-fluid:before,.container-fluid:after,.row:before,.row:after,.form-horizontal .form-group:before,.form-horizontal .form-group:after,.btn-toolbar:before,.btn-toolbar:after,.btn-group-vertical>.btn-group:before,.btn-group-vertical>.btn-group:after,.nav:before,.nav:after,.navbar:before,.navbar:after,.navbar-header:before,.navbar-header:after,.navbar-collapse:before,.navbar-collapse:after,.pager:before,.pager:after,.panel-body:before,.panel-body:after,.modal-footer:before,.modal-footer:after,.wzl-navbar:before,.wzl-navbar:after{content:" ";display:table}.clearfix:after,.dl-horizontal dd:after,.container:after,.container-fluid:after,.row:after,.form-horizontal .form-group:after,.btn-toolbar:after,.btn-group-vertical>.btn-group:after,.nav:after,.navbar:after,.navbar-header:after,.navbar-collapse:after,.pager:after,.panel-body:after,.modal-footer:after,.wzl-navbar:after{clear:both}
+.wzl-navbar .container-fluid .glyphicon-wzl-back{width:10px;height:20px;top:4px;background:url(../imgs/kj/ui/icon_back.png) no-repeat ;background-size:100% 100%}
+.icon-right:after{content:"";position:absolute;right:0;top:4px;display:block;width:32px;height:32px;background-image:url(../imgs/kj/ui/icon_goright.png);background-size:100%}
+.glyphicon-menu-hamburger:before{content:"\e236"}
+.glyphicon{position:relative;top:1px;display:inline-block;font-family:'Glyphicons Halflings';font-style:normal;font-weight:normal;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.glyphicon-menu-down:before{content:"\e259"}
+.glyphicon-triangle-bottom:before{content:"\e252"}
+.glyphicon-arrow-left:before {content: "\e091";}
+.glyphicon-arrow-up:before {content: "\e093";}
+.glyphicon-menu-right:before {content: "\e258";}
+.glyphicon-triangle-top:before {content: "\e253";}
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+
+body {text-align: left;color: #444;background-color: #F8F8F8;font-family: "微软雅黑";font-size: 12px;}
+body, div, ul, li, ol, form, h1, h2, h3, h4, h5, h6 {margin: 0px; padding: 0px;}
+ul li, li { list-style: none;}
+.dn { display: none;}
+.dl {float: left;}
+.dr {float: right;}
+.tb { font-weight: bold;}
+.tc {  text-align: center;}
+.oh { overflow: hidden;}
+.hr40 { height: 30px;}
+.hr70 { height: 70px;}
+.hr20 { height: 25px;}
+.t14 {font-size: 14px;}
+.t16 { font-size: 16px;}
+.t18 { font-size: 18px;}
+#warp { background-color: rgb(248, 248, 248);}
+
+/*浮动*/
+#floating { background-color: rgb(46, 46, 46);width: 95%;height: 100%; position: absolute;z-index: 100; color: rgb(174, 174, 174); padding: 0 0px 0 8px;}
+#floating h2 { font-size: 16px; margin: 9px;}
+.floating-cz a:link, .floating-cz a:visited { display: block; font-size: 12px;margin-right: 15px;float: left; width: 26%; line-height: 26px; border: 1px solid #aeaeae; color: rgb(174, 174, 174); text-align: center; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; text-decoration: none;}
+.floating-cz a:hover {background-color: rgb(255, 186, 0); border: 1px solid #ffba00; color: rgb(0, 0, 0);}
+.floating-sf a { display: block; font-size: 12px; margin-right: 7px; float: left; width: 22%; line-height: 24px; border: 1px solid #aeaeae; color: rgb(174, 174, 174); text-align: center; border-radius: 15px; -webkit-border-radius: 15px;-moz-border-radius: 15px;text-decoration: none; margin-bottom: 12px;}
+.floating-sf a.act { background-color: rgb(255, 186, 0); border: 1px solid #ffba00; color: rgb(0, 0, 0);}
+.btn-ok { margin-right: 10px;}
+.form-group a:link, .form-group a:visited, .form-group a:hover { width: 47%; line-height: 1.5; height: 40px; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; background-color: rgb(86, 86, 86); color: rgb(255, 255, 255);font-size: 18px; margin-top: 30px;text-decoration: none; color: rgb(255, 255, 255);}
+.form-group a.btn-ok:link { background-color: rgb(220, 16, 16);}
+/*开奖大全*/
+.wzl-navbar{position:relative;min-height:45px;margin-bottom:20px;border-radius:0;background-color:none !important;background-size:100% 100%;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;z-index:80;background-image: url(../imgs/kj/topbar.png); margin-bottom: 0px;}
+.glyphicon-kj { top: 10px; font-size: 22px;  font-weight: 400 !important;}
+.logo-font { font-size: 18px; padding: 3px 0 3px 33px; background-image: url(../imgs/kj/logo.png); background-repeat: no-repeat; background-size: 26px 26px;}
+.result-group li { background: rgba(255, 255, 255, 0) !important; padding: 0 0;}
+.result-group span.red_balls, .result-group span.blue_balls {width: 28px; height: 28px;margin: 2px 5px 2px 0;}
+.icon-right:after { background-image: url(../imgs/kj/icon_goright.png);}
+.result-group span.red_balls, .result-group span.blue_balls { line-height: 28px; font-size: 14px !important;}
+.result-group a.result-group-item.icon-right:after {top: 22px;}
+.result-group a.result-group-item { padding: 2px 0px;}
+.score { width: 88%; line-height: 25px; height: 25px; background-color: rgb(24, 154, 107); border-radius: 5px;-webkit-border-radius: 5px; -moz-border-radius: 5px; -o-border-radius: 5px; color: rgb(255, 255, 255);  padding: 0 15px; font-size: 12px;}
+.score span { display: block !important; width: 40%;text-align: center;}
+.score-width { width: 20%; float: left; text-align: center;font-size: 18px;}
+.result-item-qc {font-size: 12px !important;}
+.result-group a.result-group-item .result-item-title .result-item-time { position: absolute;top: 4px !important; right: 0; margin-right: 16px;font-size: 12px;}
+.score-grey { color: #CCC !important;color: rgb(104, 104, 104) !important; font-size:12px;}
+.score-sfc { width: 88%; line-height: 25px; height: 25px; background-color: rgb(24, 154, 107); border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -o-border-radius: 5px; color: rgb(255, 255, 255);padding-left: 5px;}
+.score-sfc li {display: block; float: left; font-size: 14px; width: 7%; text-align: center;}
+footer.footer-score { background-color: rgb(0, 0, 0); position: fixed; width: 100%; bottom: 0; padding: 4px 0 3px 0;}
+.footer-score a:link, .footer-score a:visited { height: 100%; display: block; float: left;text-decoration: none; width: 25%; background-image: url(../imgs/kj/wddz.png); background-position: top center; background-size: 25px;background-repeat: no-repeat; color: rgb(117, 117, 117);}
+.footer-score a:hover,.footer-score a.hover:link,.footer-score a.hover:visited { background-image: url(../imgs/kj/wddz_a.png); color: rgb(254, 208, 23);}
+.footer-score a span {display: block; margin-top: 25px; text-align: center;}
+.footer-score a.qgkj:link { background-image: url(../imgs/kj/qgkj.png); background-size: 27px 24px;}
+.footer-score a.qgkj:hover,.footer-score a.qgkj-hover:link { background-image: url(../imgs/kj/qgkj_a.png);color: rgb(254, 208, 23);}
+.footer-score a.zqkj:link { background-image: url(../imgs/kj/zqkj.png); background-size: 25px;}
+.footer-score a.zqkj:hover { background-image: url(../imgs/kj/zqkj_a.png); color: rgb(254, 208, 23);}
+.footer-score a.sz:link { background-image: url(../imgs/kj/sz.png); background-size: 25px;}
+.footer-score a.sz:hover {background-image: url(../imgs/kj/sz_a.png);color: rgb(254, 208, 23);}
+.result-group a.result-group-item .result-item-title .item-time-kj {margin-right: 35px !important;}
+/*双色球开奖*/
+.ssq-kj { font-size: 20px; background-repeat: no-repeat; background-size: 26px 26px;}
+.wzl-navbar .container-fluid .glyphicon-wzl-back { background-image: url(../imgs/kj/icon_back.png); top: 12px; left: 10px;}
+/*资金计算*/
+.account-nav-bar ul.account-nav-group > li {background-color: rgb(238, 238, 238) !important; border: none;border-bottom: 1px solid #bbbbbb;}
+.account-nav-group li.nav-jj a:hover, .account-nav-group li.nav-jj a {color: rgb(225, 102, 0) !important;border-bottom: 2px solid #ff6600;margin-bottom: -2px;}
+.group-number { background-color: rgb(248, 248, 248); border-bottom: 1px solid #dddddd; padding: 8px 12px 8px 12px;}
+.box-bj { background-color: rgb(255, 255, 255) !important;}
+.group-number h2 {font-size: 16px; line-height: 30px;padding: 0; margin: 0; overflow: hidden; display: block; font-weight:100;}
+.number-red ul { display: block; overflow: hidden;}
+.number-red li {display: block; float: left; width: 9%; font-size: 18px;color: rgb(228, 80, 80)}
+.number-blue li { color: rgb(86, 164, 237)}
+.container { padding: 0px !important; font-size: 14px;}
+.result-item-jj span.red_balls, .result-item-jj span.blue_balls { width: 30px; height: 30px; line-height: 30px;}
+.account-nav-bar ul.account-nav-group > li a { font-size: 14px;}
+.result-jj-name { margin: 10px 0;}
+.group-jj li { border-bottom: none !important;}
+.group-jj a.result-group-item, .group-jj li { padding: 0px !important;}
+a.btn-jj { background-color: rgb(225, 25, 10);line-height: 45px; font-size: 18px;}
+a.btn-jj:link, a.btn-jj:visited, a.btn-jj:hover {text-decoration: none; color: rgb(255, 255, 255);}
+.table-jj td {text-align: center}
+.table-jj { margin-bottom: 16px;}
+/*资金计算选球*/
+.ballbox-kj {padding: 0 8px;}
+.ballbox-kj span.ballcon-title { font-size: 16px !important;}
+.ballcon-jj ul li span { width: 30px; height: 30px; line-height: 30px; color: rgb(147, 147, 147);}
+.ballcon-jj ul li { padding-right: 3px;}
+.ballcon-jj.blueBalls li span { color: rgb(147, 147, 147) !important;}
+.grey-jj { color: rgb(147, 147, 147); margin-top: 10px;}
+/*开奖详情*/
+.result-jj-time, .sd-time, .sd-time2 {font-size: 12px;color: rgb(178, 178, 178); line-height: 22px;}
+.bordered-kj p { display: block; padding: 0; margin: 0;}
+.table-kj td { text-align: center;}
+.black-kj { color: rgb(0, 0, 0);}
+.table-kj { margin-bottom: 15px !important;}
+.detail-xq td { background-color: #FFF;}
+.wzl-mb-30 { margin: 10px 0 30px 0;}
+/*最近开奖*/
+.group-icon-right {padding-left: 50px !important;}
+.result-group a.result-group-item.group-icon-right:after { left: 0px !important;}
+.box-bj2 { background-color: rgb(248, 248, 248) !important;}
+.floating-zjkj:after, .icon-right-up:after { position: absolute;top: 0;left: 2px;background-image: url(../imgs/kj/icon_goright-top.png) !important;background-position: center; width: 32px; height: 100%; background-repeat: no-repeat;}
+.container-gauge { margin: 0 !important; padding: 0 !important;}
+.icon-down-up { background-color: rgb(0, 0, 0);color: rgb(255, 255, 255); width: 100%; padding: 5px 0px;}
+.icon-down-up table { width: 100%; line-height: 30px;}
+.icon-down-up th { font-weight: 100; width: 23%; padding-left: 10px;}
+.icon-down-up .red {color: rgb(254, 107, 107);}
+.icon-down-up .blue { color: rgb(135, 197, 255);}
+.icon-down-up .orange, .spf-down-up th { color: rgb(255, 126, 0);}
+.icon-right-up:after { background-image: url(../imgs/kj/icon_goright-up.png) !important;}
+.share-header { position: absolute; top: 0; right: 10px; background: url(../imgs/kj/share.png) center no-repeat;background-size: 100%; width: 18px; height: 100%;cursor: pointer;}
+.collect-header {position: absolute; top: 0; right:35px;background: url(../imgs/kj/collect.png) center no-repeat;background-size: 100%; width: 18px; height: 100%;cursor: pointer;}
+.collect-header-on { position: absolute; top: 0; right:35px; background: url(../imgs/kj/collect-on.png) center no-repeat;background-size: 100%; width: 18px; height: 100%;cursor: pointer;}
+.header-collect-box { position: absolute;top: 0; right: 10px; width: 88px; height: 100%; text-align: right; cursor: pointer;}
+.loading{ background: url(../imgs/kj/loading.gif) center center no-repeat; width: 100%; height: 300px;}
+.account-nav-bar { margin: 0;}
+.icon-down-up tr { border-bottom: 1px dashed #666;}
+.icon-down-up tr.delin { border-bottom: none;}
+/*遗漏分析*/
+.content-tab table, .content-tab-sfc table { width: 100%; text-align: center; font-size:12px}
+.content-tab thead, .content-tab-sfc thead { font-size: 14px; font-weight: bold;}
+.content-tab thead th { border-right: 1px solid #bbb; border-bottom: 1px solid #bbb; background: rgb(210, 210, 210);text-align: center;}
+.content-tab td { line-height: 28px;height: 28px; border-left: 1px solid #bbb; border-bottom: 1px solid #bbb; color: rgb(206, 206, 206);}
+.content-tab tbody th { border-bottom: 1px solid #bbb; text-align: center;}
+.content-tab tr.gray-bj { background: rgb(245, 245, 245);}
+.backgrup { background: url(../imgs/kj/yl_a.png) center no-repeat; background-size: 100%; width: 22px; height: 100%; margin: 0 auto;}
+.backgrup2 { background: url(../imgs/kj/yl_b.png) center no-repeat; background-size: 100%; width: 22px; height: 100%;margin: 0 auto;}
+.glyphicon-up-yl { color: rgb(101, 165, 251); margin: 0 5px 0 13px;}
+.nav-ball-yl { width: 94%; height: 40px;line-height: 40px; margin: 0 auto;background: rgb(244, 244, 244); border: 1px solid #d3d3d3; border-radius: 8px; margin-top: 5px; margin-bottom: 5px;}
+.nav-ball-yl span, .multiple span { display: block; width: 50%; float: left; text-align: center;}
+.redball-line, .multiple-tb { border-right: 1px solid #d3d3d3;}
+.multiple { border: 1px solid #e8e8e8;padding: 0 5px;width: 100%}
+.multiple-tb, .multiple-zq { padding: 5px 0; line-height: 30px;}
+.buy-bar-info > .glyphicon { width: 30px; height: 30px}
+.icon-minus, .icon-plus { margin: 0 3px; width: 22px; height: 22px; cursor: pointer; background: url('../imgs/kj/icon_minus.png') no-repeat; background-size: 100% 100%;}
+.icon-plus { background: url('../imgs/kj/icon_plus.png') no-repeat;background-size: 100% 100%;}
+.input-small { width: 40px;height: 28px; line-height: 28px; border-radius: 0; -webkit-appearance: none; border: 1px solid #bebebe; text-align: center;}
+span.multiple-zq { padding-left: 8px;}
+footer#footer-yl { padding: 8px 10px 5px 10px; overflow: hidden;}
+.fonter-left p { line-height: 20px;padding: 0; margin: 0;}
+.btn-deltel { background-color: #f4f4f4;margin-right: 10px;}
+.btn-tz { background-color: rgb(228, 80, 80); color: rgb(255, 255, 255);}
+.btn-tz:hover, .btn-tz:focus, .btn-tz:active, .btn-tz.active, .open > .dropdown-toggle.btn-tz {background-color: rgb(228, 80, 80); color: rgb(255, 255, 255); border-color: rgb(228, 80, 80);}
+/*胜负彩－任九*/
+a.btn-sfc { margin-left: 0px; padding: 0 28px 0 28px; border-radius: 6px;line-height: 41px;}
+.number-sfc li { line-height: 30px;width: 6%;}
+.group-number-sfc { border-bottom: none !important; padding: 8px 0px 8px 0px !important;}
+.content-tab-sfc tr.gray-bj { background: rgb(242, 242, 242);}
+.content-tab-sfc td { height: 28px;line-height: 28px; color: rgb(104, 104, 104);position: relative;}
+.content-tab-sfc table, .container-sfc-tab { border: 1px solid #dedede; background: rgb(255, 255, 255);}
+.content-tab-sfc p { display: block; line-height: 18px; margin: 0 !important; padding: 0 !important; font-size: 10.42857143;}
+.container-sfc h2 { line-height: 45px; font-size: 18px; font-weight:100;}
+.container-sfc-tab p {border-bottom: 1px solid #dedede; padding: 13px 0 13px 10px; font-size: 14px; margin-bottom: 0 !important;}
+.account-nav-group li.nav-jj a:hover, .account-nav-group li.nav-sfc a { width: 55%; color: rgb(225, 102, 0) !important; border-bottom: 2px solid #ff6600; margin: 0 auto; margin-bottom: -2px;}
+.result-group a.result-group-item .item-sfc .result-item-time { margin-right: 35px !important;}
+.container-sfc{ padding:0 8px !important;}
+/*福彩3d*/
+.item-sd span {font-size: 16px !important;}
+.sd-time, .sd-time2 { position: absolute; top: 37px; right: 0;}
+.result-group-sd span.red_balls, .result-group-sd span.blue_balls {font-size: 16px; width: 30px !important;line-height: 30px !important; height: 30px !important;}
+.sd-time2 { right: 16px;}
+.sd-down-up {padding: 6px 12px;}
+.sd-down-left {width: 50%; font-size: 14px;}
+.sd-down-left th, .sd-down-left td { text-align: center;}
+.sd-down-left th {color: rgb(254, 107, 107); font-size: 16px; width: auto; padding: 0;}
+a.btn-sd { padding: 0;line-height: 26px; background-color: rgb(198, 20, 20); font-size: 16px; width: 80%; right: 15px; border: none;}
+.sd-down-right p { margin-bottom: 5px;}
+.sd-down-right {margin-top: 13px;}
+.conten-tab-sd th { font-weight: 100 normal;}
+.conten-tab-sd td {color: rgb(186, 186, 186); line-height: 0 !important;}
+.content-tab thead span.blueBalls {font-size: 12px !important; font-weight: normal !important;}
+.conten-tab-sd td.sd-red { color: rgb(218, 16, 9) !important;}
+.sd-grey { background: rgb(210, 210, 210); color: rgb(0, 0, 0) !important;}
+.sd-grey td { color: rgb(0, 0, 0) !important;}
+.conten-tab-sd .red_balls { display: inline-block;width: 21px;height: 21px;font-size: 16px; line-height: 21px; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; background-clip: padding-box; text-align: center; color: #fff; cursor: pointer; border-color: #d52626; background-color: #e45050;}
+/*新时时彩*/
+table.ssc-tab td {background: rgb(238, 238, 238); color: rgb(84, 84, 84);}
+td.orange { color: rgb(255, 102, 0) !important; border-bottom: 2px solid #ff6600;}
+
+/*竞彩*/
+.jc-list { width: 23%; font-size: 12px; float: left; text-align: center; padding: 0 8px !important; overflow: hidden;}
+.jc-list p {line-height: 18px;}
+.jc-list p, .game-vs p { margin: 0; padding: 0;}
+.jc-list span.glyphicon { top: -1; color: #d2d2d2;}
+.jc-list-bqc .jc-list-r, .jc-list-spf .jc-list-r { padding: 8px 0 3px 0; overflow: hidden; border-bottom: 1px solid #dfdfdf;}
+.jc-game-title { line-height: 40px; width: 75%;}
+.jc-game-title .score,.jc-game-title .score-win { margin-top:9px; color: #ea0909; background-color: #ffebea; width: 30%; display: block;font-size: 14px; text-align: center; height: 23px; line-height: 23px; float: left;}
+.jc-game-title .score-win { color: #259dc2;  background-color: #dbf7ff;}
+.jc-game-title .vs-right { margin: 0; width: 30%; float: left; text-align: left; padding-left: 15px;}
+.jc-game-title .vs-left { margin: 0;width: 30%; float: left; text-align: right; padding-right: 15px;}
+.jc-list-bqc li.jc-title div, .jc-list-spf li.jc-title div { width: 50%;text-align: center; color: rgb(254, 9, 9);}
+span.glyphicon-menu-down {top: 2px;}
+span.glyphicon-menu-down:before {font-size: 16px; color: rgb(253, 120, 120); margin-left: 3px;}
+.magtop { margin-top: 13px !important;}
+.game-vs p.game-vs-green { color: rgb(39, 154, 35); background-color: rgb(228, 255, 227); margin-bottom: 0;}
+.game-vs font { display: block; line-height: 25px; text-align: center; color: rgb(234, 9, 9);}
+.game-rqspf {padding-top: 7px;}
+.game-rqspf p { line-height: 20px; margin: 0; padding: 0;text-align: center;}
+.jc-list-spf a { color: #000 !important;}
+.jc-list-spf a.box-spf:link { text-decoration: none;}
+.jc-list-spf .glyphicon-triangle-top:before { color: rgb(0, 0, 0) !important; line-height: 21px;}
+.spf-down-up tr { border-bottom: 1px dashed #666;}
+.spf-down-up th { width: 30%;}
+.spf-down-up .green {color: rgb(5, 221, 0)}
+.spf-down-a a {text-decoration: none; color: rgb(255, 255, 255) !important;}
+.spf-down-a .glyphicon-menu-right:before { line-height: 27px;padding-right: 5px; color: #dfdfdf;}
+.spf-down-a span.mag-spf { text-align: center; width: 48%}
+.spf-down-b span { width: 28%;display: block;  float: left;}
+.spf-down-a span { display: block;float: left; width: 30%}
+.spf-down-a .glyphicon-menu-right { width: 21% !important;text-align: right}
+
+/*分享*/
+.share-box {background-color: #fff;position: absolute;bottom: 0; width: 100%;z-index: 300; padding: 10px 15px;}
+.share-box p.wzl-text-blue { line-height: 40px; cursor: pointer; margin-bottom: 0;}
+.share-list li a { display: block; float: left; color: rgb(143, 143, 143);width: 33%; margin: 0 auto; text-align: center; background: url('../imgs/kj/weixin.png') no-repeat; background-size: 45px; background-position: top center; height: 70px;}
+.share-list li a:link, .shez-list a:link {text-decoration: none;}
+.share-list li font {display: block; margin-top: 50px;}
+.share-list li a.friend { background: url('../imgs/kj/friends.png') no-repeat; background-size: 45px; background-position: top center;}
+.share-list li a.koukou { background: url('../imgs/kj/koongj.png') no-repeat;background-size: 45px; background-position: top center;}
+.share-list, .shez-list { border-bottom: 1px solid #8f8f8f; padding: 5px 20px 17px 20px}
+.shez-list li a { display: block; float: left; border: 1px solid #8f8f8f; border-radius: 5px; width: 30%; margin: 0 auto; text-align: center; height: 30px;line-height: 30px; color: rgb(143, 143, 143);}
+.shez-list a.shez-mag { margin: 0 10px 0 10px !important;}
+.shez-list a:hover { border: 1px solid #d91009;background: url('../imgs/kj/shez.png') no-repeat;background-size: 15px 14px;background-position: right bottom;}
+
+
+/*2015422*/
+.form-group a:link, .form-group a:visited, .form-group a:hover{ text-align:center; line-height:40px; line-height:1.5;}
+.wzl-navbar .container-fluid{line-height:45px;color:#fff}
+.jc-game-title{overflow:hidden}span.jc-row:last-child{border-top-right-radius:4px;border-bottom-right-radius:4px;border-left:none}
+.result-group{margin:0;padding:0}.result-group li{margin:0;padding:0;background:#fff;overflow:hidden;border-bottom:1px solid #ccc}.result-group a.result-group-item{position:relative;display:block;text-decoration:none;padding:0 8px;overflow:hidden}.result-group a.result-group-item .result-item-title{position:relative;color:#000;margin:8px 0;width:100%;font-size:16px}.result-group a.result-group-item .result-item-title .result-item-name{margin-right:20px}.result-group a.result-group-item .result-item-title .result-item-qc{font-size:14px}.result-group a.result-group-item .result-item-title .result-item-time{float:right;margin-right:10px;color:#b2b2b2;font-size:12px}.result-group a.result-group-item .result-item-detail{overflow:hidden;margin-bottom:6px}.result-group a.result-group-item .result-item-detail .result-jc{background:#f4f4f4;border:1px solid #ddd;border-radius:4px;line-height:2;text-align:center;padding:2px 0;width:80%}.result-group a.result-group-item .result-item-detail .result-jc .result-jc-home,.result-group a.result-group-item .result-item-detail .result-jc .result-jc-away,.result-group a.result-group-item .result-item-detail .result-jc .result-jc-rq{color:#808080}.result-group a.result-group-item .result-item-detail .result-jc .result-jc-result{color:#ff0000;font-size:14px;margin:0 10px}.result-group a.result-group-item.icon-right:after{top:30px}.result-group span.result-ball-type{color:#000;line-height:30px;float:left;display:block;margin-left:10px}.result-group span.red_balls,.result-group span.blue_balls{display:inline-block;width:28px;height:28px;font-size:14px;line-height:28px;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;background-clip:padding-box;text-align:center;color:#fff;cursor:pointer;border-color:#d52626;background-color:#e45050;margin-right:5px}
+.result-group span.blue_balls{border-color:#4b95da;background-color:#56a4ed;color:#fff;}
+.wzl-about p{ line-height:24px; padding:0 20px;text-indent:2em}
+
+/*竞彩开奖*/
+.jc-list-bqc li{ padding:8px 0 3px 0; overflow:hidden; border-bottom:1px solid #dfdfdf;}
+.jc-list-bqc ul.jc-game-title li{ border-bottom:none !important; padding-top:0 !important}
+.jc-game-title span{ display:block; float:left;}
+.jc-game-title { line-height:50px; width:75%;}
+.game-vs p{ display:block; padding:0 10px; color:#259dc2; font-size:14px; text-align:center; height:23px; line-height:23px; background-color:#dbf7ff; margin-bottom:3px;}
+.game-vs p.game-vs-pink{ color:#ea0909; background-color:#ffebea;margin-bottom:0;}
+.game-vs{ margin:0 10px; width:30%;}
+.wzl-fixed{border-top:1px solid #cbcbcb;position:fixed;bottom:0;display:block;min-height:40px;background:#eeeeee;color:#3d3d3d;padding:0 5px;width:100% ;font-size:14px;text-align:center;z-index:10}
+a.ball-status-bar {cursor: pointer;font-size: 14px;border-radius: 4px;border: 1px solid #db0d0d;display: inline-block;line-height: 30px;padding: 0;position: relative;margin-top: 4px;margin-left: 18px;overflow: hidden;color: #fff;max-width: 270px;width: 100%;background: #e45050;text-align: center;}
+a.btn-jj {background-color: rgb(225,25,10);line-height: 45px;font-size: 18px;}
+a.wzl-ml0 {margin-left: 0;}
+a.max-width-320 {max-width: 320px;}
+.jc-list-bqc li.jc-title {
+padding: 8px 0 3px 0;
+overflow: hidden;
+border-bottom: 1px solid #dfdfdf;}
+
+/*福彩3d开奖*/
+.table td,.table th{background-color:#fff !important}.btn>.caret,.dropup>.btn>.caret{border-top-color:#000 !important}.label{border:1px solid #000}.table{border-collapse:collapse !important}.table-bordered th,.table-bordered td{border:1px solid #ddd !important}
+.table{width:100%;max-width:100%;margin-bottom:20px}.table>thead>tr>th,.table>tbody>tr>th,.table>tfoot>tr>th,.table>thead>tr>td,.table>tbody>tr>td,.table>tfoot>tr>td{padding:8px;line-height:1.42857143;vertical-align:top;border-top:1px solid #ddd}.table>thead>tr>th{vertical-align:bottom;border-bottom:2px solid #ddd}
+.account-nav-bar,.account-nav-group {position: relative;z-index: 2;}
+.account-nav-bar {text-align: center;min-height: 35px;}
+.account-nav-bar ul.account-nav-group {width: 100%;list-style: none;
+margin: 0;padding: 0;margin-top: -1px;display: flex;background: #ccc;}
+.account-nav-bar ul.account-nav-group>li {width: 33.3%;-webkit-box-flex: 1;flex: 1;border-width: 0 1px 1px 0px;box-sizing: border-box;background: #f8f8f8;}
+.account-nav-bar ul.account-nav-group>li a {display: block;color: #686868;line-height: 35px;text-decoration: none;}
+.table-bordered {border: 1px solid #ddd;}
+.issue-detail table {width: 100%;max-width: 100%;	border-collapse: collapse;border-spacing: 0;}
+.table>tbody>tr>td{padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;}
+.table-bordered th,.table-bordered td{border:1px solid #ddd !important}
+.table-bordered{border:1px solid #ddd}
+.wzl-s-red {color: #eb2c2c;}
+.blueBalls {color: #65a5fb;}
+.content-tab table{ background-color:#FFF !important;}
+.btn {display: inline-block;margin-bottom: 0;font-weight: normal;text-align: center;vertical-align: middle;cursor: pointer;background-image: none;border: 1px solid transparent;white-space: nowrap;padding: 6px 12px;font-size: 14px;line-height: 1.42857143;border-radius: 4px;-webkit-user-select: none;}
+.btn-default {color: #333;border-color: #ccc;}
+.btn-tz {background-color: rgb(228,80,80);color: rgb(255,255,255);}
+/*胜负彩开奖*/
+a.btn-sfc {margin-left: 0px;padding: 0 28px 0 28px;border-radius: 6px;line-height: 41px;}
+.spf-down-a .glyphicon-menu-right:before {line-height: 27px;padding-right: 5px;color: #dfdfdf;}
+.jc-list-spf li {padding: 8px 0 3px 0;overflow: hidden;border-bottom: 1px solid #dfdfdf;}
+.spf-down-up td,.spf-down-up th{border-bottom: 1px dashed #666 !important; font-size:12px}
+
+/*双色球开奖*/
+.container-ssq{ padding:0 10px !important;}
+.ballcon .ballcon-bar span.ballcon-title {font-weight: bold;color: #c71616;margin-right: 10px;}
+.ballcon-bar{ margin-top:10px;}
+.ballcon ul li span {vertical-align: middle;display: block;font-size: 14px;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;border: 1px solid #ccc;text-align: center;font-weight: 100;overflow: hidden;cursor: pointer;float:left;}
+.ballcon ul li {width: 35px;float: left;padding: 5px 0 5px 0;text-align: center;box-sizing: content-box;-moz-box-sizing: content-box;-webkit-box-sizing: content-box;margin-right:3px;}
+.grey-jj {color: rgb(147,147,147);margin-top: 10px;}
+.ball-yaoyiyao{height:25px;background-image:url(../imgs/kj/ui/wzl_yaoyiyao.png);background-repeat:no-repeat;background-position:center right;background-size:100px 25px;margin-bottom:50px}
+.clearfix ul li{ font-size:14px !important;}
+.ballcon.blueBalls span.ballcon-title {color: #0084ff;}
+.ballcon .ballcon-bar span.ballcon-tips {color: #686868;font-size: 14px;}
+.text-center{ text-align:center;}
+

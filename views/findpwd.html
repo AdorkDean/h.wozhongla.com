@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>找回密码</title>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script>
+        seajs.config({
+            base:'../js/dist'
+        })
+        seajs.use('wzlh5/1.0.0/user',function(userA){
+            userA.userA('findpwd');
+        })
+    </script>
+    <!-- 行内样式属于该页面独有样式 -->
+    <style>
+             #findstep2{
+                 display: none;
+             }
+    </style>
+</head>
+<body>
+
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar" onclick="history.back(-1)">
+                    <span class="glyphicon glyphicon-wzl-back" ></span>找回密码
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="findblock">
+        <div id="findstep1">
+            <p class="wzl-mb-20">请输入您手机获得的验证码并设置登录密码</p>
+            <form action="" role="form" class="">
+                <ul class="list-group wzl-mb-20">
+                    <li class="list-group-item">
+                        <input type="text" id="uname" class="form-control" placeholder="请输入手机号" maxlength="15"/>
+                    </li>
+                    <li class="list-group-item clearfix wzl-verifycode-block" style="display: block">
+                        <div class="pull-left">
+                            <input type="text" id="verifycode" class="form-control" style="width:100px;" placeholder="输入验证码" maxlength="6">
+                        </div>
+                        <div class="pull-right wzl-child-block">
+                            <div class="wzl-verifyphone-block" style="right: 0px;">
+                                <a href="javascript:;" class="btn btn-xs wzl-getverify-phone ">获取验证码</a>
+                            </div>
+                            <div class="wzl-verifyimg-block" style="right: 120px;">
+                                <img src="../imgs/ui/verify_code.png" class="wzl-verify-code" alt="验证码">
+                                <span class="wzl-verify-refresh">刷新</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!--<p class="text-muted wzl-mb-20">
+                    <span class="wzl-text-warning">温馨提示：</span>如果您未验证过手机号，请拨打客服电话400-686-5015，联系客服找回密码。
+                </p>-->
+
+                <a href="javascript:;" id="verifyphone" class="btn btn-wzl-default btn-lg btn-block wzl-mb-20">下一步</a>
+            </form>
+        </div>
+        <div id="findstep2">
+            <form action="" role="form" class="">
+                <ul class="list-group wzl-mb-20">
+                    <li class="list-group-item clearfix">
+                        <div class="pull-left">
+                            <input type="text" class="form-control" id="oldpwd" style="width:240px;" placeholder="请输入新密码 6-15位字母和数字" maxlength="15"/>
+                        </div>
+                        <div class="pull-right">
+                            <span class="glyphicon glyphicon-wzl-eye" id="glyphicon-wzl-eye"></span>
+                        </div>
+                    </li>
+                    <li class="list-group-item clearfix">
+                        <input type="text" id="newpwd" class="form-control" placeholder="请再次输入新密码"/>
+                    </li>
+                </ul>
+                <p class="text-muted wzl-mb-20">
+                    <span class="wzl-text-warning">温馨提示：</span>如果您未验证过手机号，请拨打客服电话400-686-5015，联系客服找回密码。
+                </p>
+
+                <a href="javascript:;" class="btn btn-wzl-default btn-lg btn-block wzl-mb-20" id="checkok">完成</a>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

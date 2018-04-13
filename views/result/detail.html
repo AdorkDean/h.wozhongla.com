@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>开奖详情</title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/detail.css"/>
+
+</head>
+<body>
+<header>
+    <a class="header-back" id="headerBack" href="index.html"><span id="title"></span></a>
+    <div class="dr header-counter dn" id="counter">奖金计算器</div>
+</header>
+<section class="head-h45  pf">
+    <ul class="nav-group">
+        <li>
+            <a href="javascript:;" id="listLink">最近开奖</a>
+        </li>
+        <li class="action">
+            <a href="javascript:;" id="detailLink">开奖详情</a>
+        </li>
+        <li>
+            <a href="javascript:;" id="chatrLink">走势图表</a>
+        </li>
+    </ul>
+</section>
+<section class="head-h80 foot-h30" id="con-show">
+    <div class="group-number" id="detail"></div>
+</section>
+<script id="detailTemp" type="text/x-handlebars-template">
+    <ul class="result-list group-jj">
+        <li>
+                <div class="result-item-title">
+                    <span class="result-item-name t18">{{name}}{{issue}}期</span>
+                    <span class="result-jj-time dr">{{date}}</span>
+                </div>
+                <div class="result-item-detail">
+                    {{{ball}}}
+                </div>
+        </li>
+    </ul>
+    <table class="table table-zc table-kj dn detail-xq" id="matchListGroup">
+        <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">主队</th>
+            <th scope="col">赛果</th>
+            <th scope="col">客队</th>
+        </tr>
+        </thead>
+        <tbody id="matchList"></tbody>
+    </table>
+    <div id="result" class="container wzl-mb-30">
+        <div id="issue-detail" class="detail-xq">
+            <table class="table table-bordered table-kj t14">
+                <tbody>
+                {{#if bonusBalance}}
+                <tr>
+                    <td class="black-kj">奖池累计</td>
+                    <td class="bordered-kj "><span class="red t18">{{bonusBalance}}</span>元</td>
+                </tr>
+                {{/if}}
+                <tr>
+                    <td class="black-kj">本期销量</td>
+                    <td><span class="red">{{sale}}</span> 元</td>
+                </tr>
+
+                </tbody>
+            </table>
+            <table class="table table-bordered table-kj　table-zc">
+                <tbody>
+
+                <tr class="black-kj">
+                    <td>奖级</td>
+                    <td><span>注数</span></td>
+                    <td>奖金</td>
+                </tr>
+                {{#each prizes}}
+
+                <tr>
+                    <td>{{winName}}</td>
+                    <td>{{winCount}}</td>
+                    <td>{{winMoney}}</td>
+                </tr>
+                {{/each}}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</script>
+
+<script ty src="cordova.js"></script>
+<script src="js/sea.js" id="seajsnode"></script>
+<script src="js/config.js"></script>
+<script>
+    seajs.use('detail', function (main) {
+        main.init();
+    })
+</script>
+
+</body>
+</html>

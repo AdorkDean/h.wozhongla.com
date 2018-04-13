@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>奖金计算</title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/counter.css"/>
+</head>
+<body>
+<header>
+    <a class="header-back" id="headerBack" href="javascript:"><span id="title"></span></a>
+</header>
+<section>
+    <div class="result-detail">
+        <div class="group-number oh">
+            <h2><span class="name"></span><span class="issue"></span>期开奖号码：</h2>
+        </div>
+        <div class="result-item-detail" id="resultBall"></div>
+    </div>
+    <!-- 选球区 -->
+    <div id="selectBox" class="dn">
+        <div class="ballbox ballbox-kj" id="dg">
+            <div id="select001" class="dn">
+            <div class="ballcon ballcon-jj">
+                <div class="ballcon-bar">
+                    <span class="ballcon-title">红球</span>
+                    <span class="ballcon-tips">至少选择6个</span>
+                </div>
+                <ul class="ball-red ball-001-0">
+                    <li>01</li>
+                    <li>02</li>
+                    <li>03</li>
+                    <li>04</li>
+                    <li>05</li>
+                    <li>06</li>
+                    <li>07</li>
+                    <li>08</li>
+                    <li>09</li>
+                    <li>10</li>
+                    <li>11</li>
+                    <li>12</li>
+                    <li>13</li>
+                    <li>14</li>
+                    <li>15</li>
+                    <li>16</li>
+                    <li>17</li>
+                    <li>18</li>
+                    <li>19</li>
+                    <li>20</li>
+                    <li>21</li>
+                    <li>22</li>
+                    <li>23</li>
+                    <li>24</li>
+                    <li>25</li>
+                    <li>26</li>
+                    <li>27</li>
+                    <li>28</li>
+                    <li>29</li>
+                    <li>30</li>
+                    <li>31</li>
+                    <li>32</li>
+                    <li>33</li>
+                </ul>
+            </div>
+            <div class="ballcon blueBalls ballcon-jj">
+                <div class="ballcon-bar">
+                    <span class="ballcon-title">蓝球</span>
+                    <span class="ballcon-tips">至少选择1个</span>
+                </div>
+                <ul class="clearfix ball-blue ball-001-1">
+                    <li>01</li>
+                    <li>02</li>
+                    <li>03</li>
+                    <li>04</li>
+                    <li>05</li>
+                    <li>06</li>
+                    <li>07</li>
+                    <li>08</li>
+                    <li>09</li>
+                    <li>10</li>
+                    <li>11</li>
+                    <li>12</li>
+                    <li>13</li>
+                    <li>14</li>
+                    <li>15</li>
+                    <li>16</li>
+                </ul>
+            </div>
+        </div>
+            <div id="select113" class="dn">
+                <div class="ballcon ballcon-jj">
+                    <div class="ballcon-bar">
+                        <span class="ballcon-title">前区</span>
+                        <span class="ballcon-tips">至少选择5个</span>
+                    </div>
+                    <ul class="ball-red ball-113-0">
+                        <li>01</li>
+                        <li>02</li>
+                        <li>03</li>
+                        <li>04</li>
+                        <li>05</li>
+                        <li>06</li>
+                        <li>07</li>
+                        <li>08</li>
+                        <li>09</li>
+                        <li>10</li>
+                        <li>11</li>
+                        <li>12</li>
+                        <li>13</li>
+                        <li>14</li>
+                        <li>15</li>
+                        <li>16</li>
+                        <li>17</li>
+                        <li>18</li>
+                        <li>19</li>
+                        <li>20</li>
+                        <li>21</li>
+                        <li>22</li>
+                        <li>23</li>
+                        <li>24</li>
+                        <li>25</li>
+                        <li>26</li>
+                        <li>27</li>
+                        <li>28</li>
+                        <li>29</li>
+                        <li>30</li>
+                        <li>31</li>
+                        <li>32</li>
+                        <li>33</li>
+                        <li>34</li>
+                        <li>35</li>
+                    </ul>
+                </div>
+                <div class="ballcon blueBalls ballcon-jj">
+                    <div class="ballcon-bar">
+                        <span class="ballcon-title">后区</span>
+                        <span class="ballcon-tips">至少选择2个</span>
+                    </div>
+                    <ul class="clearfix ball-blue ball-113-1">
+                        <li>01</li>
+                        <li>02</li>
+                        <li>03</li>
+                        <li>04</li>
+                        <li>05</li>
+                        <li>06</li>
+                        <li>07</li>
+                        <li>08</li>
+                        <li>09</li>
+                        <li>10</li>
+                        <li>11</li>
+                        <li>12</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center grey-jj t18 zhuji">共 <span id="item">0</span> 注 <span class="red" id="sum">0</span> 元
+            </div>
+        </div>
+        <div class="wzl-fixed">
+            <a class="ball-status-bar max-width-320 wzl-ml0 btn-jj" href="javasctipt:" id="tradeBtn">提交号码计算奖金</a>
+        </div>
+        <div class="hr50"></div>
+
+    </div>
+
+    <!-- 选球区 end-->
+    <div class="group-number oh dn"  id="showBox">
+        <div class="group-number oh">
+            <h2>您提交的投注组合号码：</h2>
+
+            <div class="number-red oh">
+                <div class="red" id="ball0"></div>
+                <div class="blue" id="ball1"></div>
+            </div>
+        </div>
+
+
+        <div class="group-number oh">
+            <h2>您的投注号码组合中奖情况：</h2>
+        </div>
+        <div id="account" class="container">
+            <div id="resulta" class="conta
+            iner wzl-mb-40">
+                <div id="issue-detaila">
+                    <table class="table table-bordered tc">
+
+                        <tr>
+                            <td>命中(注)</td>
+                            <td>奖项</td>
+                            <td>单注奖金(元)</td>
+                            <td>中奖(元)</td>
+                        </tr>
+                        <tbody id="winList">
+
+                        </tbody>
+                    </table>
+                    <div id="tatal" class="tatal"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<script ty src="cordova.js"></script>
+<script src="js/sea.js" id="seajsnode"></script>
+<script src="js/config.js"></script>
+<script>
+    seajs.use('counter', function (main) {
+        main.init("001");
+    })
+</script>
+</body>
+</html>

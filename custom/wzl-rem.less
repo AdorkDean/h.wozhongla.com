@@ -1,0 +1,694 @@
+@import "../../../boot-less/less/normalize.less";
+@import "../../../boot-less/less/mixins.less";
+@import "../../../boot-less/less/utilities.less";
+//reset
+p{
+  font-size:1.4rem;
+}
+
+@media screen and (min-width: 240px) {
+  html,body,button,input,select,textarea {
+    font-size:9px
+  }
+}
+
+@media screen and (min-width: 320px) {
+  html,body,button,input,select,textarea {
+    font-size:12px
+  }
+}
+
+@media screen and (min-width: 380px) {
+  html,body,button,input,select,textarea {
+    font-size:14px
+  }
+}
+
+@media screen and (min-width: 420px) {
+  html,body,button,input,select,textarea {
+    font-size:16px
+  }
+}
+
+@media screen and (min-width: 450px) {
+  html,body,button,input,select,textarea {
+    font-size:18px
+  }
+}
+
+@media screen and (min-width: 480px) {
+  html,body,button,input,select,textarea {
+    font-size:18px
+  }
+}
+
+@media screen and (min-width: 540px) {
+  html,body,button,input,select,textarea {
+    font-size:20.25px
+  }
+}
+
+@media screen and (min-width: 600px) {
+  html,body,button,input,select,textarea {
+    font-size:22px
+  }
+}
+
+@media screen and (min-width: 640px) {
+  html,body,button,input,select,textarea {
+    font-size:24px
+  }
+}
+
+@media screen and (min-width: 720px) {
+  html,body,button,input,select,textarea {
+    font-size:28px
+  }
+}
+
+@media screen and (min-width: 800px) {
+  html,body,button,input,select,textarea {
+    font-size:30px
+  }
+}
+
+@media screen and (min-width: 880px) {
+  html,body,button,input,select,textarea {
+    font-size:34px
+  }
+}
+
+@media screen and (min-width: 960px) {
+  html,body,button,input,select,textarea {
+    font-size:36px
+  }
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+#index-wrap{
+  padding-bottom:60px;
+}
+//header
+#header {
+  height: 3.66rem;
+  background: #ce150f;
+  color: #fff;
+  position: relative;
+  z-index: 11;
+  text-align: center;
+  border: 0;
+  .logo{
+    float:left;
+    width:10rem;
+    height:3rem;
+    margin:.3rem .5rem;
+    background: url(../imgs/news/logo.png)no-repeat;
+    background-size: 100%;
+    overflow: hidden;
+    a{
+      height:2.2rem;
+      text-decoration: none;
+      display: block;
+      text-indent:-9999px;
+    }
+    &.ptlogo{
+      background: url(../imgs/news/ptlogo.png)no-repeat;
+      background-size: 100%;
+    }
+  }
+  .header-r{
+    float:right;
+    position: relative;
+    background:#b30000;
+    border-radius:4px;
+    border:1px solid #B30B00;
+    margin:.7rem 1rem;
+    padding:0 1rem;
+    height:2rem;
+    line-height: 2rem;
+    text-align: center;
+    a{
+      font-size:1.16rem;
+      padding:0 .5rem;
+    }
+  }
+  a{
+    color:#fff;
+    text-decoration:none;
+  }
+}
+//
+#slideWrap{
+  position: relative;
+  //margin-bottom: .5rem;
+  width:100%;
+  padding:0;
+  overflow: hidden;
+  height:100px;
+  .slideImg{
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      margin:0;
+      padding:0;
+    .slideList{
+      position: relative;
+      width:100%;
+      overflow: hidden;
+      margin:0;
+      padding:0;
+      li{
+        margin:0;
+        padding:0;
+        float: left;
+        overflow: hidden;
+      }
+    }
+    a {
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  ul.slidePage{
+      position: absolute;
+      width: 100%;
+      bottom: .6rem;
+      text-align: center;
+      margin:0;
+      padding:0;
+      li {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border: 1px #fff solid;
+      border-radius: 8px;
+      margin: 0 3px ;
+      &.active {
+        background-color: #f1f1f1
+      }
+    }
+  }
+}
+
+#index-slide {
+  position: relative;
+  overflow: hidden;
+  min-height:100px;
+  .slideImg {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  ul.slideList {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    li {
+      list-style: none;
+      float: left;
+      overflow: hidden;
+      width: 100%;
+      a img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.swiper-container {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 1;
+}
+.pagination {
+  position: absolute;
+  left: 0;
+  text-align: center;
+  bottom:10px;
+  width: 100%;
+  z-index: 100
+}
+.swiper-pagination-switch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: #999;
+
+  margin: 0 3px;
+  cursor: pointer;
+;
+}
+.swiper-active-switch {
+  background: #fff;
+}
+
+.swiper-container2{
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.text-red{
+  color:#e71f19 ;
+}
+//彩票icon
+#lottery{
+  ul.lottery-list{
+    margin:0;
+    padding:0;
+    list-style: none;
+    li{
+      height:6rem;
+      width:100%;
+      overflow: hidden;
+      position: relative;
+      -webkit-box-sizing: border-box;
+      &::after{
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 200%;
+          height: 200%;
+          border-bottom: 1px solid #aaa;
+          -webkit-border-radius: 0px;
+          -webkit-box-sizing: border-box;
+          -webkit-transform: scale(0.5);
+          -webkit-transform-origin: left top;
+        }
+      a{
+        position: relative;
+        text-decoration: none;
+        display: block;
+        .tingshou{
+          position: absolute;
+          left: 0.2rem;
+          top: 0.2rem;
+          width: 2rem;
+          height: 2rem;
+          background: url("../imgs/ui/jrts.png") no-repeat;
+          z-index: 9;
+          background-size: 2rem;
+        }
+        .jrjj{
+          position: absolute;
+          left: 0.2rem;
+          top: 0.2rem;
+          width: 2rem;
+          height: 2rem;
+          background: url("../imgs/ui/jrjj.png");
+          z-index: 9;
+          background-size: 2rem;
+        }
+        .jrkj{
+          position: absolute;
+          left: 0.2rem;
+          top: 0.2rem;
+          width: 2rem;
+          height: 2rem;
+          background: url("../imgs/ui/jrkj.png");
+          z-index: 9;
+          background-size: 2rem;
+        }
+      }
+      p{
+        margin:0;
+      }
+      .multi-r{
+         width:40%;
+         float:left;
+         h2{
+          font-size:1.2rem;
+        }
+        .logo{
+          left:.7rem;
+          ::before{
+            border:none;
+          }
+        }
+        .lottery-text{
+          margin-left:6rem;
+          padding-right:0;
+        }
+        .sub-text{
+          //font-size:.7rem;
+        }
+        margin-left:-1px;
+      }
+      .multi-l{
+        width:60%;
+        float:left;
+        &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        border-right: 1px solid #aaa;
+        -webkit-border-radius: 0px;
+        -webkit-box-sizing: border-box;
+        -webkit-transform: scale(0.5);
+        -webkit-transform-origin: left top;
+      }
+        .lottery-text{
+
+          /**/
+        }
+      }
+      .multi-d{
+        width:50%;
+        float:left;
+        .lottery-text{
+          /*::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            border-right: 1px solid #aaa;
+            -webkit-border-radius: 0px;
+            -webkit-box-sizing: border-box;
+            -webkit-transform: scale(0.5);
+            -webkit-transform-origin: left top;
+          }*/
+          border-right: 1px dotted #ccc;
+        }
+        .no-border{
+          border:none !important;
+        }
+
+      }
+    }
+
+    dl.lottery-item{
+      margin:0;
+      min-height: 5.2rem;
+      //border-bottom: 1px solid #ccc;
+      clear: both;
+      float: none;
+      position: relative;
+      z-index: 9;
+      padding: .6rem 0;
+      //风向标
+      &.fxb{
+        color:#151515;
+        .lottery-text{
+          padding:0 .6rem;
+        }
+        h2{
+          border-bottom: 1px solid #d5d5d5;
+          padding:0 0 .2rem 0;
+          margin: .1rem 0 ;
+          font-size:1.4rem;
+          .text-red{
+            font-size:1.2rem;
+          }
+        }
+        .fxb-sub{
+          font-size:1rem;
+          color:#686868;
+          display: block;
+          line-height: 1.2rem;
+          margin-top:.2rem;
+          padding-right:.5rem;
+        }
+      }
+    }
+    .lottery-text{
+      margin-left:6rem;
+      h2{
+        font-size:1.3rem;
+        margin: .6rem 0;
+        color:#333;
+        font-family: Microsoft YaHei;
+        vertical-align: middle;
+        font-weight: normal;
+      }
+      .sub-text{
+        color:#686868;
+        padding-right:.2rem;
+        line-height:1.2rem;
+        font-size:1rem;
+      }
+    }
+  }
+  .logo{
+    width: 4.5rem;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 4.5rem 4.5rem;
+    background-position: 0 center;
+    position: absolute;
+    z-index: 10;
+    left: 1rem;
+    top: 0;
+    &.ssq{
+      background-image:url(../imgs/news/ssq.png) ;
+    }
+    &.jc{
+      background-image:url(../imgs/news/jczq.png) ;
+    }
+    &.dlt{
+      background-image:url(../imgs/news/dlt.png) ;
+    }
+    &.cqssc{
+      background-image:url(../imgs/news/cqssc.png) ;
+    }
+    &.jx11x5{
+      background-image:url(../imgs/news/jx115.png) ;
+    }
+    &.jxssc{
+      background-image:url(../imgs/news/jxssc.png) ;
+    }
+    &.pl3{
+      background-image:url(../imgs/news/p3.png) ;
+    }
+    &.pl5{
+      background-image:url(../imgs/news/p5.png) ;
+    }
+    &.qxc{
+      background-image:url(../imgs/news/qxc.png) ;
+    }
+    &.qlc{
+      background-image:url(../imgs/news/qlc.png) ;
+    }
+    &.fc3d{
+      background-image:url(../imgs/news/3d.png) ;
+    }
+    &.zq310{
+      background-image:url(../imgs/news/310data.png) ;
+    }
+    &.yijing{
+      background-image:url(../imgs/news/yijing.png) ;
+    }
+  }
+}
+#yijing{
+  position: relative;
+  background-image: url(../imgs/news/yijing_bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 6.4rem;
+  h2{
+    border-bottom:none !important;
+    line-height: 2rem;
+    font-size: 1.4rem;
+  }
+  .yijing-sub{
+    color:#666;
+    font-size: 1.2rem;
+  }
+}
+
+//底部导航
+#bottomnav{
+  height:47px;
+  .bottom-box{
+    background: #0e0e0e;
+    margin: 0px;
+    border-top: 1px solid #0e0e0e;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    z-index: 9;
+    box-shadow: 0 0 8px #333;
+    left: 0px;
+
+  }
+  .list-dock {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    margin:0;
+    padding:0;
+    li{
+      border-top: 1px solid #434343;
+      display: block;
+      -webkit-box-flex: 1;
+      -ms-flex: 1 auto;
+      text-align: center;
+      a{
+        display: inline-block;
+        padding: 0px 8px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        cursor: pointer;
+        .txt-dock{
+          font-size: 12px;
+          line-height: 12px;
+          color: #666;
+          text-align: center;
+          -webkit-text-size-adjust: none;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+//导航icon
+.icon-nav{
+  display: block;
+  width: 44px;
+  height: 44px;
+  line-height: 0px;
+  margin: 0 auto;
+  &.gcdt{
+    background-image: url(../imgs/news/gcdt2.png);
+    background-size: 44px;
+    background-repeat: no-repeat;
+    &.active,&:active{
+      background-image: url(../imgs/news/gcdt.png);
+      background-size: 44px;
+      background-repeat: no-repeat;
+    }
+  }
+  &.cpkj{
+    background-image: url(../imgs/news/cpkj2.png);
+    background-size: 44px;
+    background-repeat: no-repeat;
+    &.active,&:active{
+      background-image: url(../imgs/news/cpkj.png);
+      background-size: 44px;
+      background-repeat: no-repeat;
+    }
+  }
+  &.hyzx{
+    background-image: url(../imgs/news/hyzx2.png);
+    background-size: 44px;
+    background-repeat: no-repeat;
+    &.active,&:active{
+      background-image: url(../imgs/news/hyzx.png);
+      background-size: 44px;
+      background-repeat: no-repeat;
+    }
+  }
+  &.ts{
+    background-image: url(../imgs/news/tes2.png);
+    background-size: 44px;
+    background-repeat: no-repeat;
+    &.active,&:active{
+      background-image: url(../imgs/news/tes.png);
+      background-size: 44px;
+      background-repeat: no-repeat;
+    }
+  }
+
+}
+
+.testbase{
+  width:100%;
+  height:100px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  .img{
+    position: absolute;
+    left:0;
+    width:100%;
+    display: block;
+    top:-360px;
+  }
+}
+
+
+.icon-user{
+  width: 20px;
+  cursor: pointer;
+  height: 20px;
+  position: absolute;
+  left: .6rem;
+  top: .2rem;
+  background-image: url(../imgs/ui/icon_user.png);
+  background-size: 20px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.icon-goright{
+  display: block;
+  width: 32px;
+  cursor: pointer;
+  height: 6.4rem;
+  position: absolute;
+  right: .6rem;
+  top: 0;
+  background-image: url(../imgs/news/arrows.png);
+  background-size: 16px 32px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.lottery-icon{
+  width:64px;
+  background: red;
+}
+.list{
+  li{
+    position: relative;
+    display: inline-block;
+    width: 140px;
+    padding: 20px 0;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 10px 10px 0;
+    -webkit-border-radius: 5px;
+    -webkit-box-sizing: border-box;
+    background: -webkit-linear-gradient(top, #fafafa 0%, #f0f0f0 50%, #fafafa 100%);
+    &::after{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      border: 1px solid #aaa;
+      -webkit-border-radius: 0px;
+      -webkit-box-sizing: border-box;
+      -webkit-transform: scale(0.5);
+      -webkit-transform-origin: left top;
+    }
+  }
+}
+#lottery .logo.gd11x5 {
+             background-image: url(../imgs/news/gd115.png);
+           }
+#lottery .logo.sd11x5 {
+  background-image: url(../imgs/news/sd115.png);
+}

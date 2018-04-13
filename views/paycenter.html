@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>充值</title>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <script>
+
+        seajs.config({
+            base:'../js/dist'
+        })
+
+        seajs.use('wzlh5/1.0.0/pay',function(pay){
+            pay.pay();
+        })
+    </script>
+    <!-- 行内样式属于该页面独有样式 -->
+    <style>
+        .pay-items-text{
+            float:left;
+            margin-left:15px;
+            margin-top:3px;
+        }
+        .pay-items-text p{
+            margin:0;
+        }
+        .pay-items-titie{
+            font-weight:bold;
+            font-size: 14px;;
+        }
+        .pay-items-subtitie{
+            font-size: 12px;
+            color:#a6a6a6;
+        }
+        
+    </style>
+</head>
+<body>
+
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar" onclick="backAction()">
+                    <span class="glyphicon glyphicon-wzl-back"></span>充值
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="paycenter">
+            <p><b class="uname"></b>&nbsp;&nbsp;<span class="text-muted" id="balance">余额:0.00元</span></p>
+            <!--<span class="text-muted">推荐使用</span>-->
+            <!--<ul class="list-group">-->
+                <!--<li class="list-group-item pay-items clearfix">-->
+                    <!--<a href="http://www.wozhongla.com/appWechatPay" class="wzl-ui-btn icon-right">-->
+                        <!--<div class="icon-pay">-->
+                            <!--<span class="glyphicon  icon-pay-wx"></span>-->
+                        <!--</div>-->
+                        <!--<div class="pay-items-text">-->
+                            <!--<p class="pay-items-titie">微信支付</p>-->
+                            <!--<p class="pay-items-subtitie">重点推荐</p>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+            <!--<span class="text-muted hidden">其他支付方式</span>-->
+            <ul class="list-group" style="display: none" id="payList">
+                <!--<li class="list-group-iidtem pay-items clearfix">-->
+                    <!--<a href="alipaypay.html" class="wzl-ui-btn icon-right">-->
+                        <!--<div class="icon-pay">-->
+                            <!--<span class="glyphicon  icon-pay-alipay"></span>-->
+                        <!--</div>-->
+                        <!--<div class="pay-items-text">-->
+                            <!--<p class="pay-items-titie">支付宝充值</p>-->
+                            <!--<p class="pay-items-subtitie">有支付宝账号的用户使用</p>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <li class="list-group-item pay-items clearfix">
+                    <a href="yibao.html" class="wzl-ui-btn icon-right">
+                        <div class="icon-pay">
+                            <span class="glyphicon  icon-pay-yibao"></span>
+                        </div>
+                        <div class="pay-items-text">
+                            <p class="pay-items-titie">微信充值</p>
+                            <p class="pay-items-subtitie">有微信账号的用户使用</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="list-group-item pay-items clearfix hidden">
+                    <a href="javascript:;" class="wzl-ui-btn icon-right">
+                        <div class="icon-pay">
+                            <span class="glyphicon  icon-pay-unionpay"></span>
+                        </div>
+                        <div class="pay-items-text">
+                            <p class="pay-items-titie">联动支付</p>
+                            <p class="pay-items-subtitie">无需网银，无需手续费，快速安全</p>
+                        </div>
+                    </a>
+                </li>
+                <!--<li class="list-group-item pay-items clearfix">
+                    <a href="savingscard.html" class="wzl-ui-btn icon-right">
+                        <div class="icon-pay">
+                            <span class="glyphicon  icon-pay-unionpay2"></span>
+                        </div>
+                        <div class="pay-items-text">
+                            <p class="pay-items-titie">联动充值</p>
+                            <p class="pay-items-subtitie">既支持储蓄卡，也支持信用卡</p>
+                        </div>
+                    </a>
+                </li>-->
+                <li class="list-group-item pay-items clearfix hidden">
+                    <a href="unioncall.html" class="wzl-ui-btn icon-right">
+                        <div class="icon-pay">
+                            <span class="glyphicon  icon-pay-unionpay"></span>
+                        </div>
+                        <div class="pay-items-text">
+                            <p class="pay-items-titie">银联回呼充值</p>
+                            <p class="pay-items-subtitie">接电话充值，须预留手机号</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="list-group-item pay-items clearfix hidden">
+                    <a href="callscard.html" class="wzl-ui-btn icon-right">
+                        <div class="icon-pay">
+                            <span class="glyphicon  icon-pay-chinamobile"></span>
+                        </div>
+                        <div class="pay-items-text">
+                            <p class="pay-items-titie">移动手机充值卡</p>
+                            <p class="pay-items-subtitie">支持移动全国充值卡</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="list-group-item pay-items clearfix hidden">
+                    <a href="callscard.html" class="wzl-ui-btn icon-right">
+                        <div class="icon-pay">
+                            <span class="glyphicon  icon-pay-chinamobile"></span>
+                        </div>
+                        <div class="pay-items-text">
+                            <p class="pay-items-titie">联通手机充值卡</p>
+                            <p class="pay-items-subtitie">支持联通全国充值卡</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="list-group-item pay-items clearfix">
+                    <a href="qq.html" class="wzl-ui-btn icon-right">
+                        <div class="icon-pay">
+                            <span class="glyphicon  icon-pay-wzlcard"></span>
+                        </div>
+                        <div class="pay-items-text">
+                            <p class="pay-items-titie">QQ充值</p>
+                            <p class="pay-items-subtitie">通过QQ进行充值</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!--<p> <span class="wzl-text-warning">温馨提示：</span><br>
+                1.充值时使用优惠券，充值金额将计入彩金账户，只能用于购彩，不得提现，同时可以额外获得充值金额*5的积分奖励。<br>
+
+                2.客服电话 400-686-5015
+            </p>-->
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

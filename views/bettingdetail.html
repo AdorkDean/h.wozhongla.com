@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>投注记录</title>
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script>
+	function load(){
+		seajs.config({
+            base:'../js/dist'
+        })
+        seajs.use('wzlh5/1.0.0/account',function(account){
+            account.account('bettingdetail');
+        })
+	}
+        
+    </script>
+    <style>
+    .bets-list .bets-list-group li .bets-list-items .bets-result{width: 87px;}   
+    #scroller-pullDown1,#scroller-pullDown2,#scroller-pullDown3,#scroller-pullDown4{display: none}
+    #scroller-pullDown1,#scroller-pullUp1,#scroller-pullDown2,#scroller-pullUp2,#scroller-pullDown3,#scroller-pullUp3,#scroller-pullDown4,#scroller-pullUp4{height: 40px; text-align: center;line-height: 40px}
+    #scroller-pullUp1,#scroller-pullUp2,#scroller-pullUp3,#scroller-pullUp4{
+      margin-top: -20px;
+      margin-bottom: 20px;
+    }
+
+    </style>
+</head>
+<body onload="load()">
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <div class="tz-record">
+      <nav class="wzl-navbar navbar-default" role="navigation">
+          <div class="container-fluid">
+              <div class="navbar-header">
+                  <div class="wzl-nav-bar" onclick="location.href='ucenter.html'">
+                      <span class="glyphicon glyphicon-wzl-back"></span>
+                      <span class="wzl-nav-dropdown">
+                          投注记录
+                      </span>
+                  </div>
+              </div>
+          </div>
+          <!-- <div class="drop-down-more" style="display: none;">
+              <ul class="list-group text-center">
+                  <li class="list-group-item" >
+                      <a href="javascript:;">全部</a>
+                  </li>
+                  <li class="list-group-item" >
+                      <a href="javascript:;">代购</a>
+                  </li>
+                  <li class="list-group-item">
+                      <a href="javascript:;">追号</a>
+                  </li>
+              </ul>
+          </div> -->
+      </nav>
+    </div>
+    <div id="account" class="container">
+          <div class="account-nav-bar wzl-mb-10 tzacc-nav-bar">
+              <ul class="account-nav-group">
+                  <li class="active">
+                    <a href="javascript:;">全部</a>
+                  </li>
+                  <li>
+                      <a href="javascript:;">未开奖</a>
+                  </li>
+                  <li>
+                      <a href="javascript:;">已中奖</a>
+                  </li>
+                  <li>
+                      <a href="javascript:;">未中奖</a>
+                  </li>
+              </ul>
+          </div>
+              
+          <div class="bet-content" id="bet-content">
+              <div class="bets-list" style="display:block">
+                <div id="wrapper1">
+                <div class="scroller">   
+                  <div id="scroller-pullDown1">
+                    <span class="pullDownLabel">Pull down to refresh...</span>
+                  </div>
+                   <ul class="bets-list-group" id="bets-list-group1">
+                    <!-- 
+                    icon-cp-jczq
+                    icon-cp-ssq
+                    icon-cp-jxssc   --> 
+                   </ul>
+                    <div id="scroller-pullUp1">
+                        <span class="pullUpLabel">数据正在加载中...</span>
+                    </div>
+                   </div>
+                   </div>
+              </div>
+              
+              <div class="bets-list">
+                <div id="wrapper2">
+                <div class="scroller">   
+                  <div id="scroller-pullDown2">
+                    <span class="pullDownLabel">Pull down to refresh...</span>
+                  </div>
+                <ul class="bets-list-group" id="bets-list-group2"></ul>
+                <div id="scroller-pullUp2">
+                        <span class="pullUpLabel">数据正在加载中...</span>
+                  </div>
+                 </div>
+                 </div>
+                
+              </div>
+              <div class="bets-list">
+                <div id="wrapper3">
+                <div class="scroller">   
+                  <div id="scroller-pullDown3">
+                    <span class="pullDownLabel">Pull down to refresh...</span>
+                  </div>
+                <ul class="bets-list-group" id="bets-list-group3"></ul>
+                <div id="scroller-pullUp3">
+                        <span class="pullUpLabel">数据正在加载中...</span>
+                  </div>
+                 </div>
+                 </div>
+              </div>
+              <div class="bets-list">
+                <div id="wrapper4">
+                <div class="scroller">   
+                  <div id="scroller-pullDown4">
+                    <span class="pullDownLabel">Pull down to refresh...</span>
+                  </div>
+                <ul class="bets-list-group" id="bets-list-group4"></ul>
+                <div id="scroller-pullUp4">
+                        <span class="pullUpLabel">数据正在加载中...</span>
+                  </div>
+                 </div>
+                 </div>
+              </div>
+          </div>
+             
+    </div>
+</div>
+
+
+
+<script id="table-template" type="text/x-handlebars-template">
+{{#each data}}
+<li>
+  <a href='{{bettingUrl}}' class="bets-list-items clearfix icon-right">
+      <div class="bets-type">
+          <span class="glyphicon {{iconImg}}"></span>
+          <span class="bets-type-name">{{lotoName}}</span>
+      </div>
+      <div class="bets-info">
+          <p class="bets-info-qc">{{issue}}</p>
+          <p class="bets-info-buytype">{{byType}}</p>
+          <p class="bets-info-time">{{createtime}}</p>
+      </div>
+      <div class="bets-result">
+          <p class="bets-result-quota">{{totalsum}}.00元</p>
+
+          {{#if isZH}}
+          <p class="bets-result-sendbuff">{{status}}</p>
+          {{/if}}
+          
+          {{#if isWin}}
+            <p class="bets-result-win">已中奖<br/>{{bonussum}}元</p>
+          {{/if}}
+          
+      </div>
+  </a>
+</li>
+{{/each}}
+</script>
+
+<script>
+
+  
+
+</script>
+</body>
+</html>

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>订单详情</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <script>
+
+        seajs.config({
+            base:'../js/dist'
+        })
+        seajs.use('wzlh5/1.0.0/account',function(account){
+            account.account('bettingRecord');
+        })
+    </script>
+    <!-- 行内样式属于该页面独有样式 -->
+    <style>
+
+        h3.wzl-h-red{
+            margin-top:0px;
+        }
+
+        .wzl-hafix{
+            padding-bottom:60px !important;
+        }
+        
+        .wzl-pl-10{padding-left: 10px;}
+        .order-table{margin: 0px;}
+
+        .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{ vertical-align: middle; }
+        .table>thead>tr>th,.table>tbody>tr>td{border-right: 1px solid #ddd; text-align: center;}
+        .table>thead>tr>th{border-bottom: none;}
+        .table>thead>tr>th.border-right-none, .table>tbody>tr>td.border-right-none{border-right: none;}
+
+        
+        .lottory-detailrecord-list{
+            background: #E9E9E9;
+        }
+        
+        .lottory-detailrecord-list .icon-dropdown-trans:after{
+            top: 10px;
+        }
+        .lottory-detailrecord-bet{
+            font-size: 12px;
+            text-align: left;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar" onclick="history.back(-1)">
+                    <span class="glyphicon glyphicon-wzl-back"></span>
+                        <span class="wzl-nav-dropdown">
+                            订单详情
+                        </span>
+                </div>
+                <!-- <div class="wzl-nav-share ">
+                    <span class=" glyphicon icon-share"></span>
+                </div> -->
+            </div>
+        </div>
+    </nav>
+       
+    <div class="container" id="loading">加载数据中...</div>
+
+    <div class="container wzl-hafix" id="szc" style="display:none;">
+
+
+    </div>
+
+    <div class="container wzl-hafix" style="display:none;" id="jczq">
+
+ 
+    </div>
+
+
+    <div class="wzl-fixed ">
+        <a href="index.html" class="btn btn-wzl-default btn-lg btn-block " id="jx">继续投注</a>
+    </div>
+
+
+</div>
+
+
+
+
+<script id="jc-template" type="text/x-handlebars-template">
+ <h3 class=" text-center wzl-mb-20">{{data.lotoName}}</h3>
+        <div class="order row ">
+            <div class="order-desc-list">
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">方案编号:</div>
+                    <div class="col-sm-8 col-xs-8">{{data.orderno}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">创建时间:</div>
+                    <div class="col-sm-8 col-xs-8">{{data.createtime}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">投注金额:</div>
+                    <div class="col-sm-8 col-xs-8">{{data.totalsum}}元</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">订单状态:</div>
+                    <div class="col-sm-8 col-xs-8">{{data.bonusstatus}}</div>
+                </div>
+                <div class="items">
+                    <div class="items-subtitle">选号方案:</div>
+                    <div class="order-table">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>场次</th>
+                                <th>主队VS客队</th>
+                                <th>玩法</th>
+                                <th>投注项</th>
+                                <th>彩果</th>
+                                <th>让球</th>
+                                <th>胆</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{#each data.danchangMatch}}
+                            <tr>
+                                <td>
+                                    {{week}}<br>
+                                    {{matchNum}}
+                                </td>
+                                <td>
+                                    {{matchm}}<br>
+                                     VS<br>
+                                    {{matchc}}
+                                </td>
+        
+                                <td>
+                                    {{lotoName}}
+                                </td>
+        
+                                <td>
+                                    <!--  
+                                    {{spf_s}}
+                                    {{spf_p}}
+                                    {{spf_f}}-->
+                                    {{betcode}}
+                                </td>
+        
+                                <td>
+                                    x
+                                </td>
+        
+                                <td>
+                                    {{matchv}}
+                                </td>
+        
+                                <td class="border-right-none">
+                                    x
+                                </td>
+                            </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <div class="items">
+                    <div class="items-subtitle">选号详情:</div>
+                    <div class="order-table">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>场次</th>
+                                <th>过关方式</th>
+                                <th>倍数</th>
+                                <th>中奖金额</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{#each data.orderDetail}}
+                            <tr>
+                                <td>
+                                   {{num}}
+                                </td>
+                                <td>{{betcode}}</td>
+                                <td>{{playName}}</td>
+                                <td>{{multi}}</td>
+                                <td>{{bonussum}}</td>
+                            </tr>
+                            {{/each}}
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="order row hidden">
+            <div class="order-progress wzl-mb-10">
+                <div class="order-progress-graphic">
+                    <div class="order-graphic-detail">
+        
+                        <div class="order-graphic-text">
+                            65%
+                        </div>
+        
+                        <div class="circle-percent">
+        
+                        </div>
+        
+                    </div>
+
+                    <h4 class="order-sponsor">
+                        有言无书
+                    </h4>
+                </div>
+                <div class="order-desc-args row text-center">
+                    <div class="col-sm-4 col-xs-4">
+                        <p>200000元</p>
+                        <p>总金额</p>
+                    </div>
+                    <div class="col-sm-4 col-xs-4">
+                        <p>10.00元</p>
+                        <p>每份金额</p>
+                    </div>
+                    <div class="col-sm-4 col-xs-4">
+                        <p>1000份</p>
+                        <p>份数</p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-desc-list">
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">方案编号:</div>
+                    <div class="col-sm-8 col-xs-8">hm12345678</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">方案佣金:</div>
+                    <div class="col-sm-8 col-xs-8">10%</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">方案标题:</div>
+                    <div class="col-sm-8 col-xs-8">一定要中1000万!</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">方案保底:</div>
+                    <div class="col-sm-8 col-xs-8">5000份! 占2%</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">方案描述:</div>
+                    <div class="col-sm-8 col-xs-8">一定要中1000万！一定要中1000万！一定要中1000万！一定要中1000万！一定要中1000万！一定要中1000万！一定要中1000万！%</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">方案详情:</div>
+                    <div class="col-sm-8 col-xs-8">方案保密 <a class="wzl-a-info" href="javascript:;">查看详情</a></div>
+                </div>
+            </div>
+        </div>
+
+</script>
+
+
+<script id="szc-template" type="text/x-handlebars-template">
+
+<h3 class=" text-center wzl-mb-20 wzl-h-red">{{data.lotoName}}</h3>
+
+        <div class="order row ">
+            <div class="order-desc-list">
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">订单编号:</div>
+                    <div class="col-sm-8 col-xs-8">{{data.orderno}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">金额:</div>
+                    <div class="col-sm-8 col-xs-8">{{data.totalsum}}元</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">方案状态:</div>
+                    <div class="col-sm-8 col-xs-8">{{data.bonusstatus}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">中奖奖金:</div>
+                    <div class="col-sm-8 col-xs-8">{{data.bonussum}}</div>
+                </div>
+                <p class="wzl-pl-10">开奖号码</p>
+                <p class="wzl-pl-10 kjcode"></p>
+        
+                <div class="items">
+                    <div class="items-subtitle">选号方案:</div>
+                    <div class="order-table">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>号码</th>
+                                <th>玩法</th>
+                                <th>倍数</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{#each data.buycode}}
+                            <tr>
+                                <td>
+                                    {{num}}
+                                </td>
+                                <td>
+                                    {{betcode}}
+                                </td>
+        
+                                <td>
+                                    {{playName}}
+                                </td>
+        
+                                <td class="border-right-none">
+                                    {{multi}}
+                                </td>
+                            </tr>
+
+                            {{/each}}
+                            <!-- 
+
+                            <tr>
+                                <td>
+                                    1
+                                </td>
+                                <td>
+                                    <strong class="redBalls">01 02 03 04 05 06</strong> <span id="add">+</span> <strong class="blueBalls">07</strong>
+                                </td>
+        
+                                <td>
+                                    单式
+                                </td>
+        
+                                <td class="border-right-none">
+                                    1{{multi}}
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    1
+                                </td>
+                                <td>
+                                    01 02 03 04 05 06 + 07
+                                </td>
+        
+                                <td>
+                                    单式
+                                </td>
+                                
+                                <td class="border-right-none">
+                                    1
+                                </td>
+                            </tr>
+
+
+                            -->
+            
+        
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+        
+            </div>
+        </div>
+        <div class="order row hidden">
+            <div class="order-progress wzl-mb-10">
+                <div class="order-progress-graphic">
+                    <div class="order-graphic-detail">
+        
+                        <div class="order-graphic-text">
+                            65%
+                        </div>
+        
+                        <div class="circle-percent">
+        
+                        </div>
+        
+                    </div>
+        
+                    <h4 class="order-sponsor">
+                        有言无书
+                    </h4>
+                </div>
+                <div class="order-desc-args row text-center">
+                    <div class="col-sm-4 col-xs-4">
+                        <p>200000元</p>
+                        <p>总金额</p>
+                    </div>
+                    <div class="col-sm-4 col-xs-4">
+                        <p>10.00元</p>
+                        <p>每份金额</p>
+                    </div>
+                    <div class="col-sm-4 col-xs-4">
+                        <p>1000份</p>
+                        <p>份数</p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-desc-list">
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">方案编号:</div>
+                    <div class="col-sm-8 col-xs-8">hm12345678</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">方案佣金:</div>
+                    <div class="col-sm-8 col-xs-8">10%</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">方案标题:</div>
+                    <div class="col-sm-8 col-xs-8">一定要中1000万!</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">方案保底:</div>
+                    <div class="col-sm-8 col-xs-8">5000份! 占2%</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">方案描述:</div>
+                    <div class="col-sm-8 col-xs-8">一定要中1000万！一定要中1000万！一定要中1000万！一定要中1000万！一定要中1000万！一定要中1000万！一定要中1000万！%</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">方案详情:</div>
+                    <div class="col-sm-8 col-xs-8">方案保密 <a class="wzl-a-info" href="javascript:;">查看详情</a></div>
+                </div>
+            </div>
+        </div>
+</script>
+
+<script id="zh-template" type="text/x-handlebars-template">
+    <h3 class=" text-center wzl-mb-20 wzl-h-red">{{data.lotoid}} 第{{data.issue}}期</h3>
+
+        <div class="order row ">
+            <div class="order-desc-list">
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">订单编号:</div>
+                    <div class="col-sm-8 col-xs-8">{{data.orderno}}</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">创建时间:</div>
+                    <div class="col-sm-8 col-xs-8">2014-07-31 13：52：43</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">总金额:</div>
+                    <div class="col-sm-8 col-xs-8">{{data.totalsum}}元</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">订单状态:</div>
+                    <div class="col-sm-8 col-xs-8">{{data.bonusstatus}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">进度:</div>
+                    <div class="col-sm-8 col-xs-8">10/10</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">起始次数:</div>
+                    <div class="col-sm-8 col-xs-8">第2014077期</div>
+                </div>
+
+        
+                <div class="items">
+                    <div class="items-subtitle">选号方案:</div>
+                    <div class="order-table">
+                        <table class="table table-orderrecord">
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>期次</th>
+                                <th>状态</th>
+                                <th>中奖情况</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    1
+                                </td>
+                                <td class="position-relative lottory-detailrecord-list">
+                                    2022635
+                                    <span class="ballcon-js-n icon-dropdown-trans"></span>
+                                </td>
+        
+                                <td>
+                                    已出票
+                                </td>
+        
+                                <td class="border-right-none">
+                                    未中奖
+                                </td>
+                            </tr>
+
+                            <tr style="display:none;">
+                                <td colspan="4">
+                                    <div class="lottory-detailrecord-bet">
+                                投注号码：01 02 03 04 05 06 + 07 单式 1注 1倍<br>
+                          开奖号码：01 03 04 08 10 11 + 08
+                                </div>
+                                </td>
+        
+                            </tr>
+
+                             <tr>
+                                <td>
+                                    1
+                                </td>
+                                <td class="position-relative lottory-detailrecord-list">
+                                    2022635
+                                    <span class="ballcon-js-n icon-dropdown-trans"></span>
+                                </td>
+        
+                                <td>
+                                    已出票
+                                </td>
+        
+                                <td class="border-right-none">
+                                    未中奖
+                                </td>
+                            </tr>
+
+                            <tr style="display:none;">
+                                <td colspan="4">
+                                    <div class="lottory-detailrecord-bet">
+                                投注号码：01 02 03 04 05 06 + 07 单式 1注 1倍<br>
+           
+           开奖号码：01 03 04 08 10 11 + 08
+                                </div>
+                                </td>
+        
+                            </tr>
+
+
+
+
+            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+        
+            </div>
+        </div>
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>注册成功</title>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <script>
+
+        seajs.config({
+            base:'../js/dist'
+        })
+
+        seajs.use('wzlh5/1.0.0/user',function(register){
+            register.register('registerok');
+        })
+    </script>
+</head>
+<body>
+
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar" onclick="history.back(-1)">
+                    <span class="glyphicon glyphicon-wzl-back" ></span>注册
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="loading">
+
+        </div>
+        <h3 class="text-center">恭喜您，注册成功</h3>
+        <div class="accountList">
+            <ul class="list-group account-list-group">
+                <li class="list-group-item">用户名：<span id="username" class="wzl-text-warning"></span> <a href="udataname.html" class=" wzl-a-info pull-right" id="changeuser">修改</a></li>
+                <li class="list-group-item">手机号： <span id="isPhone" class="wzl-text-warning">尚未验证</span><a charset="wzl-a-info" href="verifyphone.html" class="pull-right" id="verify-btn">点击验证</a></li>
+                <li class="list-group-item">账号余额：<span id="tol-money" class="wzl-text-warning"> 0 </span>元 <a href="paycenter.html" class="wzl-a-info pull-right">马上充值</a></li>
+            </ul>
+        </div>
+        <a class="btn btn-wzl-default btn-lg btn-block wzl-mb-40" id="registerok" href="javascript:;">完成</a>
+
+        <div class="wzl-gc">
+            <p>本站购彩流程:</p>
+            <span class="wzl-gc-step on">1.注册</span> >
+            <span class="wzl-gc-step">2.充值</span>  >
+            <span class="wzl-gc-step">3.投注</span>   >
+            <span class="wzl-gc-step">4.开奖</span>    >
+            <span class="wzl-gc-step">5.提现</span>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

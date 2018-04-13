@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>走势图表</title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/chartold.css"/>
+</head>
+<body>
+<header>
+    <a class="header-back" id="headerBack" href="index.html"><span id="title"></span>走势</a>
+    <div class="header-option dr dn" id="chartListBtn"></div>
+</header>
+<section class="head-h45 pf nav-group-box">
+    <ul class="nav-group">
+        <li>
+            <a href="javascript:;" id="listLink">最近开奖</a>
+        </li>
+        <li>
+            <a href="javascript:;" id="detailLink">开奖详情</a>
+        </li>
+        <li class="action">
+            <a href="javascript:;" id="chatrLink">走势图表</a>
+        </li>
+    </ul>
+</section>
+<section id="chartListOption" class="float-option float-option-all dn"></section>
+<section class="content-tab conten-tab-sd chart-body head-h80 foot-h20">
+        <div id="chart" class="chart"></div>
+</section>
+<script ty src="cordova.js"></script>
+<script src="js/joinline.js"></script>
+<script src="js/sea.js" id="seajsnode"></script>
+<script src="js/config.js"></script>
+<script>
+    seajs.use('chartold', function (main) {
+        main.init();
+    })
+</script>
+
+</body>
+</html>

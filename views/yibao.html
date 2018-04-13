@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>微信充值</title>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <!--<script src="../js/sea-modules/seajs/2.3.0/dist/sea.js"></script>-->
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <script>
+        seajs.config({
+            base:'../js/dist'
+        })
+
+        seajs.use('wzlh5/1.0.0/pay',function(pay){
+            pay.pay('yibao');
+        })
+    </script>
+    <!-- 行内样式属于该页面独有样式 -->
+    <style>
+        /* 重新定制 ul样式 */
+        .list-group{
+            background: #fff;
+            border-radius: 5px;
+            border: 1px solid #dddddd;
+        }
+        .list-group-item{
+            position: relative;
+            display: block;
+            margin: 0 0px;
+            padding:8px 10px;
+            background-color: #ffffff;
+            border-top:none;
+            border-left:none;
+            border-right:none;
+            border-bottom: 1px solid #f3f3f3;
+        }
+        /* 重新定制 form-control */
+        .form-control{
+            padding:6px 6px 6px 0;
+        }
+
+        .wzl-form-control{
+            padding: 0 10px;
+            margin-bottom: 20px;
+        }
+        .wzl-form-control-list{
+            margin-top: 6px;
+        }
+
+        .pay-items-text{
+            float:left;
+            margin-left:15px;
+            margin-top:3px;
+        }
+
+
+        .ml20{margin-left: 20px; width: 100px;}
+        .pl10{padding-left: 10px;}
+
+    </style>
+</head>
+<body>
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar" onclick="history.back(-1)">
+                    <span class="glyphicon glyphicon-wzl-back" ></span>微信充值
+                </div>
+
+                <a class="wzl-index wzl-index-min" href="../index.html">
+                    <span class="glyphicon glyphicon-home"></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <form action="" role="form" class="">
+            <ul class="list-group mb60" >
+                <li class="list-group-item pay-items clearfix wzl-mb-10 mb20">
+                    <a href="javascript:;" class="wzl-ui-btn">
+                        <div class="icon-pay">
+                            <span class="glyphicon  icon-pay-yibao"></span>
+                        </div>
+                        <div class="pay-items-text">
+                            <input type="text" value="100" class=" alipay-cz form-control">
+                        </div>
+                    </a>
+                </li>
+
+            </ul>
+
+            <a href="javascript:;" class="btn btn-wzl-default btn-lg btn-block wzl-mb-20" id="alipaycz"> 充值</a>
+
+            <p> <span class="wzl-text-warning">温馨提示：</span><br>
+                1.充值0手续费，充值即时到账<br>
+                2.客服电话 400-686-5015
+            </p>
+        </form>
+
+
+    </div>
+</div>
+<!-- weinre 调试js -->
+<!--
+<script src="http://192.168.0.27:8081/target/target-script-min.js#anonymous" type="text/javascript">
+</script>
+-->
+
+</body>
+</html>

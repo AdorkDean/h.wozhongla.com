@@ -1,0 +1,42 @@
+{
+  "name": "wzlh5",
+  "version": "1.0.0",
+  "description": "wozhongla.com mobile app",
+  "homepage": "https://github.com/Administrator/js",
+  "author": "hebo",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Administrator/js.git"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "keywords": [],
+  "licenses": "MIT",
+  "spm": {
+    "main": "index.js",
+    "alias": {
+      "$": "sea-modules/jqury/2.1.1/jquery.js",
+      "handlebars": "sea-modules/handlebars/1.3.0/dist/handlebars.js",
+      "iscroll-probe": "sea-modules/iscroll/5.1.2/dist/iscroll-probe.js"
+    },
+    "output": [
+      "ac.js"
+    ],
+    "devAlias": {},
+    "engines": {},
+    "dependencies": {
+      "jquery": "2.1.1",
+      "seajs": "2.3.0",
+      "iscroll": "5.1.2",
+      "import-style": "1.0.0",
+      "handlebars": "1.3.0",
+      "swiper": "2.7.0",
+      "backbone": "1.1.2",
+      "underscore":"1.6.0"
+    },
+    "devDependencies": {
+      "handlebars": "1.3.0"
+    }
+  }
+}

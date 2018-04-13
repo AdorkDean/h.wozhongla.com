@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>开奖大全</title>
+    <link rel="stylesheet" href="../../css/wzl-bootstrap.css"/>
+    <link rel="stylesheet" href="../../css/bootstrap.icons.min.css"/>
+    <link rel="stylesheet" href="../../css/main.css"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="../../js/dist/wzlh5/kj/sea.js"></script>
+    <script>
+        seajs.config({
+            base:'../../js/dist'
+        })
+        seajs.use('wzlh5/kj/home', function (main) {
+            main.init();
+        })
+    </script>
+    <style>
+        #yindao img{ max-width:100%;  }
+        #lscontent{ display: none; opacity: 0;}
+        @media (device-height:480px) and (-webkit-min-device-pixel-ratio:2){
+
+            #yindao img{  width: 320px; height: 480px;}
+
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="yindao">
+    <img src="../../imgs/kj/qidong.png" alt=""/>
+</div>
+<div id="lscontent">
+    <div id="floating" class="dn">
+        <div id="filterBox">
+            <div class="floating-cz oh dn">
+                <h2>按彩种</h2>
+            <span class="type-box" data-box="type">
+                <a href="javascript:">数字彩</a>
+                <a href="javascript:">高频彩</a>
+                <a href="javascript:">竞技彩</a>
+            </span>
+            </div>
+            <div class="floating-sf oh">
+                <h2>按省份</h2>
+            <span class="type-box" data-box="area">
+                <a href="javascript:" data-val="35" >全国</a>
+                <a href="javascript:" data-val="1">北京</a>
+                <a href="javascript:" data-val="2">上海</a>
+                <a href="javascript:" data-val="3">天津</a>
+                <a href="javascript:" data-val="4">重庆</a>
+                <a href="javascript:" data-val="13">浙江</a>
+                <a href="javascript:" data-val="7">广东</a>
+                <a href="javascript:" data-val="9">江苏</a>
+                <a href="javascript:" data-val="22">福建</a>
+                <a href="javascript:" data-val="19">辽宁</a>
+                <a href="javascript:" data-val="17">河北</a>
+                <a href="javascript:" data-val="16">河南</a>
+                <a href="javascript:" data-val="14">山东</a>
+                <a href="javascript:" data-val="20">山西</a>
+                <a href="javascript:" data-val="27">湖北</a>
+                <a href="javascript:" data-val="15">黑龙江</a>
+                <a href="javascript:" data-val="21">安徽</a>
+                <a href="javascript:" data-val="30">江西</a>
+                <a href="javascript:" data-val="28">四川</a>
+                <a href="javascript:" data-val="23">云南</a>
+                <a href="javascript:" data-val="29">贵州</a>
+                <a href="javascript:" data-val="24">海南</a>
+                <a href="javascript:" data-val="26">新疆</a>
+                <a href="javascript:" data-val="31">湖南</a>
+
+            </span>
+            </div>
+            <div class="floating-sf oh">
+                <h2>按时间</h2>
+            <span class="type-box" data-box="week">
+                <a href="javascript:" data-val="1">周一</a>
+                <a href="javascript:" data-val="2">周二</a>
+                <a href="javascript:" data-val="3">周三</a>
+                <a href="javascript:" data-val="4">周四</a>
+                <a href="javascript:" data-val="5">周五</a>
+                <a href="javascript:" data-val="6">周六</a>
+                <a href="javascript:" data-val="7">周日</a>
+                <a href="javascript:" data-val="0">不定期</a>
+            </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <a href="javascript:" class="btn btn-cancel dl" id="floatingClose">取消</a>
+            <a href="javascript:" class="btn btn-ok dr" id="floatingConfirm">确定</a>
+        </div>
+    </div>
+    <div id="warp" style="padding-bottom: 40px;">
+        <nav class="wzl-navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header navbar-header-kj">
+                    <span class="glyphicon glyphicon-menu-hamburger glyphicon-kj dl" id="floatingBtn"></span>
+                    <center><font class="logo-font" id="title">开奖大全</font></center>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="loading" id="loading"></div>
+            <div  class="result-group" >
+                <ul id="resultLIst" class="result-group">
+                </ul>
+            </div>
+        </div>
+        <div class="hr20"></div>
+
+    </div>
+    <footer class="footer-score">
+        <a href="just.html"><span>我的定制</span></a>
+        <a href="#" class="qgkj qgkj-hover"><span>全国开奖</span></a>
+        <a href="jc.html" class="zqkj"><span>竞彩开奖</span></a>
+        <a href="../tese.html" class="sz"><span>特色</span></a>
+    </footer>
+</div>
+
+<script id="resultLIstTemp" type="text/x-handlebars-template">
+    {{#each list}}
+    <li>
+        {{#if isGp}}
+        <a href="javascript:" class="result-group-item">
+            {{else}}
+            <a href="list.html?lotId={{id}}" class="result-group-item icon-right">
+                {{/if}}
+                <div class="result-item-title">
+                    <span class="result-item-name">{{name}}</span>
+                    <span class="result-item-qc">{{issue}}期</span>
+                    <span class="result-item-time item-time-kj">{{date}}</span>
+                </div>
+                <div class="result-item-detail">
+                    {{{ball}}}
+                </div>
+            </a>
+    </li>
+    {{/each}}
+</script>
+</body>
+</html>

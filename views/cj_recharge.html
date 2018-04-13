@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>QQ充值</title>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script>
+
+        seajs.config({
+            base:'../js/dist'
+        })
+        seajs.use('wzlh5/1.0.0/pay',function(pay){
+            pay.pay('cjcard');
+        })
+    </script>
+
+</head>
+<body>
+<div id="warp">
+  <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar" onclick="history.back(-1)">
+                    <span class="glyphicon glyphicon-wzl-back" ></span>QQ充值
+                </div>
+
+                <a class="wzl-index wzl-index-min" href="../index.html">
+                    <span class="glyphicon glyphicon-home"></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <form action="" role="form" class="">
+            <ul class="list-group" >
+                <li class="list-group-item pay-items">
+                    <a href="javascript:;" class="wzl-ui-btn">
+                    <div class="pay-items-text">
+                        <input type="text" class="form-control" name="username" placeholder="请输入QQ账号" id="charge-username"/>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="list-group" >
+                <li class="list-group-item pay-items">
+                    <a href="javascript:;" class="wzl-ui-btn">
+                    <div class="pay-items-text">
+                        <input type="text" class="form-control" name="username" placeholder="请输入QQ密码" id="charge-password"/>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <a href="javascript:;" class="btn btn-wzl-default btn-lg btn-block wzl-mb-20" id="alipaycz"> 立即充值</a>
+
+            <p> <span class="wzl-text-warning">温馨提示：</span><br>
+                1.充值0手续费，充值即时到账<br>
+                2.使用QQ充值的资金将进入彩宝的彩金账户中，彩金账户不支持提现。<br>
+                3.客服电话 400-686-5015
+            </p>
+        </form>
+
+
+    </div>
+</div>
+<!-- weinre 调试js -->
+<!--
+<script src="http://192.168.0.27:8081/target/target-script-min.js#anonymous" type="text/javascript">
+</script>
+-->
+
+</body>
+</html>

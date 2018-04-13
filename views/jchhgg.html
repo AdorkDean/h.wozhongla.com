@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>竞彩足球</title>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <style>
+        .drop-down-more .list-group-item {
+            background: #686868;
+            border: 1px solid #7b7b7b;
+            color: #fff;
+        }
+
+        .drop-down-more .list-group-item a {
+            color: #fff;
+        }
+
+        .wzl-navbar.jc {
+            background-image: url(../imgs/ui/topbar.jpg);
+            margin-bottom: 0;
+        }
+
+        .account-nav-bar.jc ul.account-nav-group > li.active a {
+             color: #2a8a01;
+         }
+
+        .account-nav-bar.jc ul.account-nav-group > li.active {
+            border-bottom: 2px solid #2a8a01;
+        }
+        #jc-match{
+            background: #fff;
+            overflow: hidden;
+            z-index:100;
+        }
+        .jc-match-i{
+            width:40px;
+        }
+        #wzl-dropdown .wzl-dropdown-box{
+            padding:0;
+        }
+         .drop-down-more{
+             display: block;
+         }
+        #carIscroll{
+            position: absolute;
+            z-index: 10;
+            top:75px;
+            bottom:160px;
+            left: 0;
+            width: 100%;
+            background: transparent;
+            overflow: hidden;
+            height: 100%;
+        }
+
+    </style>
+</head>
+<body class="jcbody">
+<div id="warp">
+    <nav class="wzl-navbar jc navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar">
+                    <span class="glyphicon glyphicon-wzl-back" onclick="location.href='index.html'"></span>
+                    <span class="wzl-nav-dropdown icon-dropdown-white"
+                          v-touch="tap:toggleDropDown"
+                          v-class="icon-dropdown-white:!dropdown,icon-dropup-white:dropdown">      <!--  -->
+                        混合过关
+                    </span>
+                </div>
+                <div class="wzl-nav-more " v-touch="tap:toggleMore">
+                    <span class=" glyphicon icon-more"></span>
+                </div>
+                <!-- 去往购物车 -->
+                <a class="wzl-car" href="#/car" v-show="!is_car">
+                    <span class=" glyphicon glyphicon-shopping-cart"></span>
+                </a>
+                <!-- 筛选按钮 -->
+                <div class="jc-match-i" v-show="is_index" v-touch="tap:toggleMatchBox">
+                    <span class=" glyphicon icon-match"></span>
+                </div>
+            </div>
+        </div>
+        <div class="drop-down-more" v-show="moredown" style="display: none">
+            <ul class="list-group text-center">
+                <li class="list-group-item">
+                    <a href="../index.html">首页</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="bettingdetail.html">投注记录</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="ucenter.html">用户中心</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="playjczq.html">玩法介绍</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="wzl-dropdown"
+         v-show="dropdown" style="display: none">
+        <div class="wzl-dropdown-wrap">
+            <div class="wzl-dropdown-box">
+                <div class="wzl-dropdown-con" v-touch="tap:resetUserSelect">
+                    <a class=" wzl-offset-20 btn btn-wzl-green jc" href="jc.html">胜平负</a>
+                    <a class="btn btn-wzl-green jc" href="jcrqspf.html">让球胜平负</a>
+                    <a class="btn btn-wzl-green jc" href="jchhgg.html">混合过关</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-mask" v-show="is_loading">
+        <div class="tips">
+            加载足彩数据中...
+        </div>
+    </div>
+
+    <div class="container jc-match-block" id="jc-match" v-show="is_match">
+        <h4>赛事选择</h4>
+        <p class="text-center">
+           共有 {{matchData | filterMatchLength filterKey}}场比赛
+        </p>
+        <ul class="league-list wzl-mb-20">
+            <li v-repeat="leagueData"
+                v-touch="tap:filterLeague($key,this)"
+                v-class="active:isShow">
+                {{$key}}
+            </li>
+        </ul>
+        <div id="u-match-btn" class="text-center">
+            <div class="btn-group  wzl-mt10">
+                <button class="btn btn-default" id="matchall" v-touch="tap:matchAll">全选</button>
+                <button class="btn btn-default" id="matchno" v-touch="tap:matchReverse">反选</button>
+                <button class="btn btn-default" id="match5" v-touch="tap:filterFive">五大联赛</button>
+                <!--<button class="btn btn-default" id="match6" v-touch="tap:filterH">高中奖</button>-->
+                <button class="btn btn-default btn-wzl-green" v-touch="tap:doMatch" id="domatch">确定</button>
+            </div>
+        </div>
+
+    </div>
+    <!-- index -->
+    <div id="jchhgg" class="container" v-show="is_index"  keep-alive>
+        <div id="jcwrapper">
+            <div id="jchh" class="scroller" >
+                <div class="account-nav-bar jc" >
+                    <ul class="account-nav-group"  >
+                        <li class="" v-touch="tap:filterabc(hg,this)" v-repeat="abc" >
+                            <a href="javascript:;" >{{hg}}}</a>
+                        </li>
+                        <!--<li class="active" v-touch="tap:matchall(this)" >-->
+                            <!--<a href="javascript:;" >全部赛事(0)</a>-->
+                        <!--</li>-->
+                        <!--<li class="" v-touch="tap:filterFive(this)" >-->
+                            <!--<a href="javascript:;" >五大联赛(0)</a>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+                <div class="jc-content">
+                <div id="jchh-gamelist-all" class="jc-content-item wzl-mt10">
+                    <div v-repeat="renderData" id="g-{{date}}">
+                        <div class="jc-subtitle" v-touch="tap:listToggle(this)">
+                            {{list[0].date}}&nbsp;&nbsp;
+                            {{list[0].weekday}}&nbsp;&nbsp;
+                            <span class='jc-subtitle-len'>
+                                {{list | filterListLength filterKey}}
+                            </span>场比赛可投
+                        </div>
+                        <ul class="jc-gamelist jc-spf-list jchh">
+                            <li v-repeat="list  | filterLeague filterKey">
+                                <div class="jc-leftpanel">
+                                    <div class="jc-game-info">
+                                        <b>{{changciStr}}</b>
+                                        <b>{{leagueName}}</b>
+                                        <b>{{endtime}}截止</b>
+                                    </div>
+                                </div>
+                                <div class="jc-rightpanel">
+                                    <div class="jc-game-detail">
+                                        <div class="jc-game-title">
+                                            <span class="jc-row jc-game-home">{{matchHome}}</span>
+                                            <span class="jc-row jc-game-vs">VS</span>
+                                            <span class="jc-row jc-game-away">{{matchGuest}}</span>
+                                        </div>
+                                        <div class="jc-game-splist">
+                                            <div class="jc-game-tzinfo text-center"
+                                                 v-on="touchend:toggleSP($event,this)">
+                                                <span class="jc-row jc-select-span"
+                                                      v-class="active:r.spSpf0"
+                                                      data-spitem="spSpf0">胜{{spSpf0}}</span>
+                                                <span class="jc-row jc-select-span "
+                                                      v-class="active:r.spSpf1"
+                                                      data-spitem="spSpf1">平{{spSpf1}}</span>
+                                                <span class="jc-row jc-select-span "
+                                                      v-class="active:r.spSpf2"
+                                                      data-spitem="spSpf2">负{{spSpf2}}</span>
+                                                <span class="jc-row jc-select-span "
+                                                      v-class="active:r.spRqspf0"
+                                                      data-spitem="spRqspf0">胜{{spRqspf0}}</span>
+                                                <span class="jc-row jc-select-span "
+                                                      v-class="active:r.spRqspf1"
+                                                      data-spitem="spRqspf1">平{{spRqspf1}}</span>
+                                                <span class="jc-row jc-select-span "
+                                                      v-class="active:r.spRqspf2"
+                                                      data-spitem="spRqspf2">负{{spRqspf2}}</span>
+                                            </div>
+                                            <div class="no-rq">0</div>
+                                            <div class="is-rq" v-class="plus:comityBall>0">
+                                                {{comityBall | filterComityBall comityBall }}
+                                            </div>
+                                            <div class="jc-game-hhall" v-touch="tap:toggleBFDialog(this)">
+                                                <span>展开全部</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="wzl-fixed" id="buycarfixedbtn" style="margin-left:-10px;">
+        <span class="glyphicon icon-trash" v-touch="tap:removeCar"></span>
+        <a href="#/car" class="ball-status-bar jc icon-right disabled"
+           v-class="disabled:carTotal.gc<=1">
+            选择{{carTotal.gc}}场比赛
+        </a>
+    </div>
+    </div>
+    <!-- 比分弹窗 -->
+    <div id="bf-content" v-show="is_bf" >
+        <div id="bf-block"
+             v-component="bfdialog"
+             show="{{is_bf}}">
+            <!-- bf="{{bf}}"   car="{{car}}"-->
+        </div>
+        <div class="mask">
+        </div>
+    </div>
+    <!-- car -->
+    <div class="container" id="jccar" v-show="is_car" style="display: none">
+        <div class="jc-add-more">
+            <a href="#/index">添加更多的比赛 <span class="glyphicon glyphicon-plus"></span></a>
+        </div>
+        <div id="carIscroll">
+            <ul class="ball-select-group jc-select-list scroller" id="ball-select-group">
+                        <li v-repeat="carTotal.gl">
+                            <p class="game-bet-encounter">
+                                <span> {{matchHome }}</span>
+                                <span class="game-bet-encounter-yellow"> VS </span>
+                                <span>{{matchGuest }} </span>
+                        <span class="game-bet-encounter-green">
+                            ({{comityBall}})
+                        </span>
+
+                            </p>
+                            <div class="game-jchhgg-selectbox">
+                        <span class="glyphicon icon-trash "
+                              v-touch="tap:removeSelect($index,r,dis)"></span>
+                                <div class="game-bet-bd"
+                                     v-touch="tap:toggleCarList">
+                            <span class="game-bet-box "
+                                  data-spitem="spSpf0"
+                                  v-class="hidden:!r.spSpf0">胜</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spSpf1"
+                                  v-class="hidden:!r.spSpf1">平</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spSpf2"
+                                  v-class="hidden:!r.spSpf2">负</span>
+
+                            <span class="game-bet-box "
+                                  data-spitem="spRqspf0"
+                                  v-class="hidden:!r.spRqspf0">让胜</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spRqspf1"
+                                  v-class="hidden:!r.spRqspf1">让平</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spRqspf2"
+                                  v-class="hidden:!r.spRqspf2">让负</span>
+
+                            <span class="game-bet-box "
+                                  data-spitem="spBqc0"
+                                  v-class="hidden:!r.spBqc0">胜胜</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBqc1"
+                                  v-class="hidden:!r.spBqc1">胜平</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBqc2"
+                                  v-class="hidden:!r.spBqc2">胜负</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBqc3"
+                                  v-class="hidden:!r.spBqc3">平胜</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBqc4"
+                                  v-class="hidden:!r.spBqc4">平平</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBqc5"
+                                  v-class="hidden:!r.spBqc5">平负</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBqc6"
+                                  v-class="hidden:!r.spBqc6">负胜</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBqc7"
+                                  v-class="hidden:!r.spBqc7">负平</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBqc8"
+                                  v-class="hidden:!r.spBqc8">负负</span>
+
+                            <span class="game-bet-box "
+                                  data-spitem="spBf0"
+                                  v-class="hidden:!r.spBf0">胜其他</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf1"
+                                  v-class="hidden:!r.spBf1">1:0</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf2"
+                                  v-class="hidden:!r.spBf2">2:0</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf3"
+                                  v-class="hidden:!r.spBf3">2:1</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf4"
+                                  v-class="hidden:!r.spBf4">3:0</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf5"
+                                  v-class="hidden:!r.spBf5">3:1</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf6"
+                                  v-class="hidden:!r.spBf6">3:2</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf7"
+                                  v-class="hidden:!r.spBf7">4:0</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf8"
+                                  v-class="hidden:!r.spBf8">4:1</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf9"
+                                  v-class="hidden:!r.spBf9">4:2</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf10"
+                                  v-class="hidden:!r.spBf10">5:0</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf11"
+                                  v-class="hidden:!r.spBf11">5:1</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf12"
+                                  v-class="hidden:!r.spBf12">5:2</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf13"
+                                  v-class="hidden:!r.spBf13">平其他</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf14"
+                                  v-class="hidden:!r.spBf14">0:0</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf15"
+                                  v-class="hidden:!r.spBf15">1:1</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf16"
+                                  v-class="hidden:!r.spBf16">2:2</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf17"
+                                  v-class="hidden:!r.spBf17">3:3</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf18"
+                                  v-class="hidden:!r.spBf18">负其他</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf19"
+                                  v-class="hidden:!r.spBf19">0:1</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf20"
+                                  v-class="hidden:!r.spBf20">0:2</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf21"
+                                  v-class="hidden:!r.spBf21">1:2</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf22"
+                                  v-class="hidden:!r.spBf22">0:3</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf23"
+                                  v-class="hidden:!r.spBf23">1:3</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf24"
+                                  v-class="hidden:!r.spBf24">2:3</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf25"
+                                  v-class="hidden:!r.spBf25">0:4</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf26"
+                                  v-class="hidden:!r.spBf26">1:4</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf27"
+                                  v-class="hidden:!r.spBf27">2:4</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf28"
+                                  v-class="hidden:!r.spBf28">0:5</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf29"
+                                  v-class="hidden:!r.spBf29">1:5</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spBf30"
+                                  v-class="hidden:!r.spBf30">2:5</span>
+
+                            <span class="game-bet-box "
+                                  data-spitem="spJq0"
+                                  v-class="hidden:!r.spJq0">0球</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spJq1"
+                                  v-class="hidden:!r.spJq1">1球</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spJq2"
+                                  v-class="hidden:!r.spJq2">2球</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spJq3"
+                                  v-class="hidden:!r.spJq3">3球</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spJq4"
+                                  v-class="hidden:!r.spJq4">4球</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spJq5"
+                                  v-class="hidden:!r.spJq5">5球</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spJq6"
+                                  v-class="hidden:!r.spJq6">6球</span>
+                            <span class="game-bet-box "
+                                  data-spitem="spJq7"
+                                  v-class="hidden:!r.spJq7">7+</span>
+
+                                </div>
+                                <div class="game-bet-bdbox hidden">
+                                    胆
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+        </div>
+
+        <div class="wzl-fixed car" v-show="is_car" id="carfixed" >
+            <div class="buy-bar2" id="car-total">
+                <div class=" buy-bar-items" id="jchhgg-gglx" v-show="is_chuan">
+                    <div class="car-order-box" v-touch="tap:selectChuan">
+                        <span class="car-order-type" data-v="2" v-show="carTotal.gc>1">2串1</span>
+                        <span class="car-order-type" data-v="3" v-show="carTotal.gc>2">3串1</span>
+                        <span class="car-order-type" data-v="4" v-show="carTotal.gc>3">4串1</span>
+                        <span class="car-order-type" data-v="5" v-show="carTotal.gc>4">5串1</span>
+                        <span class="car-order-type" data-v="6" v-show="carTotal.gc>5">6串1</span>
+                        <span class="car-order-type" data-v="7" v-show="carTotal.gc>6">7串1</span>
+                        <span class="car-order-type" data-v="8" v-show="carTotal.gc>7">8串1</span>
+                    </div>
+                </div>
+                <div class="buy-bar-items result-info">
+                    <div class="buy-bar-info" style="padding-top:8px;">
+                        <div class="buy-bar-type " v-touch="tap:toggleChuanBox">
+                            过关类型
+                        </div>
+                    </div>
+                    <div class="buy-bar-info">
+                        <span>投</span>
+                        <span class="glyphicon icon-minus order-buy-items buy-bar-beiminus" v-touch="tap:toggleBei"></span>
+                        <input type="text" v-model="carTotal.bei" id="ball-bei">
+                        <span class="glyphicon icon-plus order-buy-items buy-bar-beiplus" v-touch="tap:toggleBei(true)"></span>
+                        <span>倍</span>
+                    </div>
+                </div>
+
+                <div class="buy-bar-items other-info text-center">
+                        <div class="jchhgg-bar">
+                            <i class="buy-bar-money">{{carTotal.nc}}</i>注
+                            <i class="buy-bar-money">{{carTotal.pc}}</i>元
+                            &nbsp;预计奖金:<i class="buy-bar-money">{{carTotal.bc}}</i>
+                            &nbsp;
+                        <a href="javascript:;"
+                           v-touch="tap:sendBuyData"
+                           v-class="disabled:carTotal.gc<2"
+                           class="btn buy-bar-btn jchhgg-buy" id="ssq_buy"> 购买</a>
+                        </div>
+
+                </div>
+                <div class="buy-bar-items buy-info hidden">
+                    <div class="buy-bar-info hidden">
+                        <a href="javascript:;" class="btn btn-default" id="ssq_hm">发起合买</a>
+                    </div>
+                    <div class="buy-bar-info hidden">
+                        <p class="buy-bar-balance">账户余额：<span class="buy-bar-money">400元</span></p>
+                    </div>
+                    <div class="buy-bar-info text-center">
+
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    <!-- success -->
+    <div id="tzsuccess" v-show="is_success">
+        <div class="tzinfo">
+            <img src="../imgs/ui/tz_smile.png" alt="">
+
+            <p>投注成功！</p>
+        </div>
+        <div class="tz-btn-group">
+            <a href="jchhgg.html" class="btn btn-wzl-green btn-lg btn-block">继续投注</a>
+            <a href="bettingdetail.html" class="btn btn-default btn-lg btn-block">查看投注详情</a>
+        </div>
+    </div>
+</div>
+
+<!-- 比分弹窗 -->
+<template type="x-template" id="dialog-template">
+    <h3 class="bf-title">  {{bf.matchHome}}
+        <span class="vs">vs</span> {{bf.matchGuest}}
+
+    </h3>
+    <div id="bf-wrapper">
+        <div class="jc-jchh-all scroller " v-touch="tap:toggleSP">
+            <p class="js-jchh-atitle">胜平负</p>
+            <ul class="jchh-list-sp layout1">
+                <li data-spitem="spSpf0"
+                    v-class="active:bf.r.spSpf0">
+                    <span class="bet-span">胜 <em>{{bf.spSpf0}}</em></span>
+                </li>
+                <li data-spitem="spSpf1"
+                    v-class="active:bf.r.spSpf1">
+                    <span class="bet-span">平 <em>{{bf.spSpf1}}</em></span>
+                </li>
+                <li data-spitem="spSpf2"
+                    v-class="active:bf.r.spSpf2">
+                    <span class="bet-span">负 <em>{{bf.spSpf2}} </em></span>
+                </li>
+            </ul>
+            <p class="js-jchh-atitle">让球胜平负
+                <span class="vs" v-class="plus: bf.comityBall>0">
+                    ({{bf.comityBall | filterComityBall}})
+                </span>
+            </p>
+            <ul class="jchh-list-sp layout1">
+                <li data-spitem="spRqspf0"
+                    v-class="active:bf.r.spRqspf0">
+                    <span class="bet-span">胜 <em>{{bf.spRqspf0}} </em></span>
+                </li>
+                <li data-spitem="spRqspf1"
+                    v-class="active:bf.r.spRqspf1">
+                    <span class="bet-span">平<em>{{bf.spRqspf1}} </em></span>
+                </li>
+                <li data-spitem="spRqspf2"
+                    v-class="active:bf.r.spRqspf2">
+                    <span class="bet-span">负<em>{{bf.spRqspf2}} </em></span>
+                </li>
+            </ul>
+            <p class="js-jchh-atitle">半全场</p>
+            <ul class="jchh-list-sp layout2">
+                <li data-spitem="spBqc0"
+                    v-class="active:bf.r.spBqc0">
+                    <span class="bet-span">胜胜 <em>{{bf.spBqc0}}</em></span>
+                </li>
+                <li data-spitem="spBqc1"
+                    v-class="active:bf.r.spBqc1">
+                    <span class="bet-span">胜平 <em>{{bf.spBqc1}}</em></span>
+                </li>
+                <li data-spitem="spBqc2"
+                    v-class="active:bf.r.spBqc2">
+                    <span class="bet-span">胜负 <em>{{bf.spBqc2}}</em></span>
+                </li>
+                <li data-spitem="spBqc3"
+                    v-class="active:bf.r.spBqc3">
+                    <span class="bet-span">平胜 <em>{{bf.spBqc3}}</em></span>
+                </li>
+                <li data-spitem="spBqc4"
+                    v-class="active:bf.r.spBqc4">
+                    <span class="bet-span">平平 <em>{{bf.spBqc4}}</em></span>
+                </li>
+                <li data-spitem="spBqc5"
+                    v-class="active:bf.r.spBqc5">
+                    <span class="bet-span">平负 <em>{{bf.spBqc5}}</em></span>
+                </li>
+                <li data-spitem="spBqc6"
+                    v-class="active:bf.r.spBqc6">
+                    <span class="bet-span">负胜 <em>{{bf.spBqc6}}</em></span>
+                </li>
+                <li data-spitem="spBqc7"
+                    v-class="active:bf.r.spBqc7">
+                    <span class="bet-span">负平 <em>{{bf.spBqc7}}</em></span>
+                </li>
+                <li data-spitem="spBqc8"
+                    v-class="active:bf.r.spBqc8">
+                    <span class="bet-span">负负 <em>{{bf.spBqc8}}</em></span>
+                </li>
+                <li>
+                    <span class="bet-span">&nbsp;</span>
+                </li>
+            </ul>
+            <p class="js-jchh-atitle">比分</p>
+            <ul class="jchh-list-sp layout4">
+                <li data-spitem="spBf1"
+                    v-class="active:bf.r.spBf1">
+                    <span class="bet-span">1:0 <em>{{bf.spBf1}}</em></span>
+                </li>
+                <li data-spitem="spBf2"
+                    v-class="active:bf.r.spBf2">
+                    <span class="bet-span">2:0 <em>{{bf.spBf2}}</em></span>
+                </li>
+                <li data-spitem="spBf3"
+                    v-class="active:bf.r.spBf3">
+                    <span class="bet-span">2:1 <em>{{bf.spBf3}}</em></span>
+                </li>
+                <li data-spitem="spBf4"
+                    v-class="active:bf.r.spBf4">
+                    <span class="bet-span">3:0 <em>{{bf.spBf4}}</em></span>
+                </li>
+                <li class="" data-spitem="spBf5"
+                    v-class="active:bf.r.spBf5">
+                    <span class="bet-span">3:1 <em>{{bf.spBf5}}</em></span>
+                </li>
+                <li data-spitem="spBf6"
+                    v-class="active:bf.r.spBf6">
+                    <span class="bet-span">3:2 <em>{{bf.spBf6}}</em></span>
+                </li>
+                <li data-spitem="spBf7"
+                    v-class="active:bf.r.spBf7">
+                    <span class="bet-span">4:0 <em>{{bf.spBf7}}</em></span>
+                </li>
+                <li data-spitem="spBf8"
+                    v-class="active:bf.r.spBf8">
+                    <span class="bet-span">4:1 <em>{{bf.spBf8}}</em></span>
+                </li>
+                <li data-spitem="spBf9"
+                    v-class="active:bf.r.spBf9">
+                    <span class="bet-span">4:2 <em>{{bf.spBf9}}</em></span>
+                </li>
+                <li data-spitem="spBf10"
+                    v-class="active:bf.r.spBf10">
+                    <span class="bet-span">5:0 <em>{{bf.spBf10}}</em></span>
+                </li>
+                <li data-spitem="spBf11"
+                    v-class="active:bf.r.spBf11">
+                    <span class="bet-span">5:1 <em>{{bf.spBf11}}</em></span>
+                </li>
+                <li data-spitem="spBf12"
+                    v-class="active:bf.r.spBf12">
+                    <span class="bet-span">5:2 <em>{{bf.spBf12}}</em></span>
+                </li>
+                <li class="spec" data-spitem="spBf0"
+                    v-class="active:bf.r.spBf0">
+                    <span class="bet-span">胜其他 <em>{{bf.spBf0}}</em></span>
+                </li>
+                <li data-spitem="spBf14"
+                    v-class="active:bf.r.spBf14">
+                    <span class="bet-span">0:0 <em>{{bf.spBf14}}</em></span>
+                </li>
+                <li data-spitem="spBf15"
+                    v-class="active:bf.r.spBf15">
+                    <span class="bet-span">1:1 <em>{{bf.spBf15}}</em></span>
+                </li>
+                <li data-spitem="spBf16"
+                    v-class="active:bf.r.spBf16">
+                    <span class="bet-span">2:2 <em>{{bf.spBf16}}</em></span>
+                </li>
+                <li data-spitem="spBf17"
+                    v-class="active:bf.r.spBf17">
+                    <span class="bet-span">3:3 <em>{{bf.spBf17}}</em></span>
+                </li>
+                <li class="spec2" data-spitem="spBf13"
+                    v-class="active:bf.r.spBf13">
+                    <span class="bet-span">平其他 <em>{{bf.spBf13}}</em></span>
+                </li>
+                <li data-spitem="spBf19"
+                    v-class="active:bf.r.spBf19">
+                    <span class="bet-span">0:1 <em>{{bf.spBf19}}</em></span>
+                </li>
+                <li data-spitem="spBf20"
+                    v-class="active:bf.r.spBf20">
+                    <span class="bet-span">0:2 <em>{{bf.spBf20}}</em></span>
+                </li>
+                <li data-spitem="spBf21"
+                    v-class="active:bf.r.spBf21">
+                    <span class="bet-span">1:2 <em>{{bf.spBf21}}</em></span>
+                </li>
+                <li data-spitem="spBf22"
+                    v-class="active:bf.r.spBf22">
+                    <span class="bet-span">0:3 <em>{{bf.spBf22}}</em></span>
+                </li>
+                <li data-spitem="spBf23"
+                    v-class="active:bf.r.spBf23">
+                    <span class="bet-span">1:3 <em>{{bf.spBf23}}</em></span>
+                </li>
+                <li data-spitem="spBf24"
+                    v-class="active:bf.r.spBf24">
+                    <span class="bet-span">2:3 <em>{{bf.spBf24}}</em></span>
+                </li>
+                <li data-spitem="spBf25"
+                    v-class="active:bf.r.spBf25">
+                    <span class="bet-span">0:4 <em>{{bf.spBf25}}</em></span>
+                </li>
+                <li data-spitem="spBf26"
+                    v-class="active:bf.r.spBf26">
+                    <span class="bet-span">1:4 <em>{{bf.spBf26}}</em></span>
+                </li>
+                <li data-spitem="spBf27"
+                    v-class="active:bf.r.spBf27">
+                    <span class="bet-span">2:4 <em>{{bf.spBf27}}</em></span>
+                </li>
+                <li data-spitem="spBf28"
+                    v-class="active:bf.r.spBf28">
+                    <span class="bet-span">0:5 <em>{{bf.spBf28}}</em></span>
+                </li>
+                <li data-spitem="spBf29"
+                    v-class="active:bf.r.spBf29">
+                    <span class="bet-span">1:5 <em>{{bf.spBf29}}</em></span>
+                </li>
+                <li data-spitem="spBf30"
+                    v-class="active:bf.r.spBf30">
+                    <span class="bet-span">2:5 <em>{{bf.spBf30}}</em></span>
+                </li>
+                <li class="spec" data-spitem="spBf18"
+                    v-class="active:bf.r.spBf18">
+                    <span class="bet-span">负其他 <em>{{bf.spBf18}}</em></span>
+                </li>
+            </ul>
+            <p class="js-jchh-atitle">进球数</p>
+            <ul class="jchh-list-sp layout3">
+                <li data-spitem="spJq0"
+                    v-class="active:bf.r.spJq0">
+                    <span class="bet-span">0球 <em>{{bf.spJq0}}</em></span>
+                </li>
+                <li data-spitem="spJq1"
+                    v-class="active:bf.r.spJq1">
+                    <span class="bet-span">1球 <em>{{bf.spJq1}}</em></span>
+                </li>
+                <li data-spitem="spJq2"
+                    v-class="active:bf.r.spJq2">
+                    <span class="bet-span">2球 <em>{{bf.spJq2}}</em></span>
+                </li>
+                <li data-spitem="spJq3"
+                    v-class="active:bf.r.spJq3">
+                    <span class="bet-span">3球 <em>{{bf.spJq3}}</em></span>
+                </li>
+                <li data-spitem="spJq4"
+                    v-class="active:bf.r.spJq4">
+                    <span class="bet-span">4球 <em>{{bf.spJq4}}</em></span>
+                </li>
+                <li data-spitem="spJq5"
+                    v-class="active:bf.r.spJq5">
+                    <span class="bet-span">5球 <em>{{bf.spJq5}}</em></span>
+                </li>
+                <li data-spitem="spJq6"
+                    v-class="active:bf.r.spJq6">
+                    <span class="bet-span">6球 <em>{{bf.spJq6}}</em></span>
+                </li>
+                <li data-spitem="spJq7"
+                    v-class="active:bf.r.spJq7">
+                    <span class="bet-span">7+ <em>{{bf.spJq7}}</em></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="bf-button">
+        <button class="jc-hh-matchbtn" v-touch="tap:cancel">取消</button>
+        <button class="jc-hh-matchbtn active" v-touch="tap:submit">确定</button>
+    </div>
+</template>
+
+<script src="../js/lib/jquery.min.js"></script>
+<script src="../js/lib/iscroll.js"></script>
+<script src="../js/lib/director.js"></script>
+<script src="../js/lib/vue.js"></script>
+<script src="../js/lib/hammer.min.js"></script>
+
+
+<!--<script src="../js/dist/wzlh5/app/lib.js"></script>-->
+<!--<script src="../js/dist/wzlh5/app/jchhgg.js"></script>-->
+<script src="../js/app/jc/jchh-resoure.js"></script>
+<script src="../js/app/jc/jchhgg.js"></script>
+<!--<script src="../js/app/jc/jchh-resoure.js"></script>-->
+<!--<script src="../js/app/jc/jchhgg.js"></script>-->
+
+
+
+</body>
+</html>

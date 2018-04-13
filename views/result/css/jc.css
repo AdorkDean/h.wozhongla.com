@@ -1,0 +1,90 @@
+.jc-vs-list{
+    padding: 6px 0;
+    overflow: hidden;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.jc-vs-list .list-no{
+    line-height: 18px;
+    width: 20%;
+    font-size: 12px;
+    float: left;
+    text-align: center;
+    overflow: hidden;
+    padding-top: 5px;
+}
+
+.jc-vs-list .list-home,.jc-vs-list .list-guest{
+    width: 23%;
+    height: 46px;
+    line-height: 46px;
+    font-size: 14px;
+    text-align: right;
+    padding-right:8px;
+    float: left;
+}
+
+.jc-vs-list .list-home .rqspf{
+    line-height: 20px;
+    padding: 5px 0;
+}
+
+.jc-vs-list .list-home .ball-0{
+    padding-right: 13px;
+
+    color: rgb(39, 154, 35);
+}
+
+.jc-vs-list .list-home .ball-3{
+    color: #ea0909;
+    padding-right: 13px;
+
+}
+
+.jc-vs-list .list-guest{
+    text-align: left;
+    padding-left:8px ;
+    padding-right:0;
+}
+
+.jc-vs-list .list-result{
+    width: 23%;
+    height: 46px;
+    text-align: left;
+    float: left;
+}
+
+
+.jc-vs-list .result-3,.jc-vs-list .result-1,.jc-vs-list .result-0,.jc-vs-list .result-null {
+    font-size: 14px;
+    text-align: center;
+    padding: 2px;
+    margin: 2px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.jc-vs-list .result-3 {
+    color: #ea0909;
+    background-color: #ffebea;
+
+}
+
+.jc-vs-list .result-1 {
+    color: #259dc2;
+    background-color: #dbf7ff;
+}
+
+
+.jc-vs-list .result-0  {
+    color: rgb(39, 154, 35);
+    background-color: rgb(228, 255, 227);
+}
+
+.jc-vs-list .nobg  {
+     background-color: inherit !important;
+ }
+.jc-vs-list .mt  {
+    margin-top: 12px;
+}

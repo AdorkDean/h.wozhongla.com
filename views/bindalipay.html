@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>绑定支付宝</title>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <!--<script src="../js/sea-modules/seajs/2.3.0/dist/sea.js"></script>-->
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <script>
+
+        seajs.config({
+            base:'../js/dist'
+        })
+
+        seajs.use('wzlh5/1.0.0/pay',function(pay){
+            pay.pay('bindalipay');
+        })
+    </script>
+    <!-- 行内样式属于该页面独有样式 -->
+    <style>
+        /* 重新定制 ul样式 */
+        .list-group{
+            background: #fff;
+            border-radius: 5px;
+            border: 1px solid #dddddd;
+        }
+        .list-group-item{
+            position: relative;
+            display: block;
+            margin: 0 0px;
+            padding:8px 10px;
+            background-color: #ffffff;
+            border-top:none;
+            border-left:none;
+            border-right:none;
+            border-bottom: 1px solid #f3f3f3;
+        }
+        /* 重新定制 form-control */
+        .form-control{
+            padding:6px 6px 6px 0;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="input-block">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar" onclick="history.back(-1)">
+                    <span class="glyphicon glyphicon-wzl-back" ></span>绑定支付宝
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <form action="" role="form" class="">
+            <ul class="list-group mb60" >
+                <li class="list-group-item ">
+                    <input type="text" class="form-control" name="username" value="" placeholder="支付宝账号（必填）" id="alipay-username1"/>
+                </li>
+                <li class="list-group-item clearfix">
+                    <!-- <span class="form-control">*宏招</span> -->
+                    <input type="text" class="form-control" name="name" value="" placeholder="真实姓名（必填）" id="alipay-name1"/>
+                </li>
+                <li class="list-group-item clearfix wzl-verifycode-block">
+                    <!-- <span class="form-control">11111111111111111111</span> -->
+                    <input type="text" class="form-control" name="card-number" value="" placeholder="卡号（必填）" id="alipay-card1"/>
+                </li>
+                <li class="list-group-item clearfix wzl-verifycode-block">
+                    <div class="pull-left">
+                        <input type="password" class="form-control"placeholder="我中啦密码（必填）" id="password1"/>
+                    </div>
+                </li>
+            </ul>
+        </form>
+        <a href="javascript:;" class="btn btn-wzl-default btn-lg btn-block wzl-mb-20"  id="submit-bind1">提交绑定</a>
+        <div class="form-group wzl-mb-40">
+            <p class="text-muted"> <span class="wzl-text-warning">温馨提示: </span><br>
+                支付宝开户信息必须与您在网站实名认证的信息一致，不一致将无法使用支付宝提现。
+                如需更改支付宝信息，请拨打客服电话：4006865015
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<div class="accomplish-block">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar">
+                    <span class="glyphicon glyphicon-wzl-back" onclick="history.back(-1)"></span>绑定支付宝
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <form action="" role="form" class="">
+            <ul class="list-group mb60" >
+                <li class="list-group-item ">
+                    <input type="text" class="form-control" name="username" value="" placeholder="支付宝账号（必填）" id="alipay-username2"/>
+                </li>
+                <li class="list-group-item clearfix">
+                    <span class="form-control" id="alipay-name">*宏招</span>
+                </li>
+                <li class="list-group-item clearfix wzl-verifycode-block">
+                    <span class="form-control" id="alipay-card2">11111111111111111111</span>
+                </li>
+                <li class="list-group-item clearfix wzl-verifycode-block">
+                    <div class="pull-left">
+                        <input type="password" class="form-control" placeholder="我中啦密码（必填）" id="password2"/>
+                    </div>
+                </li>
+            </ul>
+
+            <a href="javascript:;" class="btn btn-wzl-default btn-lg btn-block wzl-mb-20" id="submit-bind2">提交绑定</a>
+        </form>
+        
+        <div class="form-group wzl-mb-40">
+            <p class="text-muted"> <span class="wzl-text-warning">温馨提示: </span><br>
+                支付宝开户信息必须与您在网站实名认证的信息一致，不一致将无法使用支付宝提现。
+                如需更改支付宝信息，请拨打客服电话：4006865015
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

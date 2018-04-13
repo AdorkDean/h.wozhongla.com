@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>竞彩足球开奖</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <script>
+
+        seajs.config({
+            base:'../js/dist'
+        })
+        seajs.use('wzlh5/1.0.0/result',function(result){
+            result.result('jczq');
+        })
+    </script>
+</head>
+<body>
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar index navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar" onclick="history.back(-1)">
+                    <span class="glyphicon glyphicon-wzl-back"></span>
+                    <span class="wzl-nav-dropdown">
+                        竞彩足球开奖
+                    </span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-mask">
+        <div class="tips">
+            加载开奖数据中...
+        </div>
+
+    </div>
+    <div class="index-nav-bar jczq">
+        <ul class="index-nav-group">
+            <li class="">
+                <a href="javascript:;">胜平负</a>
+                <ul class="dropdown-menu" id="" role="menu">
+                    <li><a href="#">0000-00-00</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;" id="issue">开奖<span class="caret"></span></a>
+                <ul class="dropdown-menu" id="jczqissue" role="menu">
+                    <li><a href="#">0000-00-00</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div id="result" class="container">
+        <div id="result-detail">
+            <ul id="result-group" class="result-group">
+                <li>
+                    <a href="javascript:;" class="result-group-item">
+                        <div class="result-jc-simple">
+                            <div class="result-jc-sleft">
+                                <b>周四</b>
+                                <b>001</b>
+                                <b>丶</b>
+                            </div>
+                            <div class="result-jc-sright">
+                                 <span class="result-jc-home">
+                                     巴塞罗那
+                                 </span>
+                                <span class="result-jc-result">
+                                    <b>胜</b>
+                                    <b>1:0</b>
+                                </span>
+                                <span class="result-jc-away">
+                                    皇家马德里
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script id="jc-list-temp" type="text/x-handlebars-template">
+    {{#each list}}
+    <li>
+        <a href="javascript:;" class="result-group-item">
+            <div class="result-jc-simple">
+                <div class="result-jc-sleft">
+                    <b>{{week}}</b>
+                    <b>{{sceneId}}</b>
+                   <!-- <b>丶</b>-->
+                </div>
+                <div class="result-jc-sright">
+                     <span class="result-jc-home">
+                         {{matchHome}}
+                     </span>
+                    <span class="result-jc-result">
+                        <b>{{result}}</b>
+                        <b>{{matchAll}}</b>
+                    </span>
+                    <span class="result-jc-away">
+                        {{matchGuest}}
+                    </span>
+                </div>
+            </div>
+        </a>
+    </li>
+    {{/each}}
+</script>
+<script type="text/x-handlebars-template">
+    <li >
+        <a href="javascript:;" class="result-group-item icon-right">
+            <div class="result-item-title">
+                <span class="result-item-name">竞彩足球</span>
+                <span class="result-item-qc"></span>
+                <span class="result-item-time">2014-10-24</span>
+            </div>
+            <div class="result-item-detail">
+                <div class="result-jc">
+                    <span class="result-jc-home">英格兰</span>
+                    <span class="result-jc-rq">(-1)</span>
+                    <span class="result-jc-result">2:2</span>
+                    <span class="result-jc-away">意大利</span>
+                </div>
+            </div>
+        </a>
+    </li>
+</script>
+</body>
+</html>

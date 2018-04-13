@@ -1,0 +1,116 @@
+/*����*/
+.float-option {
+    width: 100%;
+}
+
+.float-option ul.type-group li {
+    width: 22%;
+}
+/*footer*/
+#bottomnav {
+	height: 47px
+}
+
+#bottomnav .bottom-box {
+	background: #0e0e0e;
+	margin: 0px;
+	border-top: 1px solid #0e0e0e;
+	position: fixed;
+	width: 100%;
+	bottom: 0px;
+	z-index: 9;
+	box-shadow: 0 0 8px #333;
+	left: 0px
+}
+
+#bottomnav .list-dock {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	margin: 0;
+	padding: 0
+}
+
+#bottomnav .list-dock li {
+	border-top: 1px solid #434343;
+	display: block;
+	-webkit-box-flex: 1;
+	-ms-flex: 1 auto;
+	text-align: center
+}
+
+#bottomnav .list-dock li a {
+	display: inline-block;
+	padding: 0px 8px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	cursor: pointer
+}
+
+#bottomnav .list-dock li a .txt-dock {
+	font-size: 12px;
+	line-height: 12px;
+	color: #666;
+	text-align: center;
+	-webkit-text-size-adjust: none;
+	font-weight: bold
+}
+
+.icon-nav {
+	display: block;
+	width: 44px;
+	height: 44px;
+	line-height: 0px;
+	margin: 0 auto
+}
+
+.icon-nav.gcdt {
+	background-image: url(../../../imgs/news/gcdt2.png);
+	background-size: 44px;
+	background-repeat: no-repeat
+}
+
+.icon-nav.gcdt.active,
+.icon-nav.gcdt:active {
+	background-image: url(../../../imgs/news/gcdt.png);
+	background-size: 44px;
+	background-repeat: no-repeat
+}
+
+.icon-nav.cpkj {
+	background-image: url(../../../imgs/news/cpkj.png);
+	background-size: 44px;
+	background-repeat: no-repeat
+}
+
+.icon-nav.cpkj.active,
+.icon-nav.cpkj:active {
+	background-image: url(../../../../../imgs/news/cpkj.png);
+	background-size: 44px;
+	background-repeat: no-repeat
+}
+
+.icon-nav.hyzx {
+	background-image: url(../../../imgs/news/hyzx2.png);
+	background-size: 44px;
+	background-repeat: no-repeat
+}
+
+.icon-nav.hyzx.active,
+.icon-nav.hyzx:active {
+	background-image: url(../../../imgs/news/hyzx.png);
+	background-size: 44px;
+	background-repeat: no-repeat
+}
+
+.icon-nav.ts {
+	background-image: url(../../../imgs/news/tes2.png);
+	background-size: 44px;
+	background-repeat: no-repeat
+}
+
+.icon-nav.ts.active,
+.icon-nav.ts:active {
+	background-image: url(../../../imgs/news/tes.png);
+	background-size: 44px;
+	background-repeat: no-repeat
+}

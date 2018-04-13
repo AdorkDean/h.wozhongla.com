@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>竞彩足球</title>
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script>
+        seajs.config({
+            base: '../js/dist'
+        })
+        seajs.use('wzlh5/1.0.0/index', function (index) {
+            index.jchh();
+        })
+    </script>
+    <style>
+        .drop-down-more .list-group-item {
+            background: #686868;
+            border: 1px solid #7b7b7b;
+            color: #fff;
+        }
+
+        .drop-down-more .list-group-item a {
+            color: #fff;
+        }
+
+        .wzl-navbar.jc {
+            background-image: url(../imgs/ui/topbar.jpg);
+            margin-bottom: 0;
+        }
+
+        .account-nav-bar.jc ul.account-nav-group > li.active a {
+            color: #2a8a01;
+        }
+
+        .account-nav-bar.jc ul.account-nav-group > li.active {
+            border-bottom: 2px solid #2a8a01;
+        }
+        #wzl-dropdown .wzl-dropdown-box{
+            padding:0;
+        }
+    </style>
+</head>
+<body class="jcbody">
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar jc navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar">
+                    <span class="glyphicon glyphicon-wzl-back" onclick="location.href='index.html'"></span>
+                    <span class="wzl-nav-dropdown icon-dropdown-white">      <!--  -->
+                        竞彩足球-混合投注
+                    </span>
+
+                    <span class="wzl-cartext hidden">
+                         竞彩足球-购物车
+                    </span>
+                </div>
+                
+                
+                <div class="wzl-nav-more ">
+                    <span class=" glyphicon icon-more"></span>
+                </div>
+                <a class="wzl-car" href="#!/car">
+                    <span class=" glyphicon glyphicon-shopping-cart"></span>
+                </a>
+                <div class="jc-match-i">
+                    <span class=" glyphicon icon-match"></span>
+                </div>
+            </div>
+        </div>
+        <div class="drop-down-more">
+            <ul class="list-group text-center">
+                <li class="list-group-item">
+                    <a href="../index.html">首页</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="bettingdetail.html">投注记录</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="ucenter.html">用户中心</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="playjczq.html">玩法介绍</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- 下拉框 -->
+    <div id="wzl-dropdown" class="dropdown-hide">
+        <div class="wzl-dropdown-wrap">
+            <div class="wzl-dropdown-box">
+                <div class="wzl-dropdown-con ">
+                    <a class=" wzl-offset-20 btn btn-wzl-green jc" href="jc.html">胜平负</a>
+                    <a class="btn btn-wzl-green jc" href="jcrqspf.html">让球胜平负</a>
+                    <a class="btn btn-wzl-green jc" href="jchhgg.html">混合过关</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="jc-match" style="display: none;">
+        <h4>赛事选择</h4>
+        <ul class="league-list">
+            <li class="active" data-league-id="2">西甲</li>
+            <li class="active" data-league-id="1">意甲</li>
+            <li class="active" data-league-id="6">荷甲</li>
+            <li class="active" data-league-id="7">英足总杯</li>
+            <li class="active" data-league-id="17">德乙</li>
+            <li class="active" data-league-id="12">苏超</li>
+            <li class="active" data-league-id="5">法甲</li>
+            <li class="active" data-league-id="4">英超</li>
+            <li class="active" data-league-id="113">荷乙</li>
+            <li class="active" data-league-id="484">瑞典超附</li>
+            <li class="active" data-league-id="3">德甲</li>
+            <li class="active" data-league-id="30">葡超</li>
+            <li class="active" data-league-id="35">挪超</li>
+            <li class="active" data-league-id="624">瑞典超杯</li>
+            <li class="active" data-league-id="56">巴甲</li>
+            <li class="active" data-league-id="48">阿甲</li>
+            <li class="active" data-league-id="534">美职附</li>
+            <li class="active" data-league-id="70">法乙</li>
+            <li class="active" data-league-id="552">英锦赛</li>
+        </ul>
+        <hr/>
+        <div class="btn-group jc-match-btn text-center">
+            <button class="btn btn-default" id="matchall">全选</button>
+            <button class="btn btn-default" id="matchno">反选</button>
+            <button class="btn btn-default" id="match5">五大联赛</button>
+            <button class="btn btn-default btn-wzl-green" id="domatch">确定</button>
+        </div>
+    </div>
+    <!-- 内容区 -->
+    <div class="container wzl-hafix" id="selectjc">
+        <div id="jchh">
+            <div class="account-nav-bar jc">
+                <ul class="account-nav-group">
+                    <li class="">
+                        <a href="javascript:;">高中奖率(0)</a>
+                    </li>
+                    <li class="active">
+                        <a href="javascript:;">全部赛事(0)</a>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">五大联赛(0)</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="jc-content">
+                <div id="jchh-gamelist-h" class="jc-content-item">
+                   <!-- <div class="jc-subtitle">数据加载中...</div>-->
+                </div>
+                <div id="jchh-gamelist-all" class="jc-content-item">
+                    <div class="jc-subtitle">
+                        2014-11-26 星期三 <span class="jc-subtitle-len">16</span>场比赛可投
+                    </div>
+                   <ul class="jc-gamelist jc-spf-list jchh">
+                       <li class="lid_0 m_3001">
+                           <div class="jc-leftpanel">
+                               <div class="jc-game-info">
+                                   <b>周三001</b>
+                                   <b>东南亚锦</b>
+                                   <b>16:45截止</b>
+                               </div>
+                           </div>
+                           <div class="jc-rightpanel">
+                               <div class="jc-game-detail">
+                                   <div class="jc-game-title">
+                                       <span class="jc-row jc-game-home">马来西亚</span>
+                                       <span class="jc-row jc-game-vs">VS</span>
+                                       <span class="jc-row jc-game-away">泰国</span>
+                                   </div>
+                                   <div class="jc-game-splist">
+                                       <div class="jc-game-tzinfo text-center" data-matchno="3001">
+                                           <span class="jc-row jc-select-span m_3001_0">胜5.60</span>
+                                           <span class="jc-row jc-select-span m_3001_1">平3.90</span>
+                                           <span class="jc-row jc-select-span m_3001_2">负1.45</span>
+                                           <span class="jc-row jc-select-span m_3001_0">胜5.60</span>
+                                           <span class="jc-row jc-select-span m_3001_1">平3.90</span>
+                                           <span class="jc-row jc-select-span m_3001_2">负1.45</span>
+                                       </div>
+                                       <div class="no-rq">1</div>
+                                       <div class="is-rq">-1</div>
+                                       <div class="jc-game-hhall">
+                                           展开
+                                           全部
+                                       </div>
+                                   </div>
+
+                               </div>
+                           </div>
+                       </li>
+
+                   </ul>
+                    <div class="jc-jchh-all">
+                        <p class="js-jchh-atitle">胜平负</p>
+                        <ul class="jchh-list-sp layout1">
+                            <li>
+                                <span class="bet-span">胜2.11</span>
+                            </li>
+                            <li>
+                                <span class="bet-span">胜2.11</span>
+                            </li>
+                            <li>
+                                <span class="bet-span">胜2.11</span>
+                            </li>
+                        </ul>
+                        <p class="js-jchh-atitle">让球胜平负</p>
+                        <ul class="jchh-list-sp layout1">
+                            <li>
+                                <span class="bet-span">胜2.11</span>
+                            </li>
+                            <li>
+                                <span class="bet-span">胜2.11</span>
+                            </li>
+                            <li>
+                                <span class="bet-span">胜2.11</span>
+                            </li>
+                        </ul>
+                        <p class="js-jchh-atitle">半全场</p>
+                        <ul class="jchh-list-sp layout2" >
+                            <li>
+                                <span class="bet-span">胜胜 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">胜胜 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">胜胜 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">胜胜 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">胜胜 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">胜胜 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">胜胜 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">胜胜 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">胜胜 <em>2.11</em></span>
+                            </li>
+                        </ul>
+                        <p class="js-jchh-atitle">比分</p>
+
+                        <ul class="jchh-list-sp layout4" >
+                            <li>
+                                <span class="bet-span">1:0 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">1:0 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">1:0 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">1:0 <em>2.11</em></span>
+                            </li>
+                            <li class="active">
+                                <span class="bet-span">1:0 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">1:0 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">1:0 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">1:0 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">1:0 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">1:0 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">1:0 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">1:0 <em>2.11</em></span>
+                            </li>
+                        </ul>
+                        <p class="js-jchh-atitle">进球数</p>
+                        <ul class="jchh-list-sp layout3" >
+                            <li>
+                                <span class="bet-span">0 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">0 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">0 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">0 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">0 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">0 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">0 <em>2.11</em></span>
+                            </li>
+                            <li>
+                                <span class="bet-span">0 <em>2.11</em></span>
+                            </li>
+                        </ul>
+
+                        <div class="jchh-btn-group">
+                            <button class="jc-hh-matchbtn">取消</button>
+                            <button class="jc-hh-matchbtn active">确定</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="jchh-gamelist-l" class="jc-content-item">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container " style="display: none" id="jccar">
+        <!-- 按钮选择组 -->
+        <div class="jc-add-more">
+            <a href="javascript:history.back(-1);">添加更多的比赛 <span class="glyphicon glyphicon-plus"></span></a>
+        </div>
+        <!-- 结果呈现组 -->
+        <div class="jc-select-list">
+            <ul class="ball-select-group" id="ball-select-group">
+                <li>
+
+                </li>
+            </ul>
+            <div class="ball-remove text-right">
+                <!-- ss -->
+            </div>
+        </div>
+    </div>
+
+    <div id="tzsuccess">
+        <div class="tzinfo">
+            <img src="../imgs/ui/tz_smile.png" alt=""/>
+            <p>投注成功！</p>
+        </div>
+        <div class="tz-btn-group">
+            <a href="jchh.html" class="btn btn-wzl-green btn-lg btn-block">继续投注</a>
+            <a href="bettingdetail.html" class="btn btn-default btn-lg btn-block">查看投注详情</a>
+        </div>
+    </div>
+    <!-- 底部栏 -->
+    <div class="wzl-fixed" id="buycarfixedbtn">
+        <span class="glyphicon icon-trash"></span>
+        <a class="ball-status-bar jc icon-right disabled">
+            选择0场比赛
+        </a>
+    </div>
+    <!-- 底部栏 car -->
+    <div class="wzl-fixed car" style="display: none" id="carfixed">
+        <div class="buy-bar2" id="car-total">
+
+        </div>
+        <div id="car-gglx">
+            <div class="car-order">
+                <p class="car-order-tit">自由过关：</p>
+
+                <div class="car-order-box clearfix">
+
+                    <span class="car-order-type" data-v="2">2串1</span>
+                    <span class="car-order-type" data-v="3">3串1</span>
+                    <span class="car-order-type" data-v="4">4串1</span>
+                    <span class="car-order-type" data-v="5">5串1</span>
+                    <span class="car-order-type" data-v="6">6串1</span>
+                    <span class="car-order-type" data-v="7">7串1</span>
+                    <span class="car-order-type" data-v="8">8串1</span>
+                </div>
+                <div class="hidden">
+                    <p class="car-order-tit">多串过关：</p>
+
+                    <div class="car-order-box clearfix">
+                        <span class="car-order-type active">2串1</span>
+                        <span class="car-order-type">2串1</span>
+                        <span class="car-order-type">2串1</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="comform-box">
+                <span class="comform-box-cancel">取消</span>
+                <span class="game-bet-encounter-green">确认</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="jcfive-item-handlebars" type="text/x-handlebars-template">
+    {{#each list}}
+    <div class="jc-subtitle">
+        {{{str}}}
+    </div>
+    <ul class="jc-gamelist jc-spf-list jchh">
+        {{#each list}}
+            {{#if isFive}}
+                <li class="lid_{{lid}} m_{{changci}}">
+            <div class="jc-leftpanel">
+                <div class="jc-game-info">
+                    <b>{{changciStr}}</b>
+                    <b>{{leagueName}}</b>
+                    <b>{{endtime}}截止</b>
+                </div>
+            </div>
+            <div class="jc-rightpanel">
+                <div class="jc-game-detail">
+                    <div class="jc-game-title">
+                        <span class="jc-row jc-game-home">{{matchHome}}</span>
+                        <span class="jc-row jc-game-vs">VS</span>
+                        <span class="jc-row jc-game-away">{{matchGuest}}</span>
+                    </div>
+                    <div class="jc-game-splist">
+                        <div class="jc-game-tzinfo text-center" data-matchno="3001">
+                            <span class="jc-row jc-select-span ">胜{{spSpf0}}</span>
+                            <span class="jc-row jc-select-span ">平{{spSpf1}}</span>
+                            <span class="jc-row jc-select-span ">负{{spSpf2}}</span>
+                            <span class="jc-row jc-select-span ">胜{{spRqspf0}}</span>
+                            <span class="jc-row jc-select-span ">平{{spRqspf2}}</span>
+                            <span class="jc-row jc-select-span ">负{{spRqspf2}}</span>
+                        </div>
+                        <div class="no-rq"> </div>
+                        <div class="is-rq">{{comityBall}}</div>
+                        <div class="jc-game-hhall">
+                            <span>展开全部</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </li>
+            {{/if}}
+        {{/each}}
+    </ul>
+    {{/each}}
+</script>
+<script id="jchight-item-handlebars" type="text/x-handlebars-template">
+    {{#each list}}
+    <div class="jc-subtitle">
+        {{{str}}}
+    </div>
+    <ul class="jc-gamelist jc-spf-list jchh">
+        {{#each list}}
+            {{#if isHight}}
+                <li class="lid_{{lid}} m_{{changci}}">
+            <div class="jc-leftpanel">
+                <div class="jc-game-info">
+                    <b>{{changciStr}}</b>
+                    <b>{{leagueName}}</b>
+                    <b>{{endtime}}截止</b>
+                </div>
+            </div>
+            <div class="jc-rightpanel">
+                <div class="jc-game-detail">
+                    <div class="jc-game-title">
+                        <span class="jc-row jc-game-home">{{matchHome}}</span>
+                        <span class="jc-row jc-game-vs">VS</span>
+                        <span class="jc-row jc-game-away">{{matchGuest}}</span>
+                    </div>
+                    <div class="jc-game-splist">
+                        <div class="jc-game-tzinfo text-center" data-matchno="3001">
+                            <span class="jc-row jc-select-span ">胜{{spSpf0}}</span>
+                            <span class="jc-row jc-select-span ">平{{spSpf1}}</span>
+                            <span class="jc-row jc-select-span ">负{{spSpf2}}</span>
+                            <span class="jc-row jc-select-span ">胜{{spRqspf0}}</span>
+                            <span class="jc-row jc-select-span ">平{{spRqspf2}}</span>
+                            <span class="jc-row jc-select-span ">负{{spRqspf2}}</span>
+                        </div>
+                        <div class="no-rq"> </div>
+                        <div class="is-rq">{{comityBall}}</div>
+                        <div class="jc-game-hhall">
+                            <span>展开全部</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </li>
+            {{/if}}
+        {{/each}}
+    </ul>
+    {{/each}}
+</script>
+<script id="jchh-item-handlebars" type="text/x-handlebars-template">
+    {{#each list}}
+    <div class="jc-subtitle">
+        {{{str}}}
+    </div>
+    <ul class="jc-gamelist jc-spf-list jchh">
+        {{#each list}}
+        <li class="lid_{{lid}} m_{{changci}}">
+            <div class="jc-leftpanel">
+                <div class="jc-game-info">
+                    <b>{{changciStr}}</b>
+                    <b>{{leagueName}}</b>
+                    <b>{{endtime}}截止</b>
+                </div>
+            </div>
+            <div class="jc-rightpanel">
+                <div class="jc-game-detail">
+                    <div class="jc-game-title">
+                        <span class="jc-row jc-game-home">{{matchHome}}</span>
+                        <span class="jc-row jc-game-vs">VS</span>
+                        <span class="jc-row jc-game-away">{{matchGuest}}</span>
+                    </div>
+                    <div class="jc-game-splist">
+                        <div class="jc-game-tzinfo text-center" data-matchno="3001">
+                            <span class="jc-row jc-select-span ">胜{{spSpf0}}</span>
+                            <span class="jc-row jc-select-span ">平{{spSpf1}}</span>
+                            <span class="jc-row jc-select-span ">负{{spSpf2}}</span>
+                            <span class="jc-row jc-select-span ">胜{{spRqspf0}}</span>
+                            <span class="jc-row jc-select-span ">平{{spRqspf2}}</span>
+                            <span class="jc-row jc-select-span ">负{{spRqspf2}}</span>
+                        </div>
+                        <div class="no-rq"> </div>
+                        <div class="is-rq">{{comityBall}}</div>
+                        <div class="jc-game-hhall">
+                            <span>展开全部</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+    {{/each}}
+
+</script>
+<script type="text/x-handlebars-template">
+    <div class="buy-bar-items result-info">
+        <div class="buy-bar-info">
+            <span>买</span>
+            <span class="glyphicon icon-minus order-buy-items buy-bar-qcminus"></span>
+            <input type="text" value="{{qi}}" id="ball-qc"/>
+            <span class="glyphicon icon-plus order-buy-items buy-bar-qcplus"></span>
+            <span>期</span>
+        </div>
+        <div class="buy-bar-info">
+            <span>投</span>
+            <span class="glyphicon icon-minus order-buy-items buy-bar-beiminus"></span>
+            <input type="text" value="{{bei}}" id="ball-bei"/>
+            <span class="glyphicon icon-plus order-buy-items buy-bar-beiplus"></span>
+            <span>倍</span>
+        </div>
+    </div>
+    <div class="buy-bar-items other-info">
+        <div class="checkbox">
+            <label>
+                {{#if zjstop}}
+                <input type="checkbox" checked id="ball-zjstop">
+                {{else}}
+                <input type="checkbox" id="ball-zjstop">
+                {{/if}}
+                中奖后停止
+            </label>
+        </div>
+    </div>
+    <div class="buy-bar-items buy-info">
+        <div class="buy-bar-info">
+            <a href="javascript:;" class="btn btn-default" id="ssq_hm">发起合买</a>
+        </div>
+        <div class="buy-bar-info">
+            <p><span>{{count}}注</span> <span>{{bei}}倍</span></p>
+
+            <p><span>{{qi}}期</span> 共： <span>￥{{price}}</span></p>
+        </div>
+        <div class="buy-bar-info">
+            <a href="javascript:;" class="btn btn-default btn-wzl-red" id="ssq_buy"> 购买</a>
+        </div>
+    </div>
+
+</script>
+<script id="car-total-handlebars" type="text/x-handlebars-template">
+    <div class="buy-bar-items result-info">
+        <div class="buy-bar-info">
+            <span class="buy-bar-type">过关类型</span>
+        </div>
+        <div class="buy-bar-info">
+            <span>投</span>
+            <span class="glyphicon icon-minus order-buy-items buy-bar-beiminus"></span>
+            <input type="text" value="{{bei}}" id="ball-bei">
+            <span class="glyphicon icon-plus order-buy-items buy-bar-beiplus"></span>
+            <span>倍</span>
+        </div>
+    </div>
+    <div class="buy-bar-items other-info">
+        <span class="buy-bar-amount"><span class="buy-bar-money">{{count}}</span>注,<span
+                class="buy-bar-money">{{price}}</span>元</span>
+    </div>
+    <div class="buy-bar-items other-info">
+        <span class="buy-bar-amount2">预计奖金：<span class="buy-bar-money">{{car_maxwin}}元</span></span>
+    </div>
+    <div class="buy-bar-items buy-info">
+        <div class="buy-bar-info hidden">
+            <a href="javascript:;" class="btn btn-default" id="ssq_hm">发起合买</a>
+        </div>
+        <div class="buy-bar-info hidden">
+            <p class="buy-bar-balance">账户余额：<span class="buy-bar-money">400元</span></p>
+        </div>
+        <div class="buy-bar-info text-center">
+            <a href="javascript:;" class="btn buy-bar-btn" id="ssq_buy"> 购买</a>
+        </div>
+    </div>
+</script>
+<script id="jcmatch-match-item-handlebars" type="text/x-handlebars-template">
+    {{#each list}}
+        <li class="active" data-league-id="{{id}}">{{name}}</li>
+    {{/each}}
+</script>
+
+</body>
+</html>

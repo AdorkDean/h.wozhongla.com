@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>订单详情</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <script>
+
+        seajs.config({
+            base:'../js/dist'
+        })
+        seajs.use('wzlh5/1.0.0/account',function(account){
+            account.account('bettingZH');
+        })
+    </script>
+    <!-- 行内样式属于该页面独有样式 -->
+    <style>
+
+        h3.wzl-h-red{
+            margin-top:0px;
+        }
+
+        .wzl-hafix{
+            padding-bottom:60px !important;
+        }
+        
+        .wzl-pl-10{padding-left: 10px;}
+        .order-table{margin: 0px;}
+
+        .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{ vertical-align: middle; }
+        .table>thead>tr>th,.table>tbody>tr>td{border-right: 1px solid #ddd; text-align: center;}
+        .table>thead>tr>th{border-bottom: none;}
+        .table>thead>tr>th.border-right-none, .table>tbody>tr>td.border-right-none{border-right: none;}
+
+        
+        .lottory-detailrecord-list{
+            background: #E9E9E9;
+        }
+        
+        .lottory-detailrecord-list .icon-dropdown-trans:after{
+            top: 12px;
+        }
+        .lottory-detailrecord-bet{
+            font-size: 12px;
+            text-align: left;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar" onclick="history.back(-1)">
+                    <span class="glyphicon glyphicon-wzl-back"></span>
+                        <span class="wzl-nav-dropdown">
+                            订单详情
+                        </span>
+                </div>
+                <!-- <div class="wzl-nav-share ">
+                    <span class=" glyphicon icon-share"></span>
+                </div> -->
+            </div>
+        </div>
+    </nav>
+       
+    <div class="container" id="loading">加载数据中...</div>
+
+
+
+    <div class="container wzl-hafix" style="display:block;" id="zh">
+
+    </div>
+
+
+    <div class="wzl-fixed ">
+        <a href="index.html" class="btn btn-wzl-default btn-lg btn-block " id="jx">继续投注</a>
+    </div>
+
+
+</div>
+
+
+<script id="zh-template" type="text/x-handlebars-template">
+    <h3 class=" text-center wzl-mb-20 wzl-h-red">{{obj.name}}</h3>
+
+        <div class="order row ">
+            <div class="order-desc-list">
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">订单编号:</div>
+                    <div class="col-sm-8 col-xs-8">{{obj.projectno}}</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">创建时间:</div>
+                    <div class="col-sm-8 col-xs-8">{{obj.createtime}}</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">总金额:</div>
+                    <div class="col-sm-8 col-xs-8">{{obj.totalsum}}元</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">订单状态:</div>
+                    <div class="col-sm-8 col-xs-8">{{obj.status}}</div>
+                </div>
+                <!--<div class="row">
+                    <div class="col-sm-3 col-xs-3">进度:</div>
+                    <div class="col-sm-8 col-xs-8">10/10</div>
+                </div>-->
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">开始期次:</div>
+                    <div class="col-sm-8 col-xs-8">第{{obj.startIssue}}期</div>
+                </div>
+
+        
+                <div class="items">
+                    <div class="items-subtitle">选号方案:</div>
+                    <div class="order-table">
+                        <table class="table table-orderrecord">
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>期次</th>
+                                <th>状态</th>
+                                <th>中奖情况</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            {{#each obj.p1}}
+                            <tr>
+                                <td>
+                                    {{ordernum}}
+                                </td>
+                                <td class="position-relative lottory-detailrecord-list">
+                                    {{issue}}
+                                    <span class="ballcon-js-n icon-dropdown-trans"></span>
+                                </td>
+        
+                                <td>
+                                    {{status}}
+                                </td>
+        
+                                <td class="border-right-none">
+                                    {{{bonusstatus}}}
+                                </td>
+                            </tr>
+                            
+                            <tr style="display:none;">
+                                <td colspan="4">
+                                    <div class="lottory-detailrecord-bet ">
+                                
+                                投注号码：<br>{{{betcode}}}
+                                
+                                <div class="iss-{{issue}}">开奖号码：<br>{{kjCode}}</div>
+                           
+                                </div>
+                                </td>
+        
+                            </tr>
+                            
+                            {{/each}}
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+        
+            </div>
+        </div>
+</script>
+
+</body>
+</html>

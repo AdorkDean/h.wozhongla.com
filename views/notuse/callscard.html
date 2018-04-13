@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>话费卡</title>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <!--<script src="../js/sea-modules/seajs/2.3.0/_dist/sea.js"></script>-->
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <script>
+        seajs.config({
+            base:'../js/dist'
+        })
+        seajs.use('wzlh5/1.0.0/index',function(index){
+            index.pay('telecom');
+        })
+
+    </script>
+    <!-- 行内样式属于该页面独有样式 -->
+    <style>
+        #paycenter{
+
+        }
+
+        .uname{
+
+        }
+        .pay-items-text{
+            float:left;
+            margin-left:15px;
+            margin-top:3px;
+        }
+        .pay-items-text p{
+            margin:0;
+        }
+        .pay-items-titie{
+            font-weight:bold;
+            font-size: 14px;;
+        }
+        .pay-items-subtitie{
+            font-size: 12px;
+            color:#a6a6a6;
+        }
+        .pay-addcard  .text-muted{
+            line-height: 30px;
+            text-indent: 4em;
+        }
+
+        /* 运营商 */
+       .operators-blcok{
+           padding:0 15px;
+       }
+    </style>
+</head>
+<body>
+
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar">
+                    <span class="glyphicon glyphicon-wzl-back" onclick="history.back(-1)"></span>话费卡充值
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h4 class="text-center">请选择运营商</h4>
+        <div class=" wzl-mb-20 clearfix ">
+            <button class="icon-operators btn btn-wzl-default pull-left icon-chinamobile onselect" data-name="chinamobile"></button>
+            <button class="icon-operators btn btn-wzl-default  pull-right icon-chinaunicom" data-name="chinaunicom"></button>
+        </div>
+        <h4 class="text-center">请选择充值金额</h4>
+        
+        <div class="wzl-form-control">
+            <select class="form-control pl10" id="money">
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="300">300</option>
+                <option value="400">400</option>
+                <option value="500">500</option>
+            </select>
+        </div>
+
+        <h4 class="text-center">充值卡号密码</h4>
+
+        <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-wzl-user"></span></div>
+                        <input type="text" class="form-control" name="username" placeholder="请输入充值卡账号" id="cardNumber">
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-wzl-lock"></span></div>
+                        <input type="password" class="form-control" name="password" placeholder="请输入充值卡密码" id="cardPass">
+                    </div>
+                </li>
+                
+            </ul>
+        <a href="javascript:;" class="btn btn-wzl-default btn-lg btn-block wzl-mb-20" id="submit-btn">提交</a>
+
+        <div class="form-group wzl-mb-40">
+            <p class="text-muted"> <span class="wzl-text-warning">温馨提示: </span><br>
+                1.充值0手续费，充值即时到账<br>
+2.支持农行、交行、中信、广发银行，招商银行，工行、建行等多家银行</p>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

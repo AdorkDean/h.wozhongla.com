@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>银联回呼充值</title>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script>
+
+        seajs.config({
+            base:'../js/dist'
+        })
+        seajs.use('wzlh5/1.0.0/pay',function(pay){
+            pay.pay('bindbank');
+        })
+    </script>
+    <!-- 行内样式属于该页面独有样式 -->
+    <style>
+        /* 重新定制 ul样式 */
+        .list-group{
+            background: #fff;
+            border-radius: 5px;
+            border: 1px solid #dddddd;
+        }
+        .list-group-item{
+            position: relative;
+            display: block;
+            margin: 0 0px;
+            padding:8px 10px;
+            background-color: #ffffff;
+            border-top:none;
+            border-left:none;
+            border-right:none;
+            border-bottom: 1px solid #f3f3f3;
+        }
+        /* 重新定制 form-control */
+        .form-control{
+            padding:6px 6px 6px 0;
+        }
+
+        .wzl-form-control{
+            padding: 0 10px;
+            margin-bottom: 20px;
+        }
+        .wzl-form-control-list{
+            margin-top: 6px;
+        }
+
+        .ml20{margin-left: 5px; width: 100px;}
+
+    </style>
+</head>
+<body>
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar" onclick="history.back(-1)">
+                    <span class="glyphicon glyphicon-wzl-back"></span>银联回呼充值
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="wzl-form-control">
+        <select class="form-control pl10" name="ubank" id="bankname">
+            <option value="default">请您点击选择银行</option>
+            <option value="12">2</option>
+            <option value="13">3</option>
+            <option value="14">4</option>
+            <option value="15">5</option>
+        </select>
+    </div>
+
+    <div class="wzl-form-control clearfix">
+        <div class="pull-left wzl-form-control-list pl10">
+            <span>银行所在地：</span>
+        </div>
+        <div class="pull-right ml20 pl10">
+            <select class="form-control" name="ucity" id="chose-city">
+                <option value="default">选择市</option>
+                <option value="12">2</option>
+                <option value="13">3</option>
+                <option value="14">4</option>
+                <option value="15">5</option>
+            </select>
+        </div>
+        <div class="pull-right ml20 ">
+            <select class="form-control pl10" name="uprov" id="chose-province">
+                <option value="default">选择省份</option>
+                <option value="12">2</option>
+                <option value="13">3</option>
+                <option value="14">4</option>
+                <option value="15">5</option>
+            </select>
+        </div>
+        
+
+
+    </div>
+    
+    <div class="container">
+        <form action="" role="form" class="">
+            <ul class="list-group mb60" >
+                <li class="list-group-item ">
+                    <input type="text" class="form-control" name="username" value="" placeholder="我中啦账号（必填）" id="wzl-account"/>
+                </li>
+                <li class="list-group-item clearfix">
+                    <input type="text" class="form-control" name="username" value="" placeholder="真实姓名（必填）" id="realname"/>
+                </li>
+                <li class="list-group-item clearfix wzl-verifycode-block">
+                  <input type="text" class="form-control" name="username" value="" placeholder="银行卡号（必填）" id="bankcard"/>
+                </li>
+                <li class="list-group-item clearfix wzl-verifycode-block">
+                    <input type="password" class="form-control"placeholder="我中啦密码（必填）" id="password"/>
+
+                </li>
+            </ul>
+        </form>
+
+        <a href="javascript:;" class="btn btn-wzl-default btn-lg btn-block wzl-mb-20" id="submit-btn"> 提交绑定</a>
+
+        <div class="form-group wzl-mb-40">
+            <p class="text-muted"> <span class="wzl-text-warning">温馨提示: </span><br>支付宝开户信息必须与您在网站实名认证的信息一致，不一致将无法使用支付宝提现。如需更改支付宝信息，请拨打客服电话：4006865015
+            </p>
+        </div>
+    </div>
+</div>
+<!-- weinre 调试js -->
+<!--
+<script src="http://192.168.0.27:8081/target/target-script-min.js#anonymous" type="text/javascript">
+</script>
+-->
+
+</body>
+</html>

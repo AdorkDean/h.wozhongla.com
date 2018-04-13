@@ -1,0 +1,456 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>大乐透</title>
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script>
+    	function load(){
+    		seajs.config({
+	            base:'../js/dist'
+	        })
+	        seajs.use('wzlh5/1.0.0/dlt')
+    	}
+        
+    </script>
+
+</head>
+<body onload="load()">
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar">
+                    <span class="glyphicon glyphicon-wzl-back" onclick="location.href='index.html'"></span>
+                    <span class="wzl-nav-dropdown icon-dropdown-white ">
+                        大乐透-代购
+                    </span>
+                    <span class="wzl-cartext hidden">
+                        大乐透-购物车
+                    </span>
+                </div>
+                
+                <div class="wzl-nav-more ">
+                    <span class=" glyphicon icon-more"></span>
+                </div>
+
+                <a class="wzl-car" href="#!/car">
+                    <span class=" glyphicon glyphicon-shopping-cart"></span>
+                </a>
+                
+            </div>
+        </div>
+
+        <div class="drop-down-more">
+            <ul class="list-group text-center">
+                <li class="list-group-item">
+                    <a href="../index.html">首页</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="bettingdetail.html">投注记录</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="ucenter.html">用户中心</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="resultdlt.html">大乐透开奖</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="playdlt.html">玩法介绍</a>
+                </li>
+            </ul>
+        </div>
+        
+    </nav>
+    <!-- 下拉框 -->
+    <div id="wzl-dropdown" class="dropdown-hide">
+        <div class="wzl-dropdown-wrap">
+            <div class="wzl-dropdown-box"></div>
+            <div class="wzl-dropdown-con ">
+                <a class="btn btn-wzl-red dlt" href="#!/dg">代购</a>
+                <a class="btn btn-wzl-red dlt" href="#!/dt">胆拖</a>
+            </div>
+        </div>
+    </div>
+    <div class="container wzl-hafix" id="selectdlt">
+        <!-- 历史开奖期次 -->
+        <div id="dlt-history" class="ball-history">
+            <div class="history-bar">
+                <span>正在加载历史数据...</span>
+            </div>
+        </div>
+        <!--代购-->
+        <div class="ballbox" id="dg">
+            <div class="ballcon redBalls">
+                <div class="ballcon-bar">
+                    <span class="ballcon-title">前区</span>
+                    <span class="ballcon-tips" id="ballcon-tips1">至少选择5个</span>
+                    <div class="ballcon-jx-se">
+                        <span class="ballcon-js-chosered" num="5">机选前区</span>
+                        <span class="ballcon-js-n icon-dropdown-trans">5个</span>
+                    </div>
+
+                    <div class="ball-random-block">
+                        <ul>
+                            <!--<li><a class="btn random-ball tl"  href="javascript:;" num="1">1个</a></li>-->
+                            <!--<li><a class="btn random-ball" href="javascript:;" num="2">2个</a></li>-->
+                            <!--<li><a class="btn random-ball" href="javascript:;" num="3">3个</a></li>-->
+                            <!--<li><a class="btn random-ball" href="javascript:;" num="4">4个</a></li>-->
+                            <li><a class="btn random-ball" href="javascript:;" num="5">5个</a></li>
+                            <li><a class="btn random-ball tr" href="javascript:;" num="6">6个</a></li>
+                            <li><a class="btn random-ball " href="javascript:;" num="7">7个</a></li>
+                            <li><a class="btn random-ball" href="javascript:;" num="8">8个</a></li>
+                            <li><a class="btn random-ball " href="javascript:;" num="9">9个</a></li>
+                            <li><a class="btn random-ball " href="javascript:;" num="10">10个</a></li>
+                            <li><a class="btn random-ball " href="javascript:;" num="11">11个</a></li>
+                            <li><a class="btn random-ball br" href="javascript:;" num="12">12个</a></li>
+                            <li><a class="btn random-ball bl" href="javascript:;" num="13">13个</a></li>
+                            <li><a class="btn random-ball " href="javascript:;" num="14">14个</a></li>
+                            <li><a class="btn random-ball " href="javascript:;" num="15">15个</a></li>
+                            <li><a class="btn random-ball " href="javascript:;" num="16">16个</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <ul class="clearfix">
+                    <li><span class="red_balls">01</span></li>
+                    <li><span class="red_balls">02</span></li>
+                    <li><span class="red_balls">03</span></li>
+                    <li><span class="red_balls">04</span></li>
+                    <li><span class="red_balls">05</span></li>
+                    <li><span class="red_balls">06</span></li>
+                    <li><span class="red_balls">07</span></li>
+                    <li><span class="red_balls">08</span></li>
+                    <li><span class="red_balls">09</span></li>
+                    <li><span class="red_balls">10</span></li>
+                    <li><span class="red_balls">11</span></li>
+                    <li><span class="red_balls">12</span></li>
+                    <li><span class="red_balls">13</span></li>
+                    <li><span class="red_balls">14</span></li>
+                    <li><span class="red_balls">15</span></li>
+                    <li><span class="red_balls">16</span></li>
+                    <li><span class="red_balls">17</span></li>
+                    <li><span class="red_balls">18</span></li>
+                    <li><span class="red_balls">19</span></li>
+                    <li><span class="red_balls">20</span></li>
+                    <li><span class="red_balls">21</span></li>
+                    <li><span class="red_balls">22</span></li>
+                    <li><span class="red_balls">23</span></li>
+                    <li><span class="red_balls">24</span></li>
+                    <li><span class="red_balls">25</span></li>
+                    <li><span class="red_balls">26</span></li>
+                    <li><span class="red_balls">27</span></li>
+                    <li><span class="red_balls">28</span></li>
+                    <li><span class="red_balls">29</span></li>
+                    <li><span class="red_balls">30</span></li>
+                    <li><span class="red_balls">31</span></li>
+                    <li><span class="red_balls">32</span></li>
+                    <li><span class="red_balls">33</span></li>
+                    <li><span class="red_balls">34</span></li>
+                    <li><span class="red_balls">35</span></li>
+                </ul>
+            </div>
+            <div class="ballcon blueBalls">
+                <div class="ballcon-bar">
+                    <span class="ballcon-title">后区</span>
+                    <span class="ballcon-tips" id="ballcon-tips2">至少选择2个</span>
+                    <div class="ballcon-jx-se">
+                        <span class="ballcon-js-choseblue" num="2">机选后区</span>
+                        <span class="ballcon-js-n icon-dropdown-trans">2个</span>
+                    </div>
+                    <div class="ball-random-block">
+                        <ul>
+                            <li><a class="btn random-ball" href="javascript:;" num="2">2个</a></li>
+                            <li><a class="btn random-ball" href="javascript:;" num="3">3个</a></li>
+                            <li><a class="btn random-ball" href="javascript:;" num="4">4个</a></li>
+                            <li><a class="btn random-ball" href="javascript:;" num="5">5个</a></li>
+                            <li><a class="btn random-ball tr" href="javascript:;" num="6">6个</a></li>
+                            <li><a class="btn random-ball bl" href="javascript:;" num="7">7个</a></li>
+                            <li><a class="btn random-ball" href="javascript:;" num="8">8个</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <ul class="clearfix">
+                    <li><span class="blue_balls">01</span></li>
+                    <li><span class="blue_balls">02</span></li>
+                    <li><span class="blue_balls">03</span></li>
+                    <li><span class="blue_balls">04</span></li>
+                    <li><span class="blue_balls">05</span></li>
+                    <li><span class="blue_balls">06</span></li>
+                    <li><span class="blue_balls">07</span></li>
+                    <li><span class="blue_balls">08</span></li>
+                    <li><span class="blue_balls">09</span></li>
+                    <li><span class="blue_balls">10</span></li>
+                    <li><span class="blue_balls">11</span></li>
+                    <li><span class="blue_balls">12</span></li>
+                </ul>
+                <div class="ball-yaoyiyao"></div>
+            </div>
+        </div>
+        
+        <!--胆托-->
+        <div class="ballbox" id="dt" style="display:none;" >
+            <div class="ballcon redBalls dlt-front-d">
+                <div class="ballcon-bar">
+                    <span class="ballcon-title">前区胆码</span>
+                    <span class="ballcon-tips">至少1个,最多4个</span>
+                </div>
+                <ul class="clearfix">
+                    <li><span class="red_balls">01</span></li>
+                    <li><span class="red_balls">02</span></li>
+                    <li><span class="red_balls">03</span></li>
+                    <li><span class="red_balls">04</span></li>
+                    <li><span class="red_balls">05</span></li>
+                    <li><span class="red_balls">06</span></li>
+                    <li><span class="red_balls">07</span></li>
+                    <li><span class="red_balls">08</span></li>
+                    <li><span class="red_balls">09</span></li>
+                    <li><span class="red_balls">10</span></li>
+                    <li><span class="red_balls">11</span></li>
+                    <li><span class="red_balls">12</span></li>
+                    <li><span class="red_balls">13</span></li>
+                    <li><span class="red_balls">14</span></li>
+                    <li><span class="red_balls">15</span></li>
+                    <li><span class="red_balls">16</span></li>
+                    <li><span class="red_balls">17</span></li>
+                    <li><span class="red_balls">18</span></li>
+                    <li><span class="red_balls">19</span></li>
+                    <li><span class="red_balls">20</span></li>
+                    <li><span class="red_balls">21</span></li>
+                    <li><span class="red_balls">22</span></li>
+                    <li><span class="red_balls">23</span></li>
+                    <li><span class="red_balls">24</span></li>
+                    <li><span class="red_balls">25</span></li>
+                    <li><span class="red_balls">26</span></li>
+                    <li><span class="red_balls">27</span></li>
+                    <li><span class="red_balls">28</span></li>
+                    <li><span class="red_balls">29</span></li>
+                    <li><span class="red_balls">30</span></li>
+                    <li><span class="red_balls">31</span></li>
+                    <li><span class="red_balls">32</span></li>
+                    <li><span class="red_balls">33</span></li>
+                    <li><span class="red_balls">34</span></li>
+                    <li><span class="red_balls">35</span></li>
+                </ul>
+            </div>
+            <div class="ballcon redBalls dlt-front-t">
+                <div class="ballcon-bar">
+                    <span class="ballcon-title">前区拖码</span>
+                    <span class="ballcon-tips">最多16个</span>
+                </div>
+                <ul class="clearfix">
+                    <li><span class="red_balls">01</span></li>
+                    <li><span class="red_balls">02</span></li>
+                    <li><span class="red_balls">03</span></li>
+                    <li><span class="red_balls">04</span></li>
+                    <li><span class="red_balls">05</span></li>
+                    <li><span class="red_balls">06</span></li>
+                    <li><span class="red_balls">07</span></li>
+                    <li><span class="red_balls">08</span></li>
+                    <li><span class="red_balls">09</span></li>
+                    <li><span class="red_balls">10</span></li>
+                    <li><span class="red_balls">11</span></li>
+                    <li><span class="red_balls">12</span></li>
+                    <li><span class="red_balls">13</span></li>
+                    <li><span class="red_balls">14</span></li>
+                    <li><span class="red_balls">15</span></li>
+                    <li><span class="red_balls">16</span></li>
+                    <li><span class="red_balls">17</span></li>
+                    <li><span class="red_balls">18</span></li>
+                    <li><span class="red_balls">19</span></li>
+                    <li><span class="red_balls">20</span></li>
+                    <li><span class="red_balls">21</span></li>
+                    <li><span class="red_balls">22</span></li>
+                    <li><span class="red_balls">23</span></li>
+                    <li><span class="red_balls">24</span></li>
+                    <li><span class="red_balls">25</span></li>
+                    <li><span class="red_balls">26</span></li>
+                    <li><span class="red_balls">27</span></li>
+                    <li><span class="red_balls">28</span></li>
+                    <li><span class="red_balls">29</span></li>
+                    <li><span class="red_balls">30</span></li>
+                    <li><span class="red_balls">31</span></li>
+                    <li><span class="red_balls">32</span></li>
+                    <li><span class="red_balls">33</span></li>
+                    <li><span class="red_balls">34</span></li>
+                    <li><span class="red_balls">35</span></li>
+                </ul>
+            </div>
+            <div class="ballcon blueBalls dlt-back-d">
+                <div class="ballcon-bar">
+                    <span class="ballcon-title">后区胆码</span>
+                <span class="ballcon-tips">选择1个</span></div>
+                <ul class="clearfix">
+                    <li><span class="blue_balls">01</span></li>
+                    <li><span class="blue_balls">02</span></li>
+                    <li><span class="blue_balls">03</span></li>
+                    <li><span class="blue_balls">04</span></li>
+                    <li><span class="blue_balls">05</span></li>
+                    <li><span class="blue_balls">06</span></li>
+                    <li><span class="blue_balls">07</span></li>
+                    <li><span class="blue_balls">08</span></li>
+                    <li><span class="blue_balls">09</span></li>
+                    <li><span class="blue_balls">10</span></li>
+                    <li><span class="blue_balls">11</span></li>
+                    <li><span class="blue_balls">12</span></li>
+                </ul>
+            </div>
+            <div class="ballcon blueBalls dlt-back-t">
+                <div class="ballcon-bar">
+                    <span class="ballcon-title">后区拖码</span>
+                <span class="ballcon-tips">至少选择2个</span></div>
+                <ul class="clearfix">
+                    <li><span class="blue_balls">01</span></li>
+                    <li><span class="blue_balls">02</span></li>
+                    <li><span class="blue_balls">03</span></li>
+                    <li><span class="blue_balls">04</span></li>
+                    <li><span class="blue_balls">05</span></li>
+                    <li><span class="blue_balls">06</span></li>
+                    <li><span class="blue_balls">07</span></li>
+                    <li><span class="blue_balls">08</span></li>
+                    <li><span class="blue_balls">09</span></li>
+                    <li><span class="blue_balls">10</span></li>
+                    <li><span class="blue_balls">11</span></li>
+                    <li><span class="blue_balls">12</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 购物车 -->
+    <div class="container" id="car" style="display: none;">
+        <!-- 按钮选择组 -->
+        <div class="nav-chose-box">
+            <div class="btn-group wzl-mb-20">
+                <button id="car-addhm" type="button" class="btn btn-default btn-wzl-pink">增加自选号码</button>
+                <button id="car-addjx" type="button" class="btn btn-default btn-wzl-pink">增加机选1注</button>
+            </div>
+        </div>
+        <!-- 结果呈现组 -->
+        <div class="ball-select-list">
+            <div id="car-no-select" class="car-no-select hidden">
+                你尚未选择号码！ <a href="#!/dg">选购</a>
+            </div>
+            <ul class="ball-select-group" id="ball-select-group">
+            </ul>
+            <div class="ball-remove text-right">
+                <span class="glyphicon icon-trash"></span>
+            </div>
+        </div>
+    </div>
+    <div id="tzsuccess">
+        <div class="tzinfo">
+            <img src="../imgs/ui/tz_smile.png" alt=""/>
+            <p>投注成功！</p>
+        </div>
+        <div class="tz-btn-group">
+            <a href="dlt.html" class="btn btn-wzl-default btn-lg btn-block">继续投注</a>
+            <a href="bettingdetail.html" class="btn btn-default btn-lg btn-block">查看投注详情</a>
+        </div>
+
+    </div>
+       
+    <!-- 底部栏 -->
+    <div class="wzl-fixed" id="dlt-fixed">
+        <span class="glyphicon icon-trash"></span>
+        <a class="ball-status-bar icon-right disabled">
+            添加购物车        </a>
+    </div>
+    <!-- 底部栏 car -->
+    <div class="wzl-fixed car" style="display: none" id="carfixed">
+<div style="border-bottom:1px solid #ccc;width:100%">每个二维码只能使用一次</div>
+        <div class="buy-bar" id="car-total">
+
+        </div>
+    </div>
+</div>
+
+
+<script id="ball-select-item" type="text/x-handlebars-template">
+    {{#each list}}
+    <li class="ball-select-item clearfix" data-id="{{id}}">
+        <a class=" ball-select-remove" href="javascript:;"> <span class="glyphicon icon-close-circula"></span></a>
+        <div class="ball-select-result pull-left">
+            <p class="ball-select-warp">
+                <span class="redBalls">{{redStr}}</span> +
+                <span class="blueBalls">{{blueStr}}</span>
+            </p>
+            <p class="ball-select-warp">
+                <span class="pull-left">{{type}}</span>  <span class="ball-select-total pull-right">{{count}}注{{price}}元</span>
+            </p>
+        </div>
+        <span class="glyphicon icon-right hidden"></span>
+    </li>
+    {{/each}}
+</script>
+<script id="car-total-template" type="text/x-handlebars-template">
+    <div class="buy-bar-items result-info">
+        <div class="buy-bar-info">
+            <span>买</span>
+            <span class="glyphicon icon-minus order-buy-items buy-bar-qcminus"></span>
+            <input type="text" value="{{qi}}" id="ball-qc"/>
+            <span class="glyphicon icon-plus order-buy-items buy-bar-qcplus"></span>
+            <span>期</span>
+        </div>
+        <div class="buy-bar-info">
+            <span>投</span>
+            <span class="glyphicon icon-minus order-buy-items buy-bar-beiminus"></span>
+            <input type="text" value="{{bei}}" id="ball-bei"/>
+            <span class="glyphicon icon-plus order-buy-items buy-bar-beiplus"></span>
+            <span>倍</span>
+        </div>
+    </div>
+    <div class="buy-bar-items other-info" style="display:none">
+        <div class="checkbox">
+            	<label>
+                {{#if zjstop}}
+                <input type="checkbox" checked id="ball-zjstop">
+                {{else}}
+                <input type="checkbox" id="ball-zjstop">
+                {{/if}}
+                
+            	中奖后停止</label>
+            	
+           		<label>
+                {{#if zj}}
+                <input type="checkbox" checked id="ball-zj">
+                {{else}}
+                <input type="checkbox" id="ball-zj">
+                {{/if}}
+               
+          	 	
+          	 	 追加</label>
+          	 	 
+        </div>
+    </div>
+    <div class="buy-bar-items buy-info">
+        <div class="buy-bar-info"  style="display:none">
+            <a href="javascript:;" class="btn btn-default hidden" id="ssq_hm">发起合买</a>
+        </div>
+        <div class="buy-bar-info">
+            <span class="wzl-text-warning">{{count}}</span>注 <span class="wzl-text-warning">{{bei}}</span><span>倍</span>
+            <span class="wzl-text-warning">{{qi}}</span>期 共： ￥<span class="wzl-text-warning">{{price}}</span>
+	   <p id="oBalance" style="margin-top:5px;font-size:14px;">您的二维码余额还可购买<span style="color:red">{{money}}</span>注</p>
+        </div>
+        <div class="buy-bar-info">
+            <a href="javascript:;" class="btn btn-default btn-wzl-red" id="ssq_buy"> 兑换</a>
+        </div>
+    </div>
+</script>
+<script id="history-template" type="text/x-handlebars-template">
+    <div class="history-list" style="display: none">
+        <ul class="history-list-group">
+            {{#each data}}
+            <li class="history-list-items"><span class="history-stage">{{issue}}期</span><span class="history-number"><b class="redBalls">{{redball}}</b> + <b class="blueBalls">{{blueball}}</b></span></li>
+            {{/each}}
+        </ul>
+    </div>
+</script>
+
+</body>
+</html>

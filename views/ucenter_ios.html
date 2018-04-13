@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>用户中心</title>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <!--<script src="../js/sea-modules/seajs/2.3.0/dist/sea.js"></script>-->
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <script>
+        seajs.config({
+            base:'../js/dist'
+        })
+
+        seajs.use('wzlh5/1.0.0/user',function(userA){
+            userA.userA();
+        })
+    </script>
+    <style>
+    
+    </style>
+</head>
+<body>
+
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <!-- 用户头部 start -->
+    <nav class="wzl-navbar ucenter navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="ucenter wzl-nav-bar" id="username_info_block">
+                    <img class="ucenter-avatar" src="../imgs/ui/fbb_avatar2.jpg" _src="https://avatars1.githubusercontent.com/u/3375725?v=2&s=460" alt=""/>
+                    <div class="ucenter ubar">
+                        
+                    </div>
+                </div>
+
+                <a class="wzl-index" href="../index.html">
+                    <span class="glyphicon glyphicon-home"></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- 用户头部 end -->
+
+
+    <div class="container-mask">
+
+    </div>
+    <div class="container hidden">
+        <!-- 用户钱包 start -->
+        <div class="ucenter uqb row wzl-mb-20" id="money_info_block">
+            
+        </div>
+        <!-- 用户钱包 end-->
+        <!-- 用户操作 start -->
+        <!-- 用户操作 end -->
+
+        <!-- 功能列表 statr -->
+        <ul class="list-group row ualist">
+            <li class="list-group-item">
+                <a href="bettingdetail.html" class="ualist-items">
+                    <span class="glyphicon  icon-uci icon-uc-betr"></span>
+                    <span class="uatitle">投注记录</span>
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a href="accountdetail.html" class="ualist-items">
+                    <span class="glyphicon icon-uci icon-uc-ua"></span>
+                    <span class="uatitle">账户明细</span>
+                </a>
+            </li>
+            <!-- <li class="list-group-item">
+                <a href="accountdetail.html" class="ualist-items">
+                    <span class="glyphicon icon-uci icon-uc-rmb"></span>
+                    <span class="uatitle">充值记录</span>
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a href="accountdetail2.html" class="ualist-items">
+                    <span class="glyphicon icon-uci icon-uc-wd"></span>
+                    <span class="uatitle">提现记录</span>
+                </a>
+            </li> -->
+
+            <div id="bond_info_block">
+                <li class="list-group-item group">
+                    <a href="javascript:;" class="ualist-items">
+                        <span class="glyphicon icon-uci icon-uc-phoner"></span>
+                        <span class="uatitle">绑定手机</span>
+                        <span class="badge pull-right wzl-a-info" id="bondPhone">未认证</span>
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="udatamanage.html" class="ualist-items">
+                        <span class="glyphicon icon-uci icon-uc-im"></span>
+                        <span class="uatitle">资料管理</span>
+                        <span class="badge pull-right wzl-a-info" id="bondIdcard">未认证</span>
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="modifypwd.html" class="ualist-items">
+                        <span class="glyphicon icon-uci icon-uc-key"></span>
+                        <span class="uatitle">修改密码</span>
+                    </a>
+                </li>
+                <li class="list-group-item group">
+                    <a href="ubankcards.html" class="ualist-items">
+                        <span class="glyphicon icon-uci icon-uc-card"></span>
+                        <span class="uatitle">绑定银行</span>
+                        <span class="badge pull-right wzl-a-info" id="bondBankcard">未绑定</span>
+                    </a>
+                </li>
+                <!-- <li class="list-group-item">
+                    <a href="bindalipay.html" class="ualist-items">
+                        <span class="glyphicon icon-uci icon-uc-alipay"></span>
+                        <span class="uatitle">绑定支付宝</span>
+                        <span class="badge pull-right wzl-a-info">未绑定</span>
+                    </a>
+                </li> -->
+                <li class="list-group-item">
+                    <a href="aboutus.html" class="ualist-items">
+                        <span class="glyphicon icon-uci icon-uc-ua"></span>
+                        <span class="uatitle">关于我们</span>
+                    </a>
+                </li> 
+
+                <li class="list-group-item group" id="logout">
+                    <a href="javascript:;" class="ualist-items">
+                        <span class="glyphicon icon-uci icon-uc-quit"></span>
+                        <span class="uatitle">退出登录</span>
+                    </a>
+                </li>
+            </div>
+
+        </ul>
+        <!-- 功能列表 end -->
+    </div>
+</div>
+
+
+
+<script id="money-template" type="text/x-handlebars-template">
+
+    <div class="col-sm-4 col-xs-4 uqb-items">
+        <div class="uqb-icon">
+            <span class="glyphicon icon-uqb-xj"></span> <span class="title">现金</span>
+        </div>
+        <div class="uqb-total">
+            ￥{{data.u_xj}}
+        </div>
+    </div>
+    <div class="col-sm-4 col-xs-4 uqb-items">
+        <div class="uqb-icon">
+            <span class="glyphicon icon-uqb-cj"></span> <span class="title">彩金</span>
+        </div>
+        <div class="uqb-total">
+            ￥{{data.u_cj}}
+        </div>
+    </div>
+
+    <div class="col-sm-4 col-xs-4 uqb-items">
+        <div class="uqb-icon">
+            <span class="glyphicon icon-uqb-jf"></span> <span class="title">积分</span>
+        </div>
+        <div class="uqb-total">
+            {{data.score}}
+        </div>
+    </div>
+</script>
+
+
+
+</body>
+</html>

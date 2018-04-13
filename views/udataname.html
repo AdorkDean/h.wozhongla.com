@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>更改用户名</title>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <script>
+
+        seajs.config({
+            base:'../js/dist'
+        })
+
+        seajs.use('wzlh5/1.0.0/user',function(userA){
+            userA.userA('udataname');
+        })
+    </script>
+
+</head>
+<body>
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar" onclick="history.back(-1)">
+                    <span class="glyphicon glyphicon-wzl-back"></span>更改用户名
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <form action="" role="form" class="">
+            <ul class="udataid-list-group">
+                <li class="udataid-list-group-item">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="username" placeholder="请输入您要更改的用户名">
+                    </div>
+                </li>
+            </ul>
+
+            <p>用户名是6-18位数字，字母，汉字或组合</p>
+
+            <a href="javascript:;" class="btn btn-wzl-default btn-lg btn-block wzl-mb-20" id="udata-name"> 保存</a>
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>

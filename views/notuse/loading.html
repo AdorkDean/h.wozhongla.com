@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>我中啦引导页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--<script src="../js/sea-modules/seajs/2.3.0/_dist/sea.js"></script>-->
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <script>
+        seajs.config({
+            base:'../js/dist'
+        })
+        seajs.use('wzlh5/1.0.0/index',function(index){
+            index.wzlindex('loading');
+        })
+    </script>
+    <style>
+      body{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .load-container{position: relative;}
+      .swiper-wrapper{float: left;}
+      .experience{
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+      }
+    </style>
+</head>
+<body>
+
+<div class="load-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="" alt="">
+    </div>
+    <div class="swiper-slide position-relative">
+      <img src="" alt="">
+      <a href="../index.html" class="experience"></a>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

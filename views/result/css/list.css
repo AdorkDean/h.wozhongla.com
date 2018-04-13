@@ -1,0 +1,217 @@
+.result-list {
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.result-list>li {
+    margin: 0;
+    padding: 5px 0;
+    background: #f8f8f8;
+    overflow: hidden;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+
+
+
+
+.result-list>li:active {
+    background: #e7e7e7;
+}
+
+.result-list a.result-list-item {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    padding: 0 8px;
+    overflow: hidden
+}
+
+.result-list a.result-list-item {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    padding: 0 8px;
+    overflow: hidden
+}
+
+.result-list a.result-list-item .result-item-title {
+    position: relative;
+    color: #000;
+    margin: 8px 0;
+    width: 100%;
+    font-size: 16px
+}
+
+.result-list a.result-list-item .result-item-title .result-item-name {
+    margin-right: 20px
+}
+
+.result-list a.result-list-item .result-item-title .result-item-qc {
+    font-size: 14px
+}
+
+.result-list a.result-list-item .result-item-title .result-item-time {
+    float: right;
+    margin-right: 25px;
+    padding: 4px 0;
+    color: #b2b2b2;
+    font-size: 12px
+}
+
+.result-list a.result-list-item .result-item-detail {
+    overflow: hidden;
+    margin-bottom: 6px
+}
+
+.result-list a.result-list-item .result-item-detail .result-jc {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    line-height: 2;
+    text-align: center;
+    padding: 2px 0;
+    width: 80%
+}
+
+.result-list a.result-list-item .result-item-detail .result-jc .result-jc-home, .result-list a.result-list-item .result-item-detail .result-jc .result-jc-away, .result-list a.result-list-item .result-item-detail .result-jc .result-jc-rq {
+    color: #808080
+}
+
+.result-list a.result-list-item .result-item-detail .result-jc .result-jc-result {
+    color: #ff0000;
+    font-size: 14px;
+    margin: 0 10px
+}
+
+.result-list a.result-list-item.icon-right:after {
+    top: 30px
+}
+
+.result-list span.result-ball-type {
+    color: #000;
+    line-height: 30px;
+    float: left;
+    display: block;
+    margin-left: 10px
+}
+
+.result-list span.red_balls, .result-list span.blue_balls {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-clip: padding-box;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    border-color: #d52626;
+    background-color: #e45050;
+    margin:0 3px 3px 0;
+}
+
+
+.result-list span.blue_balls {
+    border-color: #4b95da;
+    background-color: #56a4ed;
+    color: #fff;
+}
+
+.result-list .score-grey {
+    color: rgb(104, 104, 104) !important;
+    font-size: 12px;
+}
+
+.result-list .jc {
+    float: right;
+    margin: 6px 25px 0 0
+}
+
+.result-list .score-zc {
+    width: 88%;
+    line-height: 25px;
+    height: 25px;
+    background-color: rgb(24, 154, 107);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+
+    padding-left: 5px;
+}
+
+.result-list .score-zc li {
+    display: block;
+    float: left;
+    background-color: inherit;
+    font-size: 14px;
+    width: 7%;
+    text-align: center;
+}
+
+.result-list .icon-right:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 4px;
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url(../img/icon_goright.png);
+    background-size: 100%
+}
+
+
+.analyse-detail {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    width: 100%;
+    padding: 5px 0px;
+}
+
+.analyse-detail table {
+    width: 100%;
+    line-height: 30px;
+}
+
+.analyse-detail th {
+    font-weight: 100;
+    width: 23%;
+    padding-left: 10px;
+}
+
+.analyse-detail .red {
+    color: rgb(254, 107, 107);
+}
+
+.analyse-detail .blue {
+    color: rgb(135, 197, 255);
+}
+
+.analyse-detail .orange, .spf-down-up th {
+    color: rgb(255, 126, 0);
+}
+
+.icon-right-up:after {
+    background-image: url(../imgs/icon_goright-up.png) !important;
+}
+
+.analyse-detail tr {
+    border-bottom: 1px dashed #666;
+}
+
+.analyse-detail tr.delin, .bordered tr.delin td, .bordered tr.delin th {
+    border-bottom: none !important;
+}
+
+.loading{
+    background: url("../img/loading.gif") center 0 no-repeat;
+    background-size: 20px 20px;
+    height: 30px;
+}

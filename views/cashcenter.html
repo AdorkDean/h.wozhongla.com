@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>提现</title>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script>
+
+        seajs.config({
+            base:'../js/dist'
+        })
+        seajs.use('wzlh5/1.0.0/pay',function(pay){
+            pay.pay();
+        })
+    </script>
+    <!-- 行内样式属于该页面独有样式 -->
+    <style>
+
+        .pay-items-text{
+            display: block;
+            float: left;
+            margin-left:15px;
+            margin-top:3px;
+            overflow: hidden;
+        }
+        .pay-items-text p{
+            width:100%;
+            line-height: 1.3;
+        }
+        .pay-items-titie{
+            font-weight:bold;
+            font-size: 14px;;
+        }
+        .pay-items-subtitie{
+            font-size: 10px;
+            color:#a6a6a6;
+        }
+    </style>
+</head>
+<body>
+
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar" onclick="location.href='ucenter.html'">
+                    <span class="glyphicon glyphicon-wzl-back" ></span>提现
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="paycenter">
+            <p><b class="uname"></b>&nbsp;&nbsp;<span class="text-muted" id="balancea">余额:元</span></p>
+            <span class="text-muted">推荐使用</span>
+            <!-- <ul class="list-group">
+                <li class="list-group-item pay-items clearfix">
+                    <a href="alipay2cash.html" class="wzl-ui-btn icon-right">
+                        <div class="icon-pay">
+                            <span class="glyphicon  icon-pay-alipay"></span>
+                        </div>
+                        <div class="pay-items-text">
+                            <p class="pay-items-titie">支付宝提现支付</p>
+                            <p class="pay-items-subtitie">17点前提现当天到账</p>
+                            <p class="pay-items-subtitie">节假日提现顺延到周一办理</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <span class="text-muted">其他提现方式</span> -->
+            <ul class="list-group">
+                <li class="list-group-item pay-items clearfix">
+                    <a class="wzl-ui-btn icon-right" id="getmoney">
+                        <div class="icon-pay">
+                            <span class="glyphicon  icon-pay-unionpay"></span>
+                        </div>
+                        <div class="pay-items-text">
+                            <p class="pay-items-titie">银行卡提现</p>
+                            <p class="pay-items-subtitie">17点前提现当天到账</p>
+                            <p class="pay-items-subtitie">节假日提现顺延到周一办理</p>
+                        </div>
+                    </a>
+                </li>
+             </ul>
+        </div>
+
+        <p style="font-size: 12px;"> 
+            <span class="wzl-text-warning" style="font-size: 14px;">温馨提示：</span><br>
+            最低提款金额<span class="wzl-text-warning">5元</span>，收取手续费规则如下：<br>
+            1、提款金额2万（不含）元以内收取2元手续费/每笔。<br>
+            2、提款金额在2万（含）元以上，且不超过5万（不含）元收取<span class="wzl-text-warning">5元</span>手续费/每笔。<br>
+            3、提款金额在5万（含）元以上，且不超过10万（不含）元收取<span class="wzl-text-warning">10元</span>手续费/每笔。<br>
+            4、提款金额在10万（含）元以上，且不超过50万（不含）元收取<span class="wzl-text-warning">15元</span>手续费/每笔。<br>
+            5、提款金额在50万（含）元以上，且不超过100万（不含）元收取<span class="wzl-text-warning">20元</span>手续费/每笔。<br>
+            6、100万元以上按<span class="wzl-text-warning">万分之0.2</span>收取。<br>
+          
+            <br><br>
+            <span class="wzl-text-warning" style="font-size: 14px;">特别提示：</span><br>
+            1、凡通过信用卡和快捷支付充值的不予提现。
+        </p>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>订单详情</title>
+
+    <!--<script src="../js/sea-modules/seajs/2.3.0/_dist/sea.js"></script>-->
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <script>
+        seajs.config({
+            base:'../js/dist'
+        })
+        seajs.use('wzlh5/1.0.0/index',function(index){
+           index.account('orderdetail');
+        })
+    </script>
+
+</head>
+<body>
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar">
+                    <span class="glyphicon glyphicon-wzl-back" onclick="history.back(-1)"></span>
+                    <span class="wzl-nav-dropdown">
+                        订单详情
+                    </span>
+                </div>
+                <div class="wzl-nav-share ">
+                    <span class=" glyphicon icon-share"></span>
+                </div>
+            </div>
+        </div>
+        <div class="drop-down-share">
+            <ul class="list-group text-center">
+                <li class="list-group-item">
+                    <a href="javascript:;">全部</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="javascript:;">代购</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="javascript:;">合买</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="javascript:;">追号</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container wzl-hafix" id="wzl-hafix">
+        <h3 class="wzl-h-red text-center wzl-mb-20">双色球 第2014077期</h3>
+        订单进度详情
+        <div class="order row">
+            <div class="order-progress wzl-mb-10">
+                <div class="order-progress-graphic">
+                    <div class="order-graphic-detail">
+        
+                        <div class="order-graphic-text">
+                            65%
+                        </div>
+        
+                        <div class="circle-percent">
+                            <canvas id="circle-percent-loading" width="152" height="152"></canvas>
+                        </div>
+        
+                    </div>
+        
+                    <script>
+                        //设置进度
+                    </script>
+                    <h4 class="order-sponsor">
+                        有言无书
+                    </h4>
+                </div>
+                <div class="order-desc-args row text-center">
+                    <div class="col-sm-4 col-xs-4">
+                        <p>200000元</p>
+                        <p>总金额</p>
+                    </div>
+                    <div class="col-sm-4 col-xs-4">
+                        <p>10.00元</p>
+                        <p>每份金额</p>
+                    </div>
+                    <div class="col-sm-4 col-xs-4">
+                        <p>1000份</p>
+                        <p>份数</p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-desc-list">
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">方案编号:</div>
+                    <div class="col-sm-8 col-xs-8">hm12345678</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">方案佣金:</div>
+                    <div class="col-sm-8 col-xs-8">10%</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">方案标题:</div>
+                    <div class="col-sm-8 col-xs-8">一定要中1000万!</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">方案保底:</div>
+                    <div class="col-sm-8 col-xs-8">5000份! 占2%</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">方案描述:</div>
+                    <div class="col-sm-8 col-xs-8">一定要中1000万！一定要中1000万！一定要中1000万！一定要中1000万！一定要中1000万！一定要中1000万！一定要中1000万！%</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3">方案详情:</div>
+                    <div class="col-sm-8 col-xs-8">方案保密 <a class="wzl-a-info" href="javascript:;">查看详情</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wzl-fixed ">
+
+        <div class="order-buy-bar clearfix">
+            <span class="order-buy-items">购买</span>
+            <span class="glyphicon icon-minus order-buy-items" ></span>
+            <div class="form-group order-buy-items">
+                <input type="text" class="form-control" value="1份"/>
+            </div>
+            <span class="glyphicon icon-plus order-buy-items"></span>
+            <button class="btn btn-default pull-right ">付款</button>
+        </div>
+
+        <!--<span class="glyphicon icon-trash"></span>
+        <div class="ball-status-bar icon-right">
+            至少选择6个红球和一个蓝球
+        </div>-->
+    </div>
+</div>
+
+<script id="table-template" type="text/x-handlebars-template">
+{{#each data}}
+<h3 class="wzl-h-red text-center wzl-mb-20">双色球 第2014077期</h3>
+        <!-- 订单进度详情 -->
+<div class="order row">
+    <div class="order-progress wzl-mb-10">
+        <div class="order-progress-graphic">
+            <div class="order-graphic-detail">
+
+                <div class="order-graphic-text">
+                    {{orderGraphicText}}
+                </div>
+
+                <div class="circle-percent">
+
+                </div>
+
+            </div>
+
+            <h4 class="order-sponsor">
+                {{orderSponsor}}
+            </h4>
+        </div>
+        <div class="order-desc-args row text-center">
+            <div class="col-sm-4 col-xs-4">
+                <p>{{account}}元</p>
+                <p>总金额</p>
+            </div>
+            <div class="col-sm-4 col-xs-4">
+                <p>{{eachMoney}}.00元</p>
+                <p>每份金额</p>
+            </div>
+            <div class="col-sm-4 col-xs-4">
+                <p>{{fenshu}}份</p>
+                <p>份数</p>
+            </div>
+        </div>
+    </div>
+    <div class="order-desc-list">
+        <div class="row">
+            <div class="col-sm-3 col-xs-3">方案编号:</div>
+            <div class="col-sm-8 col-xs-8">{{bianhao}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 col-xs-3">方案佣金:</div>
+            <div class="col-sm-8 col-xs-8">{{yongjin}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 col-xs-3">方案标题:</div>
+            <div class="col-sm-8 col-xs-8">{{title}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 col-xs-3">方案保底:</div>
+            <div class="col-sm-8 col-xs-8">{{fenshu}}份! 占{{fenshubaifenbi}}%</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 col-xs-3">方案描述:</div>
+            <div class="col-sm-8 col-xs-8">{{des}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 col-xs-3">方案详情:</div>
+            <div class="col-sm-8 col-xs-8">方案保密 <a class="wzl-a-info" href="javascript:;">查看详情</a></div>
+        </div>
+    </div>
+</div>
+
+
+{{/each}}
+</script>
+
+</body>
+</html>

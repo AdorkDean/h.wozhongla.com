@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>支付宝提现</title>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <!--<script src="../js/sea-modules/seajs/2.3.0/_dist/sea.js"></script>-->
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <script>
+
+        seajs.config({
+            base:'../js/dist2'
+        })
+        seajs.use('wzlh5/1.0.0/pay',function(pay){
+            pay.pay('alipay2cash');
+        })
+    </script>
+    <!-- 行内样式属于该页面独有样式 -->
+    <style>
+        /* 重新定制 ul样式 */
+        .list-group{
+            background: #fff;
+            border-radius: 5px;
+            border: 1px solid #dddddd;
+        }
+        .list-group-item{
+            position: relative;
+            display: block;
+            margin: 0 0px;
+            padding:8px 10px;
+            background-color: #ffffff;
+            border-top:none;
+            border-left:none;
+            border-right:none;
+            border-bottom: 1px solid #f3f3f3;
+        }
+        /* 重新定制 form-control */
+        .form-control{
+            padding:6px 6px 6px 0;
+        }
+
+        .mb20{margin-bottom: 20px;}
+
+        .pay-items-text{
+            float:left;
+            margin-left:15px;
+            margin-top:3px;
+        }
+        .pay-items-text p{
+            margin:0;
+        }
+        .pay-items-titie{
+            font-weight:bold;
+            font-size: 14px;;
+        }
+        .pay-items-subtitie{
+            font-size: 12px;
+            color:#a6a6a6;
+        }
+        .pay-addcard  .text-muted{
+            line-height: 30px;
+            text-indent: 4em;
+        }
+
+
+
+
+
+        .wzl-form-control{
+            padding: 0 10px;
+            margin-bottom: 20px;
+        }
+        .wzl-form-control-list{
+            margin-top: 6px;
+        }
+
+        .ml20{margin-left: 20px; width: 88px;}
+        .pl10{padding-left: 10px;}
+        .pr10{padding-right: 10px;}
+
+        .wzl-user-txt{float: left;}
+        .wzl-user-txt span{ display: block; font-size: 12px; padding-left: 15px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar">
+                    <span class="glyphicon glyphicon-wzl-back" onclick="history.back(-1)"></span>支付宝提现
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <ul class="list-group">
+            <li class="list-group-item pay-items clearfix wzl-mb-10 mb20">
+                <a href="javascript:;" class="wzl-ui-btn">
+                    <div class="icon-pay">
+                        <span class="glyphicon  icon-pay-card"></span>
+                    </div>
+                    <div class="pay-items-text">
+                        <input type="text" name="tocash" value="100" class="form-control">
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <p class="pl10">请选择要使用的银行卡</p>
+
+        <ul class="list-group">
+            <li class="list-group-item pay-items clearfix wzl-mb-20">
+                <a href="javascript:;" class="wzl-ui-btn pay-addcard">
+                    <div class="icon-pay">
+                        <span class="glyphicon  icon-addcard"></span>
+                    </div>
+                    <div class="pull-left wzl-user-txt">
+                        <span>****sgd@**.com
+                        </span>
+                        <span>姓名：*洪钊</span>
+                    </div>
+
+                    <div class="radio pull-right pr10">
+                        <label>
+                            <input type="radio" name="alipayaccount"  value="alipay1" checked>
+                            默认
+                        </label>
+                    </div>
+                </a>
+            </li>
+        </ul>
+
+        <a href="javascript:;" class="btn btn-wzl-default btn-lg btn-block wzl-mb-20" id="tocash">提交</a>
+    </div>
+</div>
+<!-- weinre 调试js -->
+<!--
+<script src="http://192.168.0.27:8081/target/target-script-min.js#anonymous" type="text/javascript">
+</script>
+-->
+
+</body>
+</html>

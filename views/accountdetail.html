@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>账户明细</title>
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script>
+        seajs.config({
+            base:'../js/dist'
+        })
+        seajs.use('wzlh5/1.0.0/account',function(index){
+            index.account('accountdetail');
+        })
+    </script>
+    <style>
+    #more1,#more2,#more3,#more4,#more5,#more6{width: 100%; text-align: center; display: block;  cursor: pointer;}
+    #wrapper1, #wrapper2, #wrapper3, #wrapper4, #wrapper5, #wrapper6 {
+      position: relative;
+    }
+    #scroller-pullDown1,#scroller-pullDown2,#scroller-pullDown3,#scroller-pullDown4,#scroller-pullDown5,#scroller-pullDown6{display: none}
+    #scroller-pullDown1,#scroller-pullUp1,#scroller-pullDown2,#scroller-pullUp2,#scroller-pullDown3,#scroller-pullUp3,#scroller-pullDown4,#scroller-pullUp4,#scroller-pullDown5,#scroller-pullUp5,#scroller-pullDown6,#scroller-pullUp6{ text-align: center;}
+    #scroller-pullUp1,#scroller-pullUp2,#scroller-pullUp3,#scroller-pullUp4,#scroller-pullUp5,#scroller-pullUp6{
+      margin-bottom: 20px;
+    }</style>
+</head>
+<body>
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default tz-record" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar" onclick="location.href='ucenter.html'">
+                    <span class="glyphicon glyphicon-wzl-back"></span>
+                    <span class="wzl-nav-dropdown">
+                        账户明细
+                    </span>
+                </div>
+                <div class="wzl-nav-more ">
+                    <!-- <span class=" glyphicon icon-more"></span> -->
+                </div>
+            </div>
+        </div>
+        <!-- <div class="drop-down-more">
+            <ul class="list-group text-center">
+                <li class="list-group-item">
+                    <a href="javascript:;">全部</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="javascript:;">一周</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="javascript:;">一月</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="javascript:;">三月</a>
+                </li>
+            </ul>
+        </div> -->
+    </nav>
+
+    <div id="account" class="container">
+          <div class="account-nav-bar wzl-mb-10 tzacc-nav-bar">
+              <ul class="account-nav-group">
+                  <li class="active" data-index="1">
+                    <a href="javascript:;">全部</a>
+                  </li>
+                  <li data-index="2">
+                      <a href="javascript:;">充值</a>
+                  </li>
+                  <li data-index="3">
+                      <a href="javascript:;">提现</a>
+                  </li>
+                  <!-- <li>
+                      <a href="javascript:;">彩金</a>
+                  </li> -->
+                  <li data-index="4">
+                      <a href="javascript:;">返奖</a>
+                  </li>
+                  <li data-index="5">
+                      <a href="javascript:;">投注</a>
+                  </li>
+              </ul>
+          </div>
+
+          <div class="bet-content">
+
+            <div class="account-list" style="display:block;">
+              <div id="wrapper1">
+                <div id="scroller" class="scroller">   
+                  <div id="scroller-pullDown1">
+                    <span class="pullDownLabel">Pull down to refresh...</span>
+                  </div>
+               <ul class="account-list-group" id="account-list-group1" >
+                  <!-- <li>
+                      <div class="account-list-items hide">
+                          <p>交易时间：2014-07-29 11:48:02</p>
+                          <p class="text-muted">交易类型：现金付款</p>
+                          <p>金额: <span class="wzl-text-warning">+2</span>  <span class="wzl-offset-20">账户余额：2元</span></p>
+                          <div class="account-list-desc">
+                              <p>订单号：jcspf2014072505622061</p>
+                              <p>交易流水号：jy0001000010001001</p>
+                          </div>
+                          <div class="drop-down">
+                              <span class="glyphicon icon-down "></span>
+                              <span class="glyphicon icon-up"></span>
+                          </div>
+                      </div>
+                  </li>
+                                     <li>
+                     <div class="account-list-items hide">
+                         <p>交易时间：2014-07-29 11:48:02</p>
+                         <p class="text-muted">交易类型：现金付款</p>
+                         <p>金额: <span class="wzl-text-blue">+2</span>  <span class="wzl-offset-20">账户余额：2元</span></p>
+                         <div class="account-list-desc">
+                             <p>订单号：jcspf2014072505622061</p>
+                             <p>交易流水号：jy0001000010001001</p>
+                         </div>
+                         <div class="drop-down">
+                             <span class="glyphicon icon-down"></span>
+                             <span class="glyphicon icon-up"></span>
+                         </div>
+                     </div>
+                                     </li> -->
+               </ul>
+               <div id="scroller-pullUp1">
+                    <span class="pullUpLabel">数据加载中...</span>
+                </div>
+               </div>
+               </div>
+            </div>
+
+            <div class="account-list">
+              <div id="wrapper2">
+                <div id="scroller" class="scroller">   
+                  <div id="scroller-pullDown2">
+                    <span class="pullDownLabel">Pull down to refresh...</span>
+                  </div>   
+               <ul class="account-list-group" id="account-list-group2"></ul>
+               <div id="scroller-pullUp2">
+                    <span class="pullUpLabel">数据加载中...</span>
+                </div>
+              </div>
+             </div>
+            </div>
+            
+            <div class="account-list">
+              <div id="wrapper3">
+                <div id="scroller" class="scroller">   
+                  <div id="scroller-pullDown3">
+                    <span class="pullDownLabel">Pull down to refresh...</span>
+                  </div>   
+               <ul class="account-list-group" id="account-list-group3"></ul>
+               <div id="scroller-pullUp3">
+                    <span class="pullUpLabel">数据加载中...</span>
+                </div>
+              </div>
+             </div>
+            </div>
+
+            <div class="account-list">
+              <div id="wrapper4">
+                <div id="scroller" class="scroller">   
+                  <div id="scroller-pullDown4">
+                    <span class="pullDownLabel">Pull down to refresh...</span>
+                  </div>   
+               <ul class="account-list-group" id="account-list-group4"></ul>
+               <div id="scroller-pullUp4">
+                    <span class="pullUpLabel">数据加载中...</span>
+                </div>
+              </div>
+             </div>
+            </div>
+
+            <div class="account-list">
+              <div id="wrapper5">
+                <div id="scroller" class="scroller">   
+                  <div id="scroller-pullDown5">
+                    <span class="pullDownLabel">Pull down to refresh...</span>
+                  </div>   
+               <ul class="account-list-group" id="account-list-group5"></ul>
+               <div id="scroller-pullUp5">
+                    <span class="pullUpLabel">数据加载中...</span>
+                </div>
+              </div>
+             </div>
+            </div>
+          </div>
+
+<script id="table-template1" type="text/x-handlebars-template">
+{{#each data}}
+<li>
+
+    <div class="account-list-items show">
+        <p>交易时间：<span>{{createDt}}</p>
+        <p class="text-muted">交易类型：{{accountType}}</p>
+        <p>金额: <span class="wzl-text-warning">{{amount}}</span>  <span class="wzl-offset-20">账户余额：{{balance}}元</span></p>
+        <div class="account-list-desc">
+            <p>订单号：{{orderno}} </p>
+            <p>交易流水号：{{serialno}} </p>
+        </div>
+        <div class="drop-down">
+            <span class="glyphicon icon-down "></span>
+            <!--<span class="glyphicon icon-up"></span>-->
+        </div>
+    </div>
+</li>
+{{/each}}
+</script>
+
+<script id="table-template2" type="text/x-handlebars-template">
+{{#each data}}
+<li>
+    <div class="account-list-items show">
+        <p>交易时间：<span>{{createDt}}</p>
+        <p class="text-muted">交易类型：充值</p>
+        <p>金额: <span class="wzl-text-warning">{{amount}}</span>  <span class="wzl-offset-20">账户余额：{{balance}}元</span></p>
+        <div class="account-list-desc">
+            <p>订单号：{{orderno}} </p>
+            <p>交易流水号：{{serialno}} </p>
+        </div>
+        <div class="drop-down">
+            <span class="glyphicon icon-down "></span>
+            <!--<span class="glyphicon icon-up"></span>-->
+        </div>
+    </div>
+</li>
+{{/each}}
+</script>
+
+<script id="table-template3" type="text/x-handlebars-template">
+{{#each data}}
+<li>
+    <div class="account-list-items show">
+        <p>交易时间：<span>{{createDt}}</p>
+        <p class="text-muted">交易类型：提现</p>
+        <p>金额: <span class="wzl-text-warning">{{amount}}</span>  <span class="wzl-offset-20">账户余额：{{balance}}元</span></p>
+        <div class="account-list-desc">
+            <p>订单号：{{orderno}} </p>
+        </div>
+        <div class="drop-down">
+            <span class="glyphicon icon-down "></span>
+            <!--<span class="glyphicon icon-up"></span>-->
+        </div>
+    </div>
+</li>
+{{/each}}
+</script>
+
+<script id="table-template4" type="text/x-handlebars-template">
+{{#each data}}
+<li>
+    <div class="account-list-items show">
+        <p>交易时间：<span>{{createDt}}</p>
+        <p class="text-muted">交易类型：{{accountType}}</p>
+        <p>金额: <span class="wzl-text-warning">{{amount}}</span>  <span class="wzl-offset-20">账户余额：{{balance}}元</span></p>
+        <div class="account-list-desc">
+            <p>订单号：{{orderno}} </p>
+        </div>
+        <div class="drop-down">
+            <span class="glyphicon icon-down "></span>
+            <!--<span class="glyphicon icon-up"></span>-->
+        </div>
+    </div>
+</li>
+{{/each}}
+</script>
+
+<script id="table-template5" type="text/x-handlebars-template">
+{{#each data}}
+<li>
+    <div class="account-list-items show">
+        <p>交易时间：<span>{{createDt}}</p>
+        <p class="text-muted">交易类型：{{accountType}}</p>
+        <p>金额: <span class="wzl-text-warning">{{amount}}</span>  <span class="wzl-offset-20">账户余额：{{balance}}元</span></p>
+        <div class="account-list-desc">
+            <p>订单号：{{orderno}} </p>
+        </div>
+        <div class="drop-down">
+            <span class="glyphicon icon-down "></span>
+            <!--<span class="glyphicon icon-up"></span>-->
+        </div>
+    </div>
+</li>
+{{/each}}
+</script>
+
+</div>
+</body>
+</html>

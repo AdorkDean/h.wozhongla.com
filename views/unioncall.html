@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>银联回呼</title>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <script>
+
+        seajs.config({
+            base:'../js/dist'
+        })
+        seajs.use('wzlh5/1.0.0/pay',function(pay){
+            pay.pay('unioncz');
+        })
+    </script>
+</head>
+<body>
+
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar">
+                    <span class="glyphicon glyphicon-wzl-back" onclick="history.back(-1)"></span>银联回呼
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="paycenter">
+
+            <ul class="list-group">
+                <li class="list-group-item pay-items clearfix wzl-mb-10">
+                    <a href="javascript:;" class="wzl-ui-btn">
+                        <div class="icon-pay">
+                            <span class="glyphicon  icon-pay-card"></span>
+                        </div>
+                        <div class="pay-items-text">
+                            <input type="text" value="100"  class="unicon-pay form-control"/>
+                        </div>
+                    </a>
+                </li>
+                <li class="list-group-item pay-items clearfix wzl-mb-10">
+                    <input type="text" class="form-control union-call-phone" placeholder="请填写电话号码(方便银行电话联系)"/>
+                </li>
+            </ul>
+            <p>请选择要使用的银行卡</p>
+            <ul class="list-group">
+                <li class="list-group-item pay-items clearfix wzl-mb-20">
+                    <a href="javascript:;" class="wzl-ui-btn pay-addcard">
+                        <div class="icon-pay">
+                            <span class="glyphicon  icon-addcard"></span>
+                        </div>
+                        <div class="pay-items-text">
+                            <p class="text-muted">添加银行卡</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="list-group-item pay-items clearfix wzl-mb-20">
+                    <a href="javascript:;" class="wzl-ui-btn pay-addcard">
+                        <div class="icon-pay">
+                            <span class="glyphicon  icon-pay-card"></span>
+                        </div>
+                        <div class="pay-items-text">
+                            <p class="pay-items-titie">储蓄卡</p>
+                            <p class="pay-items-subtitie">尾号1121</p>
+                        </div>
+
+                        <div class="radio pull-right">
+                            <label>
+                                <input type="radio" name="u-crads" checked class="user-crads" value="card1">
+                                默认
+                            </label>
+                        </div>
+                    </a>
+                </li>
+                <li class="list-group-item pay-items clearfix wzl-mb-20">
+                    <a href="javascript:;" class="wzl-ui-btn pay-addcard">
+                        <div class="icon-pay">
+                            <span class="glyphicon  icon-pay-card"></span>
+                        </div>
+                        <div class="pay-items-text">
+                            <p class="pay-items-titie">储蓄卡</p>
+                            <p class="pay-items-subtitie">尾号6565</p>
+                        </div>
+
+                        <div class="radio pull-right">
+                            <label>
+                                <input type="radio" name="u-crads" class="user-crads" value="card2">
+                                默认
+                            </label>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+            <a href="javascript:;" class="btn btn-wzl-default btn-lg btn-block wzl-mb-20" id="unicon-cz">提交</a>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

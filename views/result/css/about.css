@@ -1,0 +1,70 @@
+.list-group{
+    margin: 10px 20px;
+
+}
+.list-group>li:first-child {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.list-group>li:last-child {
+    margin-bottom: 0;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.list-group>li {
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    position: relative;
+}
+.list-group>li:active {
+    background-color: #e6e6e6;
+    margin-bottom: -1px;
+}
+
+.list-group>li a {
+    display: block;
+    padding: 15px;
+}
+
+.list-group>li.icon:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 4px;
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url(../img/icon_goright.png) center center no-repeat;
+    background-size: 15px 15px;
+}
+.content{
+    padding: 10px 20px;
+}
+/*
+.content{
+
+    position: absolute;
+    width:100%;
+    margin: 45px auto 0;
+    padding: 10px;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+
+.content>div{
+    position: absolute;
+}
+*/
+p {
+    line-height: 165%;
+    font-size: 14px;
+    min-height: 1em;
+    white-space: pre-wrap;
+    margin: 10px 0;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>验证手机</title>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <script>
+
+        seajs.config({
+            base:'../js/dist'
+        })
+
+        seajs.use('wzlh5/1.0.0/user',function(userA){
+            userA.userA('verifyPhone');
+        })
+    </script>
+</head>
+<body>
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar" onclick="location.href='ucenter.html'">
+                    <span class="glyphicon glyphicon-wzl-back" ></span>验证手机
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <form action="" role="form" class="">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="phone" id="phone" placeholder="请输入手机号"/>
+                    </div>
+                </li>
+                <li class="list-group-item clearfix wzl-verifycode-block" style="display: block">
+                    <div class="pull-left">
+                        <input type="text" class="form-control " style="width:100px;" placeholder="输入验证码" id="vercode"/>
+                    </div>
+                    <div class="pull-right wzl-child-block">
+                        <div class="wzl-verifyphone-block">
+                            <a class="btn btn-xs wzl-getverify-phone active">获取验证码</a>
+                        </div>
+                        <div class="wzl-verifyimg-block">
+                            <img src="../imgs/ui/verify_code.png" class="wzl-verify-code"  alt="验证码"/>
+                            <span class="wzl-verify-refresh">刷新</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="form-group wzl-mb-40">
+                <p class="text-muted"> <span class="wzl-text-warning">温馨提示: </span>验证手机可使用手机号登录，提升账户安全性，方便找回密码。</p>
+            </div>
+            <div class="form-group">
+                <a href="javascript:;" id="verifyPhone" class="btn btn-wzl-default btn-lg btn-block">验证手机</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

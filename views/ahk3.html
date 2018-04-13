@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">-->
+    <meta name="viewport" content="width=320,maximum-scale=1.3,user-scalable=no">
+    <title>安徽快三</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <link rel="stylesheet" href="../css/wzl-k3.css" type="text/css" />
+    <script>
+        seajs.config({
+            base:'../js/dist'
+        })
+        seajs.use('wzlh5/1.0.0/ahk3',function(k3){
+            k3.init();
+        })
+    </script>
+    </head>
+    <body>
+<header class="oh">
+		<div class="navbar-header">
+		<div class="dl t16" onclick="location.href='index.html'"><span class="glyphicon-back dl"></span>快三－和值</div>
+	</div>
+		<div class="ks-nav-more dr"><span class="icon-more"></span></div>
+	</header>
+<div class="box-ks oh" id="selectNamber">
+		<div id="icoBox"></div>
+		<div class="dice-roll-box dn" id="diceTollBox">
+		<div class="dice-roll-1">
+				<div class="dice-roll"></div>
+			</div>
+		<div class="dice-roll-2">
+				<div class="dice-roll"></div>
+			</div>
+		<div class="dice-roll-3">
+				<div class="dice-roll"></div>
+			</div>
+	</div>
+		<div class="header-kj">
+		<div class="left-kj dl oh" id="playEndTime">
+				<h3 class="tc">加载中…</h3>
+				<h2 class="tc font-led" id="playEndTimeLeft">00:00</h2>
+			</div>
+		<div class="right-kj dr oh" id="historyResult">
+				<h3 class="tc">加载中…</h3>
+				<div class="tc game-kj oh">
+				<ul class="dl result-list">
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				<span class="glyphicon-kj dr dn"><img src="../imgs/ui/k3/ks_p7.png" height="11"/></span></div>
+			</div>
+	</div>
+		<div class="conter-y">
+		<div class="conter-top oh"><span class="dl" id="randomBtn"><img src="../imgs/ui/k3/ks_p9.png" height="21"  alt=""/></span>
+				<h3 class="dr">所选和值与开奖号码和值一致</h3>
+			</div>
+		<div class="conter-list oh">
+				<ul id="k3-hz">
+				<li data-ball="3" data-win = "240">
+						<h3>3</h3>
+						<p>奖金240元</p>
+					<li data-ball="4" data-win = "80">
+						<h3>4</h3>
+						<p>奖金80元</p>
+					</li>
+				<li data-ball="5" data-win = "40">
+						<h3>5</h3>
+						<p>奖金40元</p>
+					</li>
+				<li data-ball="6" data-win = "25">
+						<h3>6</h3>
+						<p>奖金25元</p>
+					</li>
+				<li data-ball="7" data-win = "16">
+						<h3>7</h3>
+						<p>奖金16元</p>
+					</li>
+				<li data-ball="8" data-win = "12">
+						<h3>8</h3>
+						<p>奖金12元</p>
+					</li>
+				<li data-ball="9" data-win = "10">
+						<h3>9</h3>
+						<p>奖金10元</p>
+					</li>
+				<li data-ball="10" data-win = "9">
+						<h3>10</h3>
+						<p>奖金9元</p>
+					</li>
+				<li data-ball="11" data-win = "9">
+						<h3>11</h3>
+						<p>奖金9元</p>
+					</li>
+				<li data-ball="12" data-win = "10">
+						<h3>12</h3>
+						<p>奖金10元</p>
+					</li>
+				<li  data-ball="13" data-win = "12">
+						<h3>13</h3>
+						<p>奖金12元</p>
+					</li>
+				<li data-ball="14" data-win = "16">
+						<h3>14</h3>
+						<p>奖金16元</p>
+					</li>
+				<li data-ball="15" data-win = "25">
+						<h3>15</h3>
+						<p>奖金25元</p>
+					</li>
+				<li data-ball="16" data-win = "40">
+						<h3>16</h3>
+						<p>奖金40元</p>
+					</li>
+				<li data-ball="17" data-win = "80">
+						<h3>17</h3>
+						<p>奖金80元</p>
+					</li>
+				<li data-ball="18" data-win = "240">
+						<h3>18</h3>
+						<p>奖金240元</p>
+					</li>
+			</ul>
+			</div>
+		<div class="tc conter-font t14">您花费<span class="yellow" id="sum">0</span>元，预计奖金<span class="yellow" id="expectWin">0元</span></div>
+		<div class="btn-delete" id="clearBtn"><a href="javascript:">清空</a></div>
+		<div class="dulo oh">
+				<div class="dulo-left dl oh">
+				<div class="dr tarde-money">
+						<ul id="valueList">
+						<li class="hover value-2" data-value="2"></li>
+						<li class="value-10" data-value="10"></li>
+						<li class="value-50" data-value="50"></li>
+						<li class="value-100" data-value="100"></li>
+					</ul>
+					</div>
+			</div>
+				<div class="dulo-btn dr tb"><a href="javascript:" id="runPay">确认投注</a></div>
+			</div>
+	</div>
+	</div>
+	
+
+<div class="result-bg confirm-table dn" id="buyConfirm">
+	<div class="confirm-table-info"> 您将购买安徽快三 <span class="ye" id="confirmIssue">0</span> 期</div>
+	<div class="confirm-table-item">您共选择 <span class="ye" id="confirmItem">0</span> 注</div>
+	<div class="confirm-table-sum">应付金额 <span class="ye" id="confirmSum">0</span> 元</div>
+	<div class="share-btn reset-btn" id="buyConfirmBtn">确认支付</div>
+	<div class="share-btn reset-btn" id="buyConfirmBtn">返回修改</div>
+</div>
+
+<div class="result-bg dn" id="buySuccess">
+		<div class="buy-success"><img src="../imgs/ui/k3/buy.png" width="55%" alt=""></div>
+	<ul class="buy-schedule">
+		<li>您成功付款<span class="ye">2</span>元 <a href="javascript:">方案详情>></a></li>
+		<li>约3分钟后出票成功 <a href="javascript:" class="reset-btn">继续购买>></a></li>
+		<li>预计今天 19:00 开出赛果</li>
+		</ul>
+		<div class="share-btn reset-btn">继续购买</div>
+	</div>
+<audio src="../imgs/ui/k3/dice.mp3" id="diceAudio" preload="auto" autoplay></audio>
+<audio src="../imgs/ui/k3/fly.mp3" id="flyAudio" preload="auto"></audio>
+<audio src="../imgs/ui/k3/chip.mp3" id="chipAudio" preload="auto"></audio>
+</body>
+</html>

@@ -1,0 +1,127 @@
+/*css document*/
+
+
+
+.wzl-ui-dialog{
+  border-radius: 10px;
+  background: transparent;
+  width:270px;
+  box-sizing: border-box;
+  border:1px solid #ccc;
+  overflow: hidden;
+  font-family: "Helvetica Neue",Helvetica,Microsoft Yahei,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;
+  position: absolute;
+  display: none;
+  overflow: hidden;
+
+  //content block
+  .wzl-ui-dialog-content{
+    padding:10px 20px 0 20px;
+    background: #fff;
+    overflow: hidden;
+  }
+  //title
+  .wzl-ui-dialog-title{
+    color:#000000;
+    text-align: center;
+    /* font-weight: bold;*/
+    margin-top:20px;
+    font-size: 16px;
+  }
+  .wzl-ui-dialog-container{
+
+  }
+  .ui-loading{
+    display: block;
+    margin:0 auto;
+    vertical-align: middle;
+  }
+  /* 消息主体 */
+  .wzl-ui-dialog-message{
+    line-height: 2;
+    text-align: center;
+    font-size: 12px;
+    margin:10px 0 10px 0;
+  }
+
+  /* input */
+ .wzl-ui-dialog-input{
+    padding-bottom:10px;
+    text-align: center;
+   input{
+     width:100%;
+     border-radius: 4px;
+     border:1px solid #ccc;
+     padding:4px;
+     margin-left:-4px;
+     &:focus{
+       outline: none;
+     }
+   }
+  }
+
+  //按钮组
+  .wzl-ui-dialog-operation{
+    border-top:1px solid #ccc;
+    margin-left:-20px;
+    margin-right:-20px;
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    &.column{
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      .wzl-ui-dialog-operationitem:nth-child(2){
+        border-top:1px solid #ccc;
+        border-left:none;
+      }
+      .wzl-ui-dialog-operationitem:nth-child(3){
+        border-top:1px solid #ccc;
+        border-left:none;
+      }
+    }
+
+    .wzl-ui-dialog-operationitem{
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      box-sizing: border-box;
+      &:nth-child(2){
+        border-left:1px solid #ccc;
+        margin-left:-1px;
+      }
+      &:nth-child(3){
+        border-left:1px solid #ccc;
+        margin-left:-1px;
+      }
+    }
+    a.wzl-ui-dialog-button{
+      display: block;
+      color:#007aff;
+      text-decoration: none;
+      height:44px;
+      text-align: center;
+      line-height: 44px;
+      /*font-weight: 700;*/
+    }
+    a.wzl-ui-dialog-button:active{
+      background: #007aff;
+      color:#fff;
+    }
+
+  }
+}
+.ui-mask{
+  background: rgba(0,0,0,0.2);
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:1;
+}
+
+
+

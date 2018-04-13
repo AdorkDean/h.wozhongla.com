@@ -1,0 +1,297 @@
+/*开奖详情*/
+.result-list span.red_balls, .result-list span.blue_balls {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-clip: padding-box;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    border-color: #d52626;
+    background-color: #e45050;
+    margin-right: 3px
+}
+
+.result-list span.blue_balls {
+    border-color: #4b95da;
+    background-color: #56a4ed;
+    color: #fff;
+}
+
+.result-list .score-grey {
+    color: rgb(104, 104, 104) !important;
+    font-size: 12px;
+}
+
+.result-jj-time, .sd-time, .sd-time2 {
+    font-size: 12px;
+    color: rgb(178, 178, 178);
+    line-height: 22px;
+}
+
+.bordered-kj p {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.table-kj td {
+    text-align: center;
+}
+
+.black-kj {
+    color: rgb(0, 0, 0);
+}
+
+.table-kj {
+    margin-bottom: 15px !important;
+}
+
+.detail-xq td {
+    background-color: #FFF;
+}
+
+.wzl-mb-30 {
+    margin: 10px 0 30px 0;
+}
+.table {
+    border-collapse: collapse !important
+}
+
+.table-bordered th, .table-bordered td {
+    border: 1px solid #ddd !important
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd
+}
+
+.table > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd
+}
+/*开奖详情*/
+.result-jj-time, .sd-time, .sd-time2 {
+    font-size: 12px;
+    color: rgb(178, 178, 178);
+    line-height: 22px;
+}
+
+.bordered-kj p {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.table-kj td {
+    text-align: center;
+}
+
+.black-kj {
+    color: rgb(0, 0, 0);
+}
+
+.table-kj {
+    margin-bottom: 15px !important;
+}
+
+.detail-xq td {
+    background-color: #FFF;
+}
+
+.wzl-mb-30 {
+    margin: 10px 0 30px 0;
+}
+
+/*最近开奖*/
+.group-icon-right {
+    padding-left: 50px !important;
+}
+
+.result-group a.result-group-item.group-icon-right:after {
+    left: 0px !important;
+}
+
+.box-bj2 {
+    background-color: rgb(248, 248, 248) !important;
+}
+
+.floating-zjkj:after, .icon-right-up:after {
+    position: absolute;
+    top: 0;
+    left: 2px;
+    background-image: url(../img/icon_goright-top.png) !important;
+    background-position: center;
+    width: 32px;
+    height: 100%;
+    background-repeat: no-repeat;
+}
+
+.container-gauge {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.icon-down-up {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    width: 100%;
+    padding: 5px 0px;
+}
+
+.icon-down-up table {
+    width: 100%;
+    line-height: 30px;
+}
+
+.icon-down-up th {
+    font-weight: 100;
+    width: 23%;
+    padding-left: 10px;
+}
+
+.icon-down-up .red {
+    color: rgb(254, 107, 107);
+}
+
+.icon-down-up .blue {
+    color: rgb(135, 197, 255);
+}
+
+.icon-down-up .orange, .spf-down-up th {
+    color: rgb(255, 126, 0);
+}
+
+.icon-right-up:after {
+    background-image: url(../img/icon_goright-up.png) !important;
+}
+
+.share-header {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    background: url(../img/share.png) center no-repeat;
+    background-size: 100%;
+    width: 18px;
+    height: 100%;
+    cursor: pointer;
+}
+
+
+.icon-down-up tr {
+    border-bottom: 1px dashed #666;
+}
+
+.icon-down-up tr.delin, .bordered tr.delin td, .bordered tr.delin th {
+    border-bottom: none !important;
+}
+.group-number {
+    background-color: rgb(248, 248, 248);
+    padding: 8px 12px 8px 12px;
+}
+
+.box-bj {
+    background-color: rgb(255, 255, 255) !important;
+}
+
+.group-number h2 {
+    font-size: 16px;
+    line-height: 30px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    display: block;
+    font-weight: 100;
+}
+
+.number-red ul {
+    display: block;
+    overflow: hidden;
+}
+
+.number-red li {
+    display: block;
+    float: left;
+    width: 9%;
+    font-size: 18px;
+    color: rgb(228, 80, 80)
+}
+
+.number-blue li {
+    color: rgb(86, 164, 237)
+}
+.result-item-title{
+    margin: 14px 0;
+}
+.result-group a.result-group-item .result-item-title .result-item-time {
+    position: absolute;
+    top: 4px !important;
+    right: 0;
+    margin-right: 16px;
+    font-size: 12px;
+}
+
+.result-list .score-zc {
+    width: 88%;
+    line-height: 25px;
+    height: 25px;
+    background-color: rgb(24, 154, 107);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    padding-left: 5px;
+}
+
+.result-list .score-zc li {
+    display: block;
+    float: left;
+    background-color: inherit;
+    font-size: 14px;
+    width: 7%;
+    text-align: center;
+}
+
+
+.result-item-detail{
+    margin-bottom: 18px;
+}
+
+.score-grey {
+    color: #CCC !important;
+    color: rgb(104, 104, 104) !important;
+    font-size: 12px;
+}
+
+.score-grey-jc {
+    float: right;
+    margin: 6px 35px 0 0
+}
+
+.table-zc{
+    border: 1px solid #ddd;
+}
+
+.table-zc td{
+    border-left:none !important;
+    border-right:none !important;
+}
+
+.table-zc tr.odd td{
+    background-color: #f8f8f8;
+}

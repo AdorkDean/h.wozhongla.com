@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>排列3开奖</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <script>
+
+        seajs.config({
+            base:'../js/dist'
+        })
+        seajs.use('wzlh5/1.0.0/result',function(result){
+            result.result('pl3');
+        })
+    </script>
+</head>
+<body>
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar" onclick="history.back(-1)">
+                    <span class="glyphicon glyphicon-wzl-back"></span>
+                    <span class="wzl-nav-dropdown">
+                        排列3开奖
+                    </span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-mask">
+        <div class="tips">
+            加载开奖数据中...
+        </div>
+    </div>
+    <div id="account" class="container">
+          <div class="account-nav-bar wzl-mb-10">
+              <ul class="account-nav-group">
+                  <li class="active">
+                    <a href="javascript:;">最近开奖</a>
+                  </li>
+                  <li>
+                      <a href="javascript:;">开奖详情</a>
+                  </li>
+              </ul>
+          </div>
+        <div id="result" class="container wzl-mb-40">
+            <div id="result-detail" class="">
+                <ul id="result-group" class="result-group">
+
+                </ul>
+                <span class="add-more-data">暂无开奖数据 %>_<% 请稍后再试</span>
+            </div>
+            <div id="issue-detail">
+                <h4 class="text-center">暂无开奖数据 %>_<% 请稍后再试</h4>
+            </div>
+        </div>
+
+    </div>
+    <div class="wzl-fixed">
+        <a class="ball-status-bar icon-right max-width-320 wzl-ml0" href="pl3.html">兑换排列三</a>
+    </div>
+</div>
+<script id="result-list-temp" type="text/x-handlebars-template">
+    {{#each list}}
+    <li data-code="{{json}}">
+        <a href="javascript:;" class="result-group-item">
+            <div class="result-item-title">
+                <span class="result-item-name">排列3</span>
+                <span class="result-item-qc">{{lotIssue}}期</span>
+                <span class="result-item-time">{{dstr}}</span>
+            </div>
+            <div class="result-item-detail">
+                {{{codeStr}}}
+            </div>
+        </a>
+    </li>
+    {{/each}}
+</script>
+<script id="issue-detail-temp" type="text/x-handlebars-template">
+    <ul class="result-group">
+        <li>
+        <a href="javascript:;" class="result-group-item">
+            <div class="result-item-title">
+            <span class="result-item-name">排列3</span>
+    <span class="result-item-qc">{{lotIssue}}期</span>
+    <span class="result-item-time">{{dstr}}</span>
+    </div>
+    <div class="result-item-detail">
+    {{{codeStr}}}
+    </div>
+    </a>
+    </li>
+    </ul>
+
+    <table class="table table-bordered">
+            <tbody>
+            <tr>
+            <td>本期销量</td>
+    <td>
+    <span class="wzl-s-red">{{xl}}</span>元
+    </td>
+    </tr>
+    
+    </tbody>
+    </table>
+    <table class="table table-bordered">
+    <thead>
+            <th>奖级</th>
+    <th>注数</th>
+    <th>奖金</th>
+    </thead>
+    <tbody>
+    {{#each kjdata}}
+        <tr>
+            <td>{{n}}</td>
+            <td>
+            {{c}}
+            </td>
+            <td>{{p}}</td>
+        </tr>
+    {{/each}}
+    </tbody>
+    </table>
+</script>
+</body>
+</html>

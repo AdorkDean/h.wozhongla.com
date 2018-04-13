@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>竞彩开奖</title>
+    <link rel="stylesheet" href="../../css/wzl-bootstrap.css"/>
+    <link rel="stylesheet" href="../../css/bootstrap.icons.min.css"/>
+    <link rel="stylesheet" href="../../css/main.css"/>
+    <script src="../../js/dist/wzlh5/kj/sea.js"></script>
+    <script>
+        seajs.config({
+            base:'../../js/dist'
+        })
+        seajs.use('wzlh5/kj/jc', function (main) {
+            main.init();
+        })
+    </script>
+    <style>
+        .histroy-date,.play-type{ display: -none;}
+        .histroy-date span{
+             display: block; -width: 90px; -margin-left: 24px;;
+        }
+        .play-type span{
+            display: block; width: -90px; margin-left: 24px;;
+        }
+        s{text-decoration:none; }
+        .game-rqspf,.game-bq,.game-sp{ width: 25%;}
+
+        #glyphicon-menu-down-1{position: absolute; left: 100px; top: 58px;}
+        #glyphicon-menu-down-2{position: absolute; left: 245px; top: 58px;}
+        @media (device-height:667px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone6 */
+
+
+            #glyphicon-menu-down-1{position: absolute; left: 115px; top: 58px;}
+            #glyphicon-menu-down-2{position: absolute; left: 275px; top: 58px;}
+
+        }
+
+        @media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone6 Plus */
+
+
+            #glyphicon-menu-down-1{position: absolute; left: 125px; top: 58px;}
+            #glyphicon-menu-down-2{position: absolute; left: 300px; top: 58px;}
+
+        }
+    </style>
+</head>
+<body id="warp">
+<nav class="wzl-navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header navbar-header-kj">
+            <div class="navbar-header navbar-header-kj">
+                <span class="glyphicon glyphicon-wzl-back dl"></span>
+                <center><font class="ssq-kj">竞彩足球开奖</font></center>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="jc-content-item" >
+
+     <ul class="jc-list-bqc oh" >
+        <li class="oh jc-title t14">
+            <div class="dl">
+                <!--<span class="kj-bf">比分</span>-->
+                <span class=" glyphicon glyphicon-menu-down glyphicon-menu-down-1" id="glyphicon-menu-down-1" style=""></span>
+                <div class="play-type" style="text-align: right;  height: 20px; width: 60%; overflow: hidden">
+                    <span class="kj-bf">比分  </span>
+                    <span class="kj-spf">胜平负</span>
+                    <span class="kj-bqc">半全场</span>
+                    <span class="kj-rqs">让球胜平负</span>
+                </div>
+            </div>
+            <div class="dr">
+                <!--<span class="nowdate">2015-4-23</span>-->
+                <span class=" glyphicon glyphicon-menu-down glyphicon-menu-down-2" id="glyphicon-menu-down-2" style=" "></span>
+                <div class="histroy-date" style="height: 20px;overflow: hidden">
+
+                </div>
+            </div>
+
+        </li>
+
+     </ul>
+    <div class="loading" id="loading" ></div>
+    <div class="jc-list-bqc oh aaa" id="jcResult"></div>
+    <div class="jc-list-bqc oh aaa" id="jcResulta"></div>
+    <div class="jc-list-bqc oh aaa" id="jcResultSpf"></div>
+    <div class="jc-list-bqc oh aaa" id="jcResultBqc"></div>
+    <div class="jc-list-bqc oh aaa" id="jcResultRqs"></div>
+    <div class="jc-list-bqc oh aaa" id="jcResultBfs"></div>
+
+</div>
+<div class="hr20"></div>
+<footer class="footer-score">
+    <a href="just.html"><span>我的定制</span></a>
+    <a href="index.html" class="qgkj"><span>全国开奖</span></a>
+    <a href="jc.html" class="zqkj zqkj-hover"><span>竞彩开奖</span></a>
+    <a href="../tese.html" class="sz"><span>特色</span></a>
+</footer>
+<div class="hr20"></div>
+
+<script id="jcResultTemp"  type="text/x-handlebars-template">
+    {{#each list}}
+    <li class="jc-list-r">
+        <div class="jc-list">
+            <p>{{wook}}</p>
+            <p>{{no}}</p>
+        </div>
+        <ul class="jc-game-title t14">
+            <li class="vs-left">{{matchHome}}</li>
+            <li class="score"><div>{{bfNumber}}</div></li>
+            <li class="vs-right">{{matchGuest}}</li>
+        </ul>
+    </li>
+    {{/each}}
+</script>
+<script id="jcResultSp"  type="text/x-handlebars-template">
+    {{#each list}}
+    <li class="jc-list-r">
+        <div class="jc-list">
+            <p>{{wook}}</p>
+            <p>{{no}}</p>
+        </div>
+        <div class="jc-game-title t14">
+            <span class="game-sp">{{matchHome}}</span>
+                <span class="game-vs">
+                    <font>{{sp}}</font>
+                    <p class="game-vs-pink">{{bfNumber}}</p>
+                </span>
+            <span>{{matchGuest}}</span>
+        </div>
+    </li>
+    {{/each}}
+</script>
+<script id="jcResultBq"  type="text/x-handlebars-template">
+    {{#each list}}
+    <li class="jc-list-r">
+        <div class="jc-list">
+            <p>{{wook}}</p>
+            <p>{{no}}</p>
+        </div>
+        <div class="jc-game-title t14">
+            <span class="game-bq">{{matchHome}}</span>
+                <span class="game-vs">
+
+                    <p>
+                        <s>{{matchHalf}}</s>
+                        <s>{{sf}}</s>
+                    </p>
+                    <p class="game-vs-pink">
+                        <s>{{bfNumber}}</s>
+                        <s>{{sp}}</s>
+                    </p>
+                </span>
+            <span>{{matchGuest}}</span>
+        </div>
+    </li>
+    {{/each}}
+</script>
+<script id="jcResultRq"  type="text/x-handlebars-template">
+    {{#each list}}
+    <li class="jc-list-r">
+        <div class="jc-list">
+            <p>{{wook}}</p>
+            <p>{{no}}</p>
+        </div>
+
+        <div class="jc-game-title t14">
+            <div class="dl game-rqspf">
+                <p>{{matchHome}}</p>
+                <p class="wzl-text-blue">{{matchBall}}</p>
+            </div>
+            <span class="game-vs">
+                <font>{{sp}}</font>
+                <p class="game-vs-pink">{{bfNumber}}</p>
+            </span>
+            <span>{{matchGuest}}</span>
+        </div>
+    </li>
+    {{/each}}
+</script>
+<script id="jcResultBf"  type="text/x-handlebars-template">
+    {{#each list}}
+    <li class="jc-list-r">
+        <div class="jc-list">
+            <p>{{wook}}</p>
+            <p>{{no}}</p>
+        </div>
+        <ul class="jc-game-title t14">
+            <li class="vs-left">{{matchHome}}</li>
+            <li class="score"><div>{{bfNumber}}</div></li>
+            <li class="vs-right">{{matchGuest}}</li>
+        </ul>
+    </li>
+    {{/each}}
+</script>
+</body>
+</html>

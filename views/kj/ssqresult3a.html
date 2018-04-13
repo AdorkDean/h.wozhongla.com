@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>资金计算</title>
+    <link rel="stylesheet" href="../../css/wzl-bootstrap.css"/>
+    <link rel="stylesheet" href="../../css/bootstrap.icons.min.css"/>
+    <link rel="stylesheet" href="../../css/main.css"/>
+    <script src="../../js/dist/wzlh5/kj/sea.js"></script>
+    <script>
+        seajs.config({
+            base:'../../js/dist'
+        })
+        seajs.use('wzlh5/kj/home', function (main) {
+            main.init();
+        })
+    </script>
+</head>
+<body class="box-bj">
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header navbar-header-kj">
+                <div class="navbar-header navbar-header-kj">
+                    <span class="glyphicon glyphicon-wzl-back dl"></span>
+                    <center><font class="ssq-kj">双色球开奖</font></center>
+            </div>
+            </div>
+        </div>
+    </nav>
+	<div class="account-nav-bar">
+              <ul class="account-nav-group">
+                  <li>
+                      <a href="javascript:;">最近开奖</a>
+                  </li>
+                  <li>
+                    <a href="javascript:;">开奖详情</a>
+                  </li>
+                  <li class="nav-jj">
+                      <a href="javascript:;">奖金计算</a>
+                  </li>
+                  <li>
+                    <a href="javascript:;">遗漏分析</a>
+                  </li>
+              </ul>
+          </div>
+    <div class="group-number oh">
+        <ul class="result-group group-jj">
+        <li>
+        <a href="javascript:;" class="result-group-item">
+            <div class="result-item-title">
+            <span class="result-item-name">双色球2014033期开奖号码：</span>
+    </div>
+    <div class="result-item-detail result-item-jj">
+    <span class="red_balls">13</span><span class="red_balls">18</span><span class="red_balls">20</span><span class="red_balls">25</span><span class="red_balls">27</span><span class="red_balls">33</span><span class="blue_balls">12</span>
+    </div>
+    </a>
+    </li>
+    </ul>
+    </div>
+    <!-- 选球区 -->
+    <div class="ballbox ballbox-kj" id="dg">
+            <div class="ballcon redBalls ballcon-jj">
+                <div class="ballcon-bar">
+                    <span class="ballcon-title">红球</span>
+                    <span class="ballcon-tips">至少选择六个</span>
+                    <div class="ball-random-block">
+                        <ul>
+                            <li><a class="btn random-ball tl" num="6" href="javascript:;">6个</a></li>
+                            <li><a class="btn random-ball" href="javascript:;" num="7">7个</a></li>
+                            <li><a class="btn random-ball" href="javascript:;" num="8">8个</a></li>
+                            <li><a class="btn random-ball" href="javascript:;" num="9">9个</a></li>
+                            <li><a class="btn random-ball" href="javascript:;" num="10">10个</a></li>
+                            <li><a class="btn random-ball tr" href="javascript:;" num="11">11个</a></li>
+                            <li><a class="btn random-ball bl" href="javascript:;" num="12">12个</a></li>
+                            <li><a class="btn random-ball" href="javascript:;" num="13">13个</a></li>
+                            <li><a class="btn random-ball " href="javascript:;" num="14">14个</a></li>
+                            <li><a class="btn random-ball br" href="javascript:;" num="15">15个</a></li>
+                            <li><a class="btn random-ball br" href="javascript:;" num="16">16个</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <ul class="clearfix">
+                    <li><span class="red_balls">01</span></li>
+                    <li><span class="red_balls">02</span></li>
+                    <li><span class="red_balls">03</span></li>
+                    <li><span class="red_balls">04</span></li>
+                    <li><span class="red_balls">05</span></li>
+                    <li><span class="red_balls">06</span></li>
+                    <li><span class="red_balls">07</span></li>
+                    <li><span class="red_balls">08</span></li>
+                    <li><span class="red_balls">09</span></li>
+                    <li><span class="red_balls">10</span></li>
+                    <li><span class="red_balls">11</span></li>
+                    <li><span class="red_balls">12</span></li>
+                    <li><span class="red_balls">13</span></li>
+                    <li><span class="red_balls">14</span></li>
+                    <li><span class="red_balls">15</span></li>
+                    <li><span class="red_balls">16</span></li>
+                    <li><span class="red_balls">17</span></li>
+                    <li><span class="red_balls">18</span></li>
+                    <li><span class="red_balls">19</span></li>
+                    <li><span class="red_balls">20</span></li>
+                    <li><span class="red_balls">21</span></li>
+                    <li><span class="red_balls">22</span></li>
+                    <li><span class="red_balls">23</span></li>
+                    <li><span class="red_balls">24</span></li>
+                    <li><span class="red_balls">25</span></li>
+                    <li><span class="red_balls">26</span></li>
+                    <li><span class="red_balls">27</span></li>
+                    <li><span class="red_balls">28</span></li>
+                    <li><span class="red_balls">29</span></li>
+                    <li><span class="red_balls">30</span></li>
+                    <li><span class="red_balls">31</span></li>
+                    <li><span class="red_balls">32</span></li>
+                    <li><span class="red_balls">33</span></li>
+                </ul>
+            </div>
+            <div class="ballcon blueBalls ballcon-jj">
+                <div class="ballcon-bar">
+                    <span class="ballcon-title">蓝球</span>
+                    <span class="ballcon-tips">至少选择1个</span>
+                    <div class="ball-random-block">
+                        <ul>
+                            <li><a class="btn random-ball tl"  href="javascript:;" num="1">1个</a></li>
+                            <li><a class="btn random-ball" href="javascript:;" num="2">2个</a></li>
+                            <li><a class="btn random-ball" href="javascript:;" num="3">3个</a></li>
+                            <li><a class="btn random-ball" href="javascript:;" num="4">4个</a></li>
+                            <li><a class="btn random-ball" href="javascript:;" num="5">5个</a></li>
+                            <li><a class="btn random-ball tr" href="javascript:;" num="6">6个</a></li>
+                            <li><a class="btn random-ball " href="javascript:;" num="7">7个</a></li>
+                            <li><a class="btn random-ball" href="javascript:;" num="8">8个</a></li>
+                            <li><a class="btn random-ball " href="javascript:;" num="9">9个</a></li>
+                            <li><a class="btn random-ball " href="javascript:;" num="10">10个</a></li>
+                            <li><a class="btn random-ball " href="javascript:;" num="11">11个</a></li>
+                            <li><a class="btn random-ball br" href="javascript:;" num="12">12个</a></li>
+                            <li><a class="btn random-ball bl" href="javascript:;" num="13">13个</a></li>
+                            <li><a class="btn random-ball " href="javascript:;" num="14">14个</a></li>
+                            <li><a class="btn random-ball " href="javascript:;" num="15">15个</a></li>
+                            <li><a class="btn random-ball " href="javascript:;" num="16">16个</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <ul class="clearfix">
+                    <li><span class="blue_balls">01</span></li>
+                    <li><span class="blue_balls">02</span></li>
+                    <li><span class="blue_balls">03</span></li>
+                    <li><span class="blue_balls">04</span></li>
+                    <li><span class="blue_balls">05</span></li>
+                    <li><span class="blue_balls">06</span></li>
+                    <li><span class="blue_balls">07</span></li>
+                    <li><span class="blue_balls">08</span></li>
+                    <li><span class="blue_balls">09</span></li>
+                    <li><span class="blue_balls">10</span></li>
+                    <li><span class="blue_balls">11</span></li>
+                    <li><span class="blue_balls">12</span></li>
+                    <li><span class="blue_balls">13</span></li>
+                    <li><span class="blue_balls">14</span></li>
+                    <li><span class="blue_balls">15</span></li>
+                    <li><span class="blue_balls">16</span></li>
+                </ul>
+                <div class="text-center grey-jj t18">共2注  <span class="wzl-s-red">10</span> 元</div>
+                <div class="ball-yaoyiyao"></div>
+      </div>
+        </div>
+    <!-- 选球区 end-->
+    <div class="wzl-fixed">
+        <a class="ball-status-bar max-width-320 wzl-ml0 btn-jj" href="ssq.html">提交号码计算资金</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>result</title>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css"/>
+</head>
+<body>
+<div id="warp">
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar" onclick="location.href='index.html'">
+                    <span class="glyphicon glyphicon-wzl-back"></span>
+                        <span class="wzl-nav-dropdown">
+                            开奖大厅
+                        </span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="result" class="container">
+        <div class="container-mask" v-show="isLoading">
+        <div class="tips">
+            加载开奖数据中...
+        </div>
+        </div>
+        <div id="result-detail" v-component="{{currentView}}"  transition-mode="in-out" keep-alive>
+
+        </div>
+    </div>
+</div>
+
+<template type="x-template" id="grid-template">
+    <ul id="result-group" class="result-group">
+        <li v-repeat="indexData" v-component="item" >
+        </li>
+    </ul>
+</template>
+<template type="x-template" id="item-template">
+   <a class="result-group-item icon-right" href="#/ssq">
+       <div class="result-item-title">
+           <span class="result-item-name">{{lotName}}</span>
+           <span class="result-item-qc">{{lotIssue}}期</span>
+           <span class="result-item-time">{{time}}</span>
+       </div>
+       <div class="result-item-detail" v-html="str">
+       </div>
+   </a>
+</template>
+
+<script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+<script src="http://cdn.staticfile.org/jquery/1.10.1/jquery.min.js"></script>
+<script src="../js/lib/director.js"></script>
+<script src="../js/app/resoure.js"></script>
+<script src="../js/app/result.js"></script>
+
+
+
+</body>
+</html>

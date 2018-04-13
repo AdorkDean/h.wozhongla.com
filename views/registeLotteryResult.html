@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>注册</title>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css?q=1111"/>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+    <script>
+        seajs.config({
+            base:'../js/dist'
+        })
+
+        seajs.use('wzlh5/1.0.0/userLotteryResult',function(register){
+            register.register();
+        })
+    </script>
+</head>
+<body>
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar">
+                    用户注册
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+
+            <ul class="register-list-group">
+                <li class="register-list-group-item ">
+                    <input type="text" class="register-form-control" name="username" value="" placeholder="手机号" maxlength="15"/>
+                </li>
+                <li class="register-list-group-item clearfix position-relative">
+                    <input type="text" class="register-form-control" name="password" placeholder="请输入密码 6-15位数字，字母" id="password" maxlength="15" />
+                    <span class="glyphicon glyphicon-wzl-eye wzl-eye" id="glyphicon-wzl-eye"></span>
+
+                </li>
+                <li class="register-list-group-item clearfix wzl-verifycode-block">
+                    <div class="pull-left">
+                        <input type="text" class="register-form-control" style="width:100px;" placeholder="输入验证码" id="code"  maxlength="6"/>
+                    </div>
+                    <div class="pull-right wzl-child-block">
+                        <div class="wzl-verifyphone-block">
+                            <button class="btn btn-xs wzl-getverify-phone">获取验证码</button>
+                        </div>
+                        <div class="wzl-verifyimg-block">
+                            <img src="" class="wzl-verify-code"  alt="验证码"/>
+                            <span class="wzl-verify-refresh">刷新</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <p class="text-danger register-tips" style="height:0px;display: none">用户名格式有误！</p>
+            <div class="form-group wzl-mb-40">
+                <div class="checkbox" style="display: none">
+                    <label>
+                        <input type="checkbox" checked="checked" id="reg-check">我已年满18岁，并同意<a class="wzl-server-a" href="javascript:;">《用户协议》《法律声明》</a>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <a id="reg" href="javascript:;" class="btn btn-wzl-default btn-lg btn-block">立即注册</a>
+            </div>
+    </div>
+
+
+    <article class="text-list" style="font-size: 1.6rem; margin: 0rem 1rem;line-height: 2.1rem;">请务必提交真实手机号码，中奖后如果无法联系到您，将按弃奖处理。</article>
+
+
+
+</div>
+
+
+
+</body>
+</html>

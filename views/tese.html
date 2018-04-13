@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>特色</title>
+    <link rel="stylesheet" href="../css/wzl-bootstrap.css"/>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <style>
+        .tese .list-group-item>a{
+            display:block;
+            color:#151515;
+            position: relative;
+            width:100%;
+            padding:10px 15px;
+        }
+        .tese .list-group-item p{
+            margin-top:10px;
+            text-indent:1em;
+        }
+    </style>
+</head>
+<body>
+<div id="warp">
+    <div class="top-buff-bar"></div>
+    <nav class="wzl-navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wzl-nav-bar" onclick="location.href='index.html'">
+                    <span class="glyphicon glyphicon-wzl-back" ></span>特色
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container tese">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <p class="text-muted">
+                    客服电话：<a href="tel:400-686-5015">400-686-5015</a>
+                </p>
+            </li>
+           <!--  <li class="list-group-item">
+               <p class="text-muted">版本号：3.8.0</p>
+           </li> -->
+        </ul>
+        <ul class="list-group tese">
+            <!--<li class="list-group-item">
+               <a href="http://www.wozhongla.com/appCheckVersion">版本检测
+                   <span class=" text-muted pull-right" id="version">V3.8.0</span>
+               </a>
+           </li>-->
+            <li class="list-group-item">
+                <a href="gsxx.html">公司简介
+                    <span class="pull-right glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a href="gczn.html">购彩指南
+                    <span class="pull-right glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a href="flsm.html">法律声明
+                    <span class="pull-right glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="../js/dist/seajs/2.3.0/dist/sea.js"></script>
+<script>
+    seajs.config({
+        base:'../js/dist'
+    })
+//  seajs.use('wzlh5/1.0.0/ac',function(ac){
+//      document.querySelector("#version").innerHTML="V"+ac.version
+//  })
+</script>
+</body>
+</html>
